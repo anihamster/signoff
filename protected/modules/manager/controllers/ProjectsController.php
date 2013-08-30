@@ -71,21 +71,47 @@ class ProjectsController extends Controller {
                 $form->save(false);
 
                 $prj = Projects::model()->findByAttributes(array('TITLE' => $_POST['Projects']['TITLE'], 'PRJ_CAT' => $_POST['Projects']['PRJ_CAT'], 'USER_ID' => It::userId()));
-                $user = UserDetails::model()->findByAttributes(array('USER_ID' => It::userId()));
+                $cat = Categories::model()->findByPk($prj->PRJ_CAT);
+                $curuser = UserDetails::model()->findByAttributes(array('USER_ID' => It::userId()));
 
                 $rules = RelationRules::model()->findAllByAttributes(array('CAT_ID' => $prj->PRJ_CAT));
 
                 if(!empty($rules)) {
                     foreach($rules as $rule) {
-                        $users = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $rule->ROLE_ID, 'BRAND' => $rule->BRAND_ID,'KEY_USER' => '1'));
+                        if($cat->BRAND_SPEC == '0') {
+                            $users = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $rule->ROLE_ID, 'BRAND' => $rule->BRAND_ID, 'KEY_USER' => '1'));
 
-                        if(!empty($users)) {
-                            foreach($users as $user) {
-                                $sign = new Signs;
-                                $sign->USER_ID = $user->USER_ID;
-                                $sign->PRG_ID = $prj->ID;
-                                $sign->FLAG = '0';
-                                $sign->save(false);
+                            if(!empty($users)) {
+                                foreach($users as $user) {
+                                    $sign = new Signs;
+                                    $sign->USER_ID = $user->USER_ID;
+                                    $sign->PRG_ID = $prj->ID;
+                                    $sign->FLAG = '0';
+                                    $sign->save(false);
+                                }
+                            }
+                        } else {
+                            $gusers = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $rule->ROLE_ID, 'BRAND' => '0', 'KEY_USER' => '1'));
+                            if(!empty($gusers)) {
+                                foreach($gusers as $user) {
+                                    $sign = new Signs;
+                                    $sign->USER_ID = $user->USER_ID;
+                                    $sign->PRG_ID = $prj->ID;
+                                    $sign->FLAG = '0';
+                                    $sign->save(false);
+                                }
+                            }
+
+                            $users = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $rule->ROLE_ID, 'BRAND' => $curuser->BRAND, 'KEY_USER' => '1'));
+
+                            if(!empty($users)) {
+                                foreach($users as $user) {
+                                    $sign = new Signs;
+                                    $sign->USER_ID = $user->USER_ID;
+                                    $sign->PRG_ID = $prj->ID;
+                                    $sign->FLAG = '0';
+                                    $sign->save(false);
+                                }
                             }
                         }
                     }
@@ -117,8 +143,11 @@ class ProjectsController extends Controller {
             $status = $sign->FLAG;
         else {
             $user = UserDetails::model()->findByAttributes(array('USER_ID' => Yii::app()->user->getId()));
-            $sign = Signs::model()->findByAttributes(array('ROLE_ID' => $user->ROLE_ID, 'PRG_ID' => $tid));
-            $status = $sign->FLAG;
+            $sign = Signs::model()->findByAttributes(array('USER_ID' => $user->USER_ID, 'PRG_ID' => $tid));
+            if(!empty($sign))
+                $status = $sign->FLAG;
+            else
+                $status = 0;
         }
 
         if($status == 0)

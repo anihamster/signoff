@@ -3,7 +3,7 @@
 <div id="text_full">
     <h1>Relations settings</h1>
     <br />
-    <?php if(!empty($cats) && !empty($roles) && !empty($deps)): ?>
+    <?php if(!empty($cats) && !empty($roles)): ?>
         <label for="grp_name">Relation name: </label>
         <input type="text" name="grp_name" id="grp_name" /><br /><br />
         <select id="category">
