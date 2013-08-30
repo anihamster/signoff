@@ -4,11 +4,11 @@ class DefaultController extends Controller
 {
 	public function actionGetUsers()
 	{
-		if(!Yii::app()->request->isAjaxRequest)
-			$this->redirect(Yii::app()->baseUrl);
+		if(!It::isAjaxRequest())
+			$this->redirect(It::baseUrl());
 		
 		if(empty($_GET['dept_id']))
-			$this->redirect(Yii::app()->baseUrl);
+			$this->redirect(It::baseUrl());
 		
 		$id = intval($_GET['dept_id']);
 		
@@ -41,11 +41,11 @@ class DefaultController extends Controller
 	}
 	
 	public function actionSignUser() {
-		if(!Yii::app()->request->isAjaxRequest)
-			$this->redirect(Yii::app()->baseUrl);
+		if(!It::isAjaxRequest())
+			$this->redirect(It::baseUrl());
 		
 		if(empty($_GET['user_id']) || empty($_GET['task_id']))
-			$this->redirect(Yii::app()->baseUrl);
+			$this->redirect(It::baseUrl());
 		
 		$id = intval($_GET['user_id']);
 		$tid = intval($_GET['task_id']);
@@ -98,30 +98,21 @@ class DefaultController extends Controller
 	}
 	
 	public function actionSetSign() {
-		if(!Yii::app()->request->isAjaxRequest)
-			$this->redirect(Yii::app()->baseUrl);
+		if(!It::isAjaxRequest())
+			$this->redirect(It::baseUrl());
 		
 		if(empty($_GET['task_id']))
-			$this->redirect(Yii::app()->baseUrl);
+			$this->redirect(It::baseUrl());
 		
 		$tid = $_GET['task_id'];
 		
-		$check = Signs::model()->findByAttributes(array('user_id' => Yii::app()->user->getId(), 'task_id' => $tid));
-		$boss = Yii::app()->user->getState('user_role');
-		
+		$check = Signs::model()->findByAttributes(array('USER_ID' => Yii::app()->user->getId(), 'PRG_ID' => $tid));
+
 		$result = array();
 		
 		if(!empty($check)) {
-			$check->flag = 1;
+			$check->FLAG = 1;
 			$check->save(false);
-			$result['status'] = 'Ok';
-			$result['result'] = 'Success!';
-		} elseif($boss == '3') {
-			$user = UserDetails::model()->findByAttributes(array('user_id' => Yii::app()->user->getId()));
-			$dept = $user->dept_id;
-			$sign = Signs::model()->findByAttributes(array('dept_id' => $dept, 'task_id' => $tid));
-			$sign->flag = '1';
-			$sign->save(false);
 			$result['status'] = 'Ok';
 			$result['result'] = 'Success!';
 		} else{
@@ -133,13 +124,13 @@ class DefaultController extends Controller
 	}
 	
 	public function actionGetComments() {
-		if(!Yii::app()->request->isAjaxRequest)
-			$this->redirect(Yii::app()->baseUrl);
+		if(!It::isAjaxRequest())
+			$this->redirect(It::baseUrl());
 		
 		if(empty($_GET['dept_id']))
-			$this->redirect(Yii::app()->baseUrl);
+			$this->redirect(It::baseUrl());
 		if(empty($_GET['task_id']))
-			$this->redirect(Yii::app()->baseUrl);
+			$this->redirect(It::baseUrl());
 		
 		$tid = intval($_GET['task_id']);
 		$did = intval($_GET['dept_id']);
@@ -174,44 +165,75 @@ class DefaultController extends Controller
 		print json_encode($result);
 	}
 
-    public function actionSaveRelations() {
+    public function actionGetTech() {
         if(!It::isAjaxRequest())
-            $this->redirect(Yii::app()->baseUrl);
-        if(empty($_REQUEST))
-            $this->redirect(Yii::app()->baseUrl);
+            $this->redirect(It::baseUrl());
 
-        $name = $_REQUEST['name'];
-        $role = $_REQUEST['role'];
-        $cat = $_REQUEST['cat'];
-        $grp = $_REQUEST['grp'];
+        if(!empty($_GET['prj'])) {
+            $pid = intval($_GET['prj']);
 
-        $result = array();
+            $result=array();
 
-        if(!empty($name)) {
-            $dept_grp = new DeptGroups();
-            $dept_grp->GROUP_NAME = $name;
-            $dept_grp->GROUP_PARENT = 0;
-            $dept_grp->save(false);
-        }
-        if(!empty($role) && !empty($cat)) {
-            $group = DeptGroups::model()->findByAttributes(array('GROUP_NAME' => $name));
-            $rule = new RelationRules;
-            $rule->CAT_ID = $cat;
-            $rule->GRP_ID = $group->ID;
-            $rule->ROLE_ID = $role;
-            $rule->save(false);
-        }
+            $criteria = new CDbCriteria;
+            $criteria->condition = 'TECH = :tech AND ROLE_PARENT != 0';
+            $criteria->params = array(':tech' => '1');
+            $roles = Roles::model()->findAll($criteria);
 
-        foreach($grp as $g_k => $g_v) {
-            $dpt = Departments::model()->findByPk($g_v);
-            if(!empty($dpt)) {
-                $dpt->DEPT_GROUP = $group->ID;
-                $dpt->save(false);
+            if(empty($roles)) {
+                $result['status'] = 'Failed';
+                $result['result'] = 'There is no tech roles in base';
+            } else {
+                $arr = array();
+                $signs = Signs::model()->with('details')->findAllByAttributes(array('PRG_ID' => $pid));
+
+                foreach($roles as $role) {
+                    $arr[$role->ID]['id'] = $role->ID;
+                    $arr[$role->ID]['name'] = $role->ROLE_NAME;
+                    if(!empty($signs)) {
+                        $arr[$role->ID]['checked'] = 0;
+                        foreach($signs as $sign) {
+                            if(!empty($sign['details']) && ($sign['details']->ROLE_ID == $role->ID))
+                                $arr[$role->ID]['checked'] = 1;
+                        }
+                    } else
+                        $arr[$role->ID]['checked'] = 0;
+                }
+                $result['status'] = 'Ok';
+                $result['result'] = $arr;
             }
-        }
+        } else
+            $this->redirect(It::baseUrl());
 
-        $result['status'] = 'Ok';
 
         print json_encode($result);
+    }
+
+    public function actionSaveTech() {
+        if(!It::isAjaxRequest())
+            $this->redirect(It::baseUrl());
+
+        if(!empty($_REQUEST['roles']) && !empty($_REQUEST['prj'])) {
+            $roles = $_REQUEST['roles'];
+            $pid = $_REQUEST['prj'];
+
+            foreach($roles as $key => $val) {
+                if($val['state'] == '1') {
+                    $users = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $val['id'], 'KEY_USER' => '1'));
+
+                    if(!empty($users)) {
+                        foreach($users as $user) {
+                            $check = Signs::model()->findByAttributes(array('PRG_ID' => $pid, 'USER_ID' => $user->USER_ID));
+                            if(empty($check)) {
+                                $sign = new Signs;
+                                $sign->USER_ID = $user->USER_ID;
+                                $sign->PRG_ID = $pid;
+                                $sign->FLAG = '0';
+                                $sign->save(false);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

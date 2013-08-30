@@ -10,12 +10,12 @@
  * @property string $CREATED_AT
  * @property string $UPDATED_AT
  */
-class DeptGroups extends CActiveRecord
+class RelGroups extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return DeptGroups the static model class
+	 * @return RelGroups the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -27,7 +27,7 @@ class DeptGroups extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'DEPT_GROUPS';
+		return 'REL_GROUPS';
 	}
 
 	/**
@@ -56,7 +56,7 @@ class DeptGroups extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-            'parent' => array(self::HAS_ONE, 'DeptGroups', array('ID' => 'GROUP_PARENT'), 'alias'=>'p'),
+            'parent' => array(self::HAS_ONE, 'RelGroups', array('ID' => 'GROUP_PARENT'), 'alias'=>'p'),
 		);
 	}
 
@@ -97,7 +97,7 @@ class DeptGroups extends CActiveRecord
 	}
 
     public function getGroups() {
-        $grps = DeptGroups::model()->findAll();
+        $grps = RelGroups::model()->findAll();
 
         $result = array();
         foreach($grps as $grp) {

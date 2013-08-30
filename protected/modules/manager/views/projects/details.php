@@ -1,7 +1,7 @@
-<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/user_signs_off.js') ?>
-<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/comments.js') ?>
+<?php Yii::app()->clientScript->registerScriptFile(IT::baseUrl() . '/js/user_signs_off.js') ?>
+<?php Yii::app()->clientScript->registerScriptFile(IT::baseUrl() . '/js/comments.js') ?>
 <?php if(Yii::app()->user->getState('user_role') == '3'): ?>
-<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/user_signs.js') ?>
+<?php Yii::app()->clientScript->registerScriptFile(IT::baseUrl() . '/js/user_signs.js') ?>
 <?php endif; ?>
 <div id="leftbar">
 	<h2>Progress tracker</h2>
@@ -9,15 +9,18 @@
 		<div class="progress finished">
 			Project initiated
 		</div>
-		<center><img src="<?php echo Yii::app()->baseUrl; ?>/images/ico/arrow-down.png" /></center>
-		<?php if(!empty($task['assigned_to'])): ?>
-			<?php foreach($task['assigned_to'] as $d_k => $d_v): ?>
-			<?php $i = 1 ;?>
-			<div <?php if(empty($signs) || !isset($signs[$d_k]) || ($signs[$d_k] == '0')): ?>class="progress inprogress"<?php elseif($signs[$d_k] == '1'): ?>class="progress finished"<?php endif; ?> id="<?php echo $d_k; ?>">
-				<?php echo $d_v; ?>
+		<div align="center"><img src="<?php echo IT::baseUrl(); ?>/images/ico/arrow-down.png" /></div>
+		<?php if(!empty($signs)): ?>
+			<?php foreach($signs as $s_k => $s_v): ?>
+			<div <?php if($s_v['flag'] == '0'): ?>class="progress inprogress"<?php elseif($s_v['flag'] == '1'): ?>class="progress finished"<?php endif; ?> id="<?php echo $s_v['user']; ?>">
+				<?php if(!empty($s_v['brand'])): ?>
+                    <?php echo $s_v['brand']; ?>
+                <?php endif; ?>
+                <?php if(!empty($s_v['role'])): ?>
+                    <?php echo $s_v['role']; ?>
+                <?php endif; ?>
 			</div>
-			<center><img src="<?php echo Yii::app()->baseUrl; ?>/images/ico/arrow-down.png" /></center>
-			<?php $i = $i + 1; ?>
+            <div align="center"><img src="<?php echo IT::baseUrl(); ?>/images/ico/arrow-down.png" /></div>
 			<?php endforeach; ?>
 			<?php endif; ?>
 		<div class="progress finished">
@@ -53,13 +56,13 @@
 		</tr>
 	</table>
 </div>
-<?php if(Yii::app()->user->getState('user_role') == '3'): ?>
+<?php if(It::getState('tkam') == '1'): ?>
 <div id="sidebar">
-	<h2>Users management</h2>
-	<table id="<?php echo $task['ID']; ?>">
+	<h2>Tech management</h2>
+	<table class="prj" id="<?php echo $task['ID']; ?>">
 		<tr>
 			<td>
-				<input value="<?php echo $dept; ?>" type="hidden"><a href="Javascript:void[0]" id="userlist" class="button orange">Users</a>
+				<a href="Javascript:void[0]" id="techlist" class="button orange">Select tech</a>
 				<div id="usrs"></div>
 			</td>
 		</tr>
@@ -76,8 +79,8 @@
 	<?php if(!empty($attaches)): ?>
 		<b>Attached files:</b><br />
 		<?php foreach($attaches as $attach): ?>
-			<a href="<?php echo Yii::app()->baseUrl; ?>/uploads/project_<?php echo $task['ID']; ?>/<?php echo $attach->ATTACH_FILE; ?>">
-				<img src="<?php echo Yii::app()->baseUrl; ?>/images/ico/attach.png" /><?php echo $attach->ATTACH_FILE; ?>
+			<a href="<?php echo IT::baseUrl(); ?>/uploads/project_<?php echo $task['ID']; ?>/<?php echo $attach->ATTACH_FILE; ?>">
+				<img src="<?php echo IT::baseUrl(); ?>/images/ico/attach.png" /><?php echo $attach->ATTACH_FILE; ?>
 			</a><br />
 		<?php endforeach; ?>
 	<?php endif; ?>

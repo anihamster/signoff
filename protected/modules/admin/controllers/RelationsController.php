@@ -9,7 +9,7 @@ class RelationsController extends Controller {
         if(It::getState('user_role') !== '1')
             throw new CDbExeption('You have not access to this page');
 
-        $rels = RelationRules::model()->with('cat', 'rls', 'grp')->findAll();
+        $rels = RelationRules::model()->with('cat', 'rls', 'grp', 'brnd')->findAll();
 
         $this->render('index', array('rels' => $rels));
     }

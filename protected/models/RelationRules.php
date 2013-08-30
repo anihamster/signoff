@@ -7,6 +7,7 @@
  * @property integer $ID
  * @property integer $CAT_ID
  * @property integer $GRP_ID
+ * @property integer $BRAND_ID
  * @property integer $ROLE_ID
  * @property string $CREATED_AT
  * @property string $UPDATED_AT
@@ -39,11 +40,11 @@ class RelationRules extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('CAT_ID, GRP_ID, ROLE_ID', 'numerical', 'integerOnly'=>true),
+			array('CAT_ID, GRP_ID, ROLE_ID, BRAND_ID', 'numerical', 'integerOnly'=>true),
 			array('CREATED_AT, UPDATED_AT', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ID, CAT_ID, GRP_ID, ROLE_ID, CREATED_AT, UPDATED_AT', 'safe', 'on'=>'search'),
+			array('ID, CAT_ID, GRP_ID, ROLE_ID, BRAND_ID, CREATED_AT, UPDATED_AT', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,7 +58,8 @@ class RelationRules extends CActiveRecord
 		return array(
             'cat' => array(self::HAS_ONE, 'Categories', array('ID' => 'CAT_ID'), 'alias'=>'c'),
             'rls' => array(self::HAS_ONE, 'Roles', array('ID' => 'ROLE_ID'), 'alias'=>'r'),
-            'grp' => array(self::HAS_ONE, 'DeptGroups', array('ID' => 'GRP_ID'), 'alias'=>'g'),
+            'grp' => array(self::HAS_ONE, 'RelGroups', array('ID' => 'GRP_ID'), 'alias'=>'g'),
+            'brnd' => array(self::HAS_ONE, 'Brands', array('ID' => 'BRAND_ID'), 'alias'=>'b'),
 		);
 	}
 
@@ -71,6 +73,7 @@ class RelationRules extends CActiveRecord
 			'CAT_ID' => 'Cat',
 			'GRP_ID' => 'Grp',
 			'ROLE_ID' => 'Role',
+            'BRAND_ID' => 'Brand',
 			'CREATED_AT' => 'Created At',
 			'UPDATED_AT' => 'Updated At',
 		);
@@ -91,6 +94,7 @@ class RelationRules extends CActiveRecord
 		$criteria->compare('CAT_ID',$this->CAT_ID);
 		$criteria->compare('GRP_ID',$this->GRP_ID);
 		$criteria->compare('ROLE_ID',$this->ROLE_ID);
+        $criteria->compare('BRAND_ID',$this->BRAND_ID);
 		$criteria->compare('CREATED_AT',$this->CREATED_AT,true);
 		$criteria->compare('UPDATED_AT',$this->UPDATED_AT,true);
 

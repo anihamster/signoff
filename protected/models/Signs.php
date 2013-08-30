@@ -6,7 +6,6 @@
  * The followings are the available columns in table 'SIGNS':
  * @property integer $ID
  * @property integer $USER_ID
- * @property integer $DEPT_ID
  * @property integer $PRG_ID
  * @property integer $FLAG
  * @property string $CREATED_AT
@@ -40,7 +39,7 @@ class Signs extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('USER_ID, DEPT_ID, PRG_ID, FLAG', 'numerical', 'integerOnly'=>true),
+			array('USER_ID, PRG_ID, FLAG', 'numerical', 'integerOnly'=>true),
 			array('CREATED_AT, UPDATED_AT', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -56,6 +55,7 @@ class Signs extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'details' => array(self::HAS_ONE, 'UserDetails', array('USER_ID' => 'USER_ID'), 'alias'=>'d'),
 		);
 	}
 
@@ -67,7 +67,6 @@ class Signs extends CActiveRecord
 		return array(
 			'ID' => 'ID',
 			'USER_ID' => 'User',
-			'DEPT_ID' => 'Dept',
 			'PRG_ID' => 'Prg',
 			'FLAG' => 'Flag',
 			'CREATED_AT' => 'Created At',
@@ -88,7 +87,6 @@ class Signs extends CActiveRecord
 
 		$criteria->compare('ID',$this->ID);
 		$criteria->compare('USER_ID',$this->USER_ID);
-		$criteria->compare('DEPT_ID',$this->DEPT_ID);
 		$criteria->compare('PRG_ID',$this->PRG_ID);
 		$criteria->compare('FLAG',$this->FLAG);
 		$criteria->compare('CREATED_AT',$this->CREATED_AT,true);

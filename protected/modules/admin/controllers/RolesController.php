@@ -9,7 +9,7 @@ class RolesController extends Controller {
         if(It::getState('user_role') !== '1')
             throw new CDbExeption('You have not access to this page');
 
-        $roles = Roles::model()->with('department')->findAll();
+        $roles = Roles::model()->with('parents')->findAll();
 
         $this->render('index', array('roles' => $roles));
     }
@@ -22,7 +22,16 @@ class RolesController extends Controller {
             throw new CDbExeption('You have not access to this page');
 
         $form = new Roles;
-        $deps = Departments::model()->getAllDeps();
+        $roles = Roles::model()->findAll();
+
+        $parents = array();
+        $parents[0] = 'General role';
+
+        if(!empty($roles)) {
+            foreach($roles as $role) {
+                $parents[$role->ID] = $role->ROLE_NAME;
+            }
+        }
 
         if(!empty($_POST['Roles'])) {
             $form->attributes = $_POST['Roles'];
@@ -34,6 +43,6 @@ class RolesController extends Controller {
             }
         }
 
-        $this->render('edit', array('form' => $form, 'deps' => $deps));
+        $this->render('edit', array('form' => $form, 'parents' => $parents));
     }
 }

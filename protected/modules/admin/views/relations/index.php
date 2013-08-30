@@ -14,6 +14,9 @@
                     Category
                 </th>
                 <th>
+                    Brand
+                </th>
+                <th>
                     User role
                 </th>
                 <th>
@@ -38,10 +41,17 @@
                         <?php endif; ?>
                     </td>
                     <td>
+                        <?php if(!empty($r_val['brnd'])): ?>
+                            <?php echo $r_val['brnd']->BRAND_NAME; ?>
+                        <?php else: ?>
+                            -
+                        <?php endif; ?>
+                    </td>
+                    <td>
                         <?php if(!empty($r_val['rls'])): ?>
                             <?php echo $r_val['rls']->ROLE_NAME; ?>
                         <?php else: ?>
-                            -
+                            General user
                         <?php endif; ?>
                     </td>
                     <td>
@@ -59,7 +69,7 @@
             <?php endforeach; ?>
             </tbody>
         </table>
-        <a href="<?php echo Yii::app()->baseUrl; ?>/admin/relations/buils" class="button orange">Build relations</a>
+        <a href="<?php echo Yii::app()->baseUrl; ?>/admin/relations/build" class="button orange">Build relations</a>
     <?php else: ?>
         There is no relations in base. Do you want to <a href="<?php echo Yii::app()->baseUrl; ?>/admin/relations/build">create</a> one?
     <?php endif;?>

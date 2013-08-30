@@ -6,10 +6,10 @@
  * The followings are the available columns in table 'ROLES':
  * @property integer $ID
  * @property integer $ROLE_PARENT
- * @property integer $DEPT_ID
  * @property string $ROLE_NAME
  * @property string $CREATED_AT
  * @property string $UPDATED_AT
+ * @property integer $SPEC
  */
 class Roles extends CActiveRecord
 {
@@ -39,12 +39,12 @@ class Roles extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ROLE_PARENT, DEPT_ID', 'numerical', 'integerOnly'=>true),
+			array('ROLE_PARENT, SPEC, TECH', 'numerical', 'integerOnly'=>true),
 			array('ROLE_NAME', 'length', 'max'=>1020),
 			array('CREATED_AT, UPDATED_AT', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ID, ROLE_PARENT, DEPT_ID, ROLE_NAME, CREATED_AT, UPDATED_AT', 'safe', 'on'=>'search'),
+			array('ID, ROLE_PARENT, ROLE_NAME, CREATED_AT, UPDATED_AT, SPEC, TECH', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,7 +56,7 @@ class Roles extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-            'department' => array(self::HAS_ONE, 'Departments', array('ID' => 'DEPT_ID'), 'alias'=>'d'),
+            'parents' => array(self::HAS_ONE, 'Roles', array('ID' => 'ROLE_PARENT'), 'alias'=>'p'),
 		);
 	}
 
@@ -68,10 +68,11 @@ class Roles extends CActiveRecord
 		return array(
 			'ID' => 'ID',
 			'ROLE_PARENT' => 'Role Parent',
-			'DEPT_ID' => 'Dept',
 			'ROLE_NAME' => 'Role Name',
 			'CREATED_AT' => 'Created At',
 			'UPDATED_AT' => 'Updated At',
+            'SPEC' => 'Brand specified role',
+            'TECH' => 'Technical role',
 		);
 	}
 
@@ -88,10 +89,11 @@ class Roles extends CActiveRecord
 
 		$criteria->compare('ID',$this->ID);
 		$criteria->compare('ROLE_PARENT',$this->ROLE_PARENT);
-		$criteria->compare('DEPT_ID',$this->DEPT_ID);
 		$criteria->compare('ROLE_NAME',$this->ROLE_NAME,true);
 		$criteria->compare('CREATED_AT',$this->CREATED_AT,true);
 		$criteria->compare('UPDATED_AT',$this->UPDATED_AT,true);
+        $criteria->compare('SPEC',$this->SPEC);
+        $criteria->compare('TECH',$this->TECH);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

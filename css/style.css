@@ -24,7 +24,7 @@ body, html {
 }
 
 #header {
-	background: url(/images/header_bckg.gif) repeat-x ;
+	background: url(../images/header_bckg.gif) repeat-x ;
 	height:120px;
 }
 
@@ -69,7 +69,7 @@ body, html {
 	font-size:13px;
 	text-decoration:none;
 	color:#fff;
-	background:url(/images/menu_enactive.gif) no-repeat bottom center;
+	background:url(../images/menu_enactive.gif) no-repeat bottom center;
 	padding:8px 10px;
 	width:118px;
 	text-align:center;
@@ -77,23 +77,23 @@ body, html {
 }
 
 #menu ul a:hover {
-	background:url(/images/menu_over.gif) no-repeat bottom center;
+	background:url(../images/menu_over.gif) no-repeat bottom center;
 	color:#232323;
 }
 
 #menu ul a.active {
-	background:url(/images/menu_active.gif) no-repeat bottom center;
+	background:url(../images/menu_active.gif) no-repeat bottom center;
 	color:#232323;
 }
 
 #menu ul a.active:hover {
-	background:url(/images/menu_active.gif) no-repeat bottom center;
+	background:url(../images/menu_active.gif) no-repeat bottom center;
 	color:#232323;
 }
 
 #head_image {
 	height:150px;
-	background:url(/images/head_bckg.jpg) no-repeat #fe5d00;
+	background:url(../images/head_bckg.jpg) no-repeat #fe5d00;
 	padding:30px 0 30px 50px;
 	line-height:24px;
 }
@@ -127,7 +127,7 @@ body, html {
 
 #text {
 	float:left;
-	width: *;
+	width:*;
 	margin-left: 200px;
 	padding-left: 20px;
 }
@@ -146,7 +146,7 @@ body, html {
 }
 
 #sidebar {
-	background:url(/images/sidebar_bckg.gif) repeat-x;
+	background:url(../images/sidebar_bckg.gif) repeat-x;
 	float: right;
 	color:#6f6e6e;
 	width: 180px;
@@ -155,7 +155,7 @@ body, html {
 
 #leftbar {
 	float: left; 
-	background:url(/images/sidebar_bckg.gif) repeat-x;
+	background:url(../images/sidebar_bckg.gif) repeat-x;
 	color:#6f6e6e;
 	padding:20px;
 	width: 160px; 
@@ -182,7 +182,7 @@ body, html {
 }
 
 #footer {
-	background:url(/images/footer_bckg.gif) repeat-x #3f3e3e 0 2px;
+	background:url(../images/footer_bckg.gif) repeat-x #3f3e3e 0 2px;
 	height:94px;
 	margin-top:-94px;
 	clear:both;
@@ -306,4 +306,9 @@ table {
 
 .cancelled {
 	background: #0ff;
+}
+
+em {
+    font-style: normal;
+    text-decoration: underline;
 }

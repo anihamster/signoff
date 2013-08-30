@@ -203,4 +203,54 @@ class Projects extends CActiveRecord
 
         return $result;
     }
+
+	public function getDeptTasks($dept_id) {
+		$criteria = new CDbCriteria;
+		$criteria->condition = 'PRJ_STATUS <> 3';
+		$criteria->order = 't.id';
+		$tasks = Projects::model()->with('details')->findAll($criteria);
+		
+		$result = array();
+		
+		if(!empty($tasks)) {
+			foreach($tasks as $task) {
+				$cs = Signs::model()->findAllByAttrubytes(array('DEPT_ID' => $dept_id));
+
+$assigned = explode(',', $task->assigned_to);
+				if(in_array($dept_id, $assigned)) {
+					$result[$task->id]['id'] = $task->id;
+					$result[$task->id]['title'] = $task->title;
+					$result[$task->id]['description'] = $task->description;
+					$result[$task->id]['created'] = $task->created;
+					$result[$task->id]['updated'] = $task->updated;
+					$result[$task->id]['status'] = $task->status;
+					if(!empty($task['details'])) {
+						$result[$task->id]['name'] = $task['details']->name;
+						$result[$task->id]['surname'] = $task['details']->surname;
+						$result[$task->id]['email'] = $task['details']->email;
+						$result[$task->id]['phone'] = $task['details']->phone;
+					} else {
+						$result[$task->id]['name'] = '';
+						$result[$task->id]['surname'] = '';
+						$result[$task->id]['email'] = '';
+						$result[$task->id]['phone'] = '';
+					}
+					if(!empty($task->assigned_to)) {
+						$deps = array();
+						$depts = array();
+						$deps = explode(',', $task->assigned_to);
+						foreach($deps as $d_v) {
+							$tmp = Departments::model()->findByPk($d_v);
+							$depts[$tmp->id] = $tmp->name;
+						}
+						$result[$task->id]['assigned_to'] = $depts;
+					} else {
+						$result[$task->id]['assigned_to'] = '';
+					}
+				}
+			}
+		}
+		
+		return $result;
+	}
 }

@@ -8,10 +8,16 @@
                     ID
                 </th>
                 <th>
-                    Department
+                    Role parent
                 </th>
                 <th>
                     Role name
+                </th>
+                <th>
+                    Brand specified
+                </th>
+                <th>
+                   Technical role
                 </th>
                 <th>
 
@@ -25,10 +31,16 @@
                         <?php echo $role->ID; ?>
                     </td>
                     <td>
-                        <?php echo $role['department']->DEPT_NAME; ?>
+                        <?php echo $parent = (!empty($role['parents'])) ? $role['parents']->ROLE_NAME : 'General role'; ?>
                     </td>
                     <td>
                         <?php echo $role->ROLE_NAME; ?>
+                    </td>
+                    <td>
+                        <?php echo $root = ($role->SPEC == '1') ? 'Yes' : 'No'; ?>
+                    </td>
+                    <td>
+                        <?php echo $root = ($role->TECH == '1') ? 'Yes' : 'No'; ?>
                     </td>
                     <td>
                         <a href="<?php echo It::baseUrl(); ?>/admin/roles/edit/?role_id=<?php echo $role->ID; ?>"><img src="<?php echo It::baseUrl(); ?>/images/ico/edit.png" /></a>

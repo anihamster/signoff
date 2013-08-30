@@ -14,6 +14,9 @@
                     Category
                 </th>
                 <th>
+                    Brand specific category
+                </th>
+                <th>
 
                 </th>
             </tr>
@@ -33,6 +36,9 @@
                     </td>
                     <td>
                         <?php echo $c_val->CAT_NAME; ?>
+                    </td>
+                    <td>
+                        <?php echo $root = ($c_val->BRAND_SPEC == '1') ? 'Yes' : 'No'; ?>
                     </td>
                     <td>
                         <a href="<?php echo It::baseUrl(); ?>/admin/categories/edit/?cat_id=<?php echo $c_val->ID; ?>"><img src="<?php echo It::baseUrl(); ?>/images/ico/edit.png" /></a>

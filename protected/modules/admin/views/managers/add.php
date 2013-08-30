@@ -29,22 +29,38 @@
 		<td>
 			<?php echo CHtml::activeDropDownList($form, 'TYPE', $levels); ?>
 		</td>
-	</tr>	
-	<tr>
-		<td>
-			<?php echo CHtml::activeLabel($form2, 'DEPT_ID'); ?>
-		</td>
-		<td>
-			<?php echo CHtml::activeDropDownList($form2, 'DEPT_ID', $deps); ?>
-		</td>
 	</tr>
+    <tr>
+        <td>
+            <?php echo CHtml::activeLabel($form2, 'KEY_USER'); ?>
+        </td>
+        <td>
+            <?php echo CHtml::activeCheckBox($form2, 'KEY_USER'); ?>
+        </td>
+    </tr>
 	<?php endif; ?>
+    <tr>
+        <td>
+            <?php echo CHtml::activeLabel($form2, 'BRAND'); ?>
+        </td>
+        <td>
+            <?php echo CHtml::activeDropDownList($form2, 'BRAND', $brands); ?>
+        </td>
+    </tr>
     <tr>
         <td>
             <?php echo CHtml::activeLabel($form2, 'ROLE_ID'); ?>
         </td>
         <td>
             <?php echo CHtml::activeDropDownList($form2, 'ROLE_ID', $roles); ?>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?php echo CHtml::activeLabel($form2, 'CAN_ADD'); ?>
+        </td>
+        <td>
+            <?php echo CHtml::activeCheckBox($form2, 'CAN_ADD'); ?>
         </td>
     </tr>
 	<tr>

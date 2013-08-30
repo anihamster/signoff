@@ -8,7 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Demo Application',
-	'defaultController' => 'main/projects',
+	'defaultController' => 'main/default/login',
 	'sourceLanguage' => 'en',
 	'language' => 'en',
 		
@@ -80,6 +80,15 @@ return array(
             //'attributes' => array (PDO :: ATTR_CASE => PDO :: CASE_LOWER),
             //'columnCase' => PDO :: CASE_LOWER,
 		),
+/*
+        'db'=>array(
+            'class'=>'ext.oci8Pdo.OciDbConnection',
+            'connectionString' => 'oci:dbname=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=myOracleHost.com)(PORT=1526))(CONNECT_DATA=(SERVICE_NAME=myService.intern)));charset=AL32UTF8;',
+            'username' => '',
+            'password' => '',
+            'enableProfiling' => false,
+            'enableParamLogging' => false,
+        ),*/
 		
 		
 		'errorHandler'=>array(

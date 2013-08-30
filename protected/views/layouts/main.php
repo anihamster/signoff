@@ -15,6 +15,10 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo It::baseUrl(); ?>/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo It::baseUrl(); ?>/css/form.css" />
+
+	<script type="text/javascript">
+		var BaseUrl = "<?php echo It::baseUrl(); ?>";
+	</script>
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
@@ -37,36 +41,36 @@
             <ul>
 				<?php if(!It::isGuest() AND (It::getState('user_role') !== '2')): ?>
             	<li>
-            		<a href="/admin/managers" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'managers')): ?>class="active"<?php endif; ?>>Users</a>
+            		<a href="<?php echo It::baseUrl(); ?>/admin/managers" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'managers')): ?>class="active"<?php endif; ?>>Users</a>
             	</li>
             	<?php endif; ?>
                 <?php if(!It::isGuest() AND (It::getState('user_role') == '1')): ?>
                 <li>
-                    <a href="/admin/default/settings" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'default')): ?>class="active"<?php endif; ?>>Settings</a>
+                    <a href="<?php echo It::baseUrl(); ?>/admin/default/settings" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'default')): ?>class="active"<?php endif; ?>>Settings</a>
                 </li>
                 <?php endif; ?>
             	<?php if(It::getState('user_role') == '1'):?>
            		<li>
-           			<a href="/admin/projects" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'projects')): ?>class="active"<?php endif; ?>>Projects</a>
+           			<a href="<?php echo It::baseUrl(); ?>/admin/projects" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'projects')): ?>class="active"<?php endif; ?>>Projects</a>
            		</li>
             	<?php endif; ?>
             	<?php if(!It::isGuest() AND (It::getState('user_role') !== '1')): ?>
             	<li>
-            		<a href="/manager/projects" <?php if((Yii::app()->controller->module->id == 'manager') && (Yii::app()->controller->id == 'projects') && (Yii::app()->controller->action->id == 'index')): ?>class="active"<?php endif; ?>>For signing</a>
+            		<a href="<?php echo It::baseUrl(); ?>/manager/projects" <?php if((Yii::app()->controller->module->id == 'manager') && (Yii::app()->controller->id == 'projects') && (Yii::app()->controller->action->id == 'index')): ?>class="active"<?php endif; ?>>For signing</a>
             	</li>
             	<?php endif; ?>
             	<?php if(!It::isGuest() AND (It::getState('user_role') !== '1')): ?>
            		<li>
-           			<a href="/manager/projects/my" <?php if((Yii::app()->controller->module->id == 'manager') && (Yii::app()->controller->id == 'projects') && (Yii::app()->controller->action->id == 'my')): ?>class="active"<?php endif; ?>>My projects</a>
+           			<a href="<?php echo It::baseUrl(); ?>/manager/projects/my" <?php if((Yii::app()->controller->module->id == 'manager') && (Yii::app()->controller->id == 'projects') && (Yii::app()->controller->action->id == 'my')): ?>class="active"<?php endif; ?>>My projects</a>
            		</li>
             	<?php endif; ?>
             	<?php if(It::isGuest()):?>
             	<li>
-            		<a href="/main/default/login" <?php if(It::isGuest()): ?>class="active"<?php endif; ?>>Login</a>
+            		<a href="<?php echo It::baseUrl(); ?>/main/default/login" <?php if(It::isGuest()): ?>class="active"<?php endif; ?>>Login</a>
             	</li>
             	<?php else: ?>
            		<li>
-           			<a href="/main/default/logout">Logout</a>
+           			<a href="<?php echo It::baseUrl(); ?>/main/default/logout">Logout</a>
            		</li>
             	<?php endif; ?>
         	</ul>

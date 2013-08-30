@@ -1,22 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "CATEGORIES".
+ * This is the model class for table "BRANDS".
  *
- * The followings are the available columns in table 'CATEGORIES':
+ * The followings are the available columns in table 'BRANDS':
  * @property integer $ID
- * @property integer $CAT_PARENT
- * @property string $CAT_NAME
+ * @property string $BRAND_NAME
  * @property string $CREATED_AT
  * @property string $UPDATED_AT
- * @property integer $BRAND_SPEC
  */
-class Categories extends CActiveRecord
+class Brands extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return CATEGORIES the static model class
+	 * @return Brands the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -28,7 +26,7 @@ class Categories extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'CATEGORIES';
+		return 'BRANDS';
 	}
 
 	/**
@@ -39,12 +37,11 @@ class Categories extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('CAT_PARENT, BRAND_SPEC', 'numerical', 'integerOnly'=>true),
-			array('CAT_NAME', 'length', 'max'=>1020),
+			array('BRAND_NAME', 'length', 'max'=>1020),
 			array('CREATED_AT, UPDATED_AT', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ID, CAT_PARENT, CAT_NAME, CREATED_AT, UPDATED_AT, BRAND_SPEC', 'safe', 'on'=>'search'),
+			array('ID, BRAND_NAME, CREATED_AT, UPDATED_AT', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,11 +63,9 @@ class Categories extends CActiveRecord
 	{
 		return array(
 			'ID' => 'ID',
-			'CAT_PARENT' => 'Category Parent',
-			'CAT_NAME' => 'Category Name',
+			'BRAND_NAME' => 'Brand Name',
 			'CREATED_AT' => 'Created At',
 			'UPDATED_AT' => 'Updated At',
-            'BRAND_SPEC' => 'Brand Specific Category',
 		);
 	}
 
@@ -86,35 +81,23 @@ class Categories extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('ID',$this->ID);
-		$criteria->compare('CAT_PARENT',$this->CAT_PARENT);
-		$criteria->compare('CAT_NAME',$this->CAT_NAME,true);
+		$criteria->compare('BRAND_NAME',$this->BRAND_NAME,true);
 		$criteria->compare('CREATED_AT',$this->CREATED_AT,true);
 		$criteria->compare('UPDATED_AT',$this->UPDATED_AT,true);
-        $criteria->compare('BRAND_SPEC',$this->BRAND_SPEC);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
 
-    public function beforeSave()
-    {
-        if ($this->isNewRecord) {
-            $this->CREATED_AT = new CDbExpression("TO_DATE('" . date('d/m/y') . "', 'DD/MM/YYYY')");
-        }
-        $this->UPDATED_AT = new CDbExpression("TO_DATE('" . date('d/m/y') . "', 'DD/MM/YYYY')");
-
-        return true;
-    }
-
-    public function getCategories() {
+    public function getBrands() {
         $criteria = new CDbCriteria;
         $criteria->order = 'ID ASC';
-        $cats = Categories::model()->findAll($criteria);
+        $brands = Brands::model()->findAll($criteria);
         $result = array();
 
-        foreach($cats as $cat) {
-            $result[$cat->ID] = $cat->CAT_NAME;
+        foreach($brands as $brand) {
+            $result[$brand->ID] = $brand->BRAND_NAME;
         }
 
         return $result;

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#userlist').click(function() {
+	$('#techlist').click(function() {
 		var dept = $(this).siblings('input').val();
 		var cont = $('#usrs');
 		
@@ -8,7 +8,7 @@ $(document).ready(function() {
 	    });	
 		
 		$.getJSON(
-			'/ajax/default/getusers/?dept_id='+dept,
+			BaseUrl + '/ajax/default/getusers/?dept_id='+dept,
 			function(data) {
 		        if(data.status == "Ok") {	        	
 		        	var response = data.result		    
@@ -45,7 +45,7 @@ $(document).ready(function() {
 	    });	
 		
 		$.getJSON(
-			'/ajax/default/getusers/?dept_id='+dept,
+			BaseUrl + '/ajax/default/getusers/?dept_id='+dept,
 			function(data) {
 		        if(data.status == "Ok") {	        	
 		        	var response = data.result		    
@@ -88,7 +88,7 @@ $(document).on('click', '#savebutton', function() {
     });	
 	
 	$.getJSON(
-		'/ajax/default/signuser/?user_id='+user+'&task_id='+task,
+		BaseUrl + '/ajax/default/signuser/?user_id='+user+'&task_id='+task,
 		function(data) {
 	        if(data.status == "Ok") {	        	
 	        	var response = data.result;	    

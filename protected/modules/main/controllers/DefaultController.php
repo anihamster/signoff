@@ -19,9 +19,6 @@ class DefaultController extends Controller
 		$level = new UserLevels;
 		$level->USER_LEVEL = 'Manager';
 		$level->save(false);	
-		$level = new UserLevels;
-		$level->USER_LEVEL = 'Departmen\'s manager';
-		$level->save(false);
 		$user = new Users;
 		$user->LOGIN = 'admin';
 		$user->PASSWORD = sha1(md5('123123'));
@@ -39,7 +36,7 @@ class DefaultController extends Controller
                 $form->attributes = $_POST['Login'];
                 $form->scenario = 'login';
                 if($form->validate()) {
-                    $this->redirect('index');
+                    $this->redirect(It::baseUrl() . '/main/default');
                 }
             }
         }

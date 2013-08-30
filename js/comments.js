@@ -9,7 +9,7 @@ $(document).ready(function(){
 		var html="";
 		
 		$.getJSON(
-				'/ajax/default/getcomments/?dept_id='+dept+'&task_id='+task,
+				BaseUrl + '/ajax/default/getcomments/?dept_id='+dept+'&task_id='+task,
 				function(data) {
 			        if(data.status == "Ok") {	        	
 			        	var response = data.result;

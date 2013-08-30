@@ -4,20 +4,36 @@
 <?php echo CHtml::beginForm(); ?>
 <?php echo CHtml::errorSummary($form); ?>
 <table>
-	<tr>
-		<td>
-			<?php echo CHtml::activeLabel($form, 'DEPT_ID'); ?>
-		</td>
-		<td>
-			<?php echo CHtml::activeDropDownList($form, 'DEPT_ID', $deps); ?>
-		</td>
-	</tr>
+    <tr>
+        <td>
+            <?php echo CHtml::activeLabel($form, 'KEY_USER'); ?>
+        </td>
+        <td>
+            <?php echo CHtml::activeCheckBox($form, 'KEY_USER'); ?>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?php echo CHtml::activeLabel($form, 'BRAND'); ?>
+        </td>
+        <td>
+            <?php echo CHtml::activeDropDownList($form, 'BRAND', $brands); ?>
+        </td>
+    </tr>
     <tr>
         <td>
             <?php echo CHtml::activeLabel($form, 'ROLE_ID'); ?>
         </td>
         <td>
             <?php echo CHtml::activeDropDownList($form, 'ROLE_ID', $roles); ?>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?php echo CHtml::activeLabel($form, 'CAN_ADD'); ?>
+        </td>
+        <td>
+            <?php echo CHtml::activeCheckBox($form, 'CAN_ADD'); ?>
         </td>
     </tr>
 	<tr>

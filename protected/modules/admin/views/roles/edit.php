@@ -14,10 +14,26 @@
         </tr>
         <tr>
             <td>
-                <?php echo CHtml::activeLabel($form, 'DEPT_ID'); ?>
+                <?php echo CHtml::activeLabel($form, 'ROLE_PARENT'); ?>
             </td>
             <td>
-                <?php echo CHtml::activeDropDownList($form, 'DEPT_ID', Chtml::listData($deps, 'ID', 'DEPT_NAME')); ?>
+                <?php echo CHtml::activeDropDownList($form, 'ROLE_PARENT', $parents); ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?php echo CHtml::activeLabel($form, 'SPEC'); ?>
+            </td>
+            <td>
+                <?php echo CHtml::activeCheckBox($form, 'SPEC'); ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?php echo CHtml::activeLabel($form, 'TECH'); ?>
+            </td>
+            <td>
+                <?php echo CHtml::activeCheckBox($form, 'TECH'); ?>
             </td>
         </tr>
     </table>

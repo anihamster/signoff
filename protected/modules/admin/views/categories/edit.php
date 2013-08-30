@@ -21,6 +21,14 @@
             </td>
         </tr>
         <tr>
+            <td>
+                <?php echo CHtml::activeLabel($form, 'BRAND_SPEC'); ?>
+            </td>
+            <td>
+                <?php echo CHtml::activeCheckBox($form, 'BRAND_SPEC'); ?>
+            </td>
+        </tr>
+        <tr>
             <td colspan="2">
                 <?php echo Chtml::submitButton('Save', array('class' => 'button orange')); ?>
             </td>

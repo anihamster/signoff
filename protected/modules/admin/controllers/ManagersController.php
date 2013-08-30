@@ -3,7 +3,7 @@
 class ManagersController extends Controller {
 	public function actionIndex() {
 		if(Yii::app()->user->isGuest)
-			$this->redirect(Yii::app()->baseUrl . '/main/default/login');
+			$this->redirect(It::baseUrl() . '/main/default/login');
 	
 		$users = Users::model()->getAllUsers();
 		$levels = UserLevels::model()->getLevels();
@@ -13,16 +13,18 @@ class ManagersController extends Controller {
 	
 	public function actionAdd() {
 		if(Yii::app()->user->isGuest)
-			$this->redirect(Yii::app()->baseUrl . '/main/default/login');
+			$this->redirect(It::baseUrl() . '/main/default/login');
 	
 		$levels = UserLevels::model()->getLevels();
 		
-		$nodes = Departments::model()->getAllDeps();
+		$nodes = Brands::model()->findAll();
 		
-		$deps = array();
-		
+		$brands = array();
+
+        $brands[0] = 'General user';
+
 		foreach($nodes as $val) {
-			$deps[$val->ID] = $val->DEPT_NAME;
+			$brands[$val->ID] = $val->BRAND_NAME;
 		}
 
         $roles = Roles::model()->getRoles();
@@ -54,37 +56,39 @@ class ManagersController extends Controller {
 				$form2->USER_ID = $user->ID;
 				$form2->save(false);
 				
-				$this->redirect(Yii::app()->baseUrl . "/admin/managers/");
+				$this->redirect(It::baseUrl() . "/admin/managers/");
 			}
 		}
-		$this->render('add', array('form' => $form, 'form2' => $form2, 'deps' => $deps, 'levels' => $levels, 'roles' => $roles));
+		$this->render('add', array('form' => $form, 'form2' => $form2, 'brands' => $brands, 'levels' => $levels, 'roles' => $roles));
 	}
 	
 	public function actionEditDetails() {
 		if(Yii::app()->user->isGuest)
-			$this->redirect(Yii::app()->baseUrl . '/main/default/login');
+			$this->redirect(It::baseUrl() . '/main/default/login');
 		
 		if(empty($_GET['user_id']))
-			$this->redirect(Yii::app()->baseUrl . '/admin/managers/');
+			$this->redirect(It::baseUrl() . '/admin/managers/');
 		
 		$uid = intval($_GET['user_id']);
 		
 		$user = Users::model()->findByPk($uid);
 		
 		if(!$user)
-			$this->redirect(Yii::app()->baseUrl . '/admin/managers/');
+			$this->redirect(It::baseUrl() . '/admin/managers/');
 		
 		$form = UserDetails::model()->findByAttributes(array('USER_ID' => $uid));
 		
 		if(empty($form))
 			$form = new UserDetails;
 		
-		$nodes = Departments::model()->getAllDeps();
+		$nodes = Brands::model()->findAll();
 		
-		$deps = array();
+		$brands = array();
+
+        $brands[0] = 'General user';
 		
 		foreach($nodes as $val) {
-			$deps[$val->ID] = $val->DEPT_NAME;
+			$brands[$val->ID] = $val->BRAND_NAME;
 		}
 
         $roles = Roles::model()->getRoles();
@@ -95,9 +99,9 @@ class ManagersController extends Controller {
 			if ($form->validate()) {
 				$form->USER_ID = $uid;
 				$form->save(false);
-				$this->redirect(Yii::app()->baseUrl . "/admin/managers/");
+				$this->redirect(It::baseUrl() . "/admin/managers/");
 			}
 		}
-		$this->render('details', array('form' => $form, 'deps' => $deps, 'roles' => $roles));
+		$this->render('details', array('form' => $form, 'brands' => $brands, 'roles' => $roles));
 	}
 }

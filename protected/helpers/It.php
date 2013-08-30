@@ -5,7 +5,7 @@
 
 class It {
 
-    public static function setSatate($attr, $val) {
+    public static function setState($attr, $val) {
         Yii::app()->user->setState($attr, $val);
         return true;
     }

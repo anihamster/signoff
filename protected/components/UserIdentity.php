@@ -21,7 +21,13 @@ class UserIdentity extends CUserIdentity
         {
             $this->_id=$record->ID;
             
-           	Yii::app()->user->setState('user_role', $record->TYPE);            	 
+           	Yii::app()->user->setState('user_role', $record->TYPE);
+
+            $details = UserDetails::model()->findByAttributes(array('USER_ID' => $record->ID));
+
+            if(!empty($details)) {
+                It::setState('tkam', $details->CAN_ADD);
+            }
             
             $this->errorCode=self::ERROR_NONE;
         }
