@@ -11,9 +11,11 @@ class ProjectsController extends Controller {
 
         $prgs = array();
 
-        if(It::getState('user_role') == '3') {
-            $details = UserDetails::model()->findByAttributes(array('USER_ID' => It::userId()));
-            $prgs = Projects::model()->getDeptTasks($details->DEPT_ID);
+        if(It::getState('head') == '1') {
+            $prgs = Projects::model()->getBrandTasks(IT::getState('brand'));
+
+        } elseif(It::getState('tkam') == '1') {
+            $prgs = Projects::model()->getAllTasks();
         } else {
             $criteria = new CDbCriteria;
             $criteria->condition = 'USER_ID = :id';
@@ -21,8 +23,10 @@ class ProjectsController extends Controller {
             $signs = Signs::model()->findAll($criteria);
 
             if(!empty($signs))
+                $i = 0;
                 foreach($signs as $sign) {
-                    $prgs[] = Projects::model()->getTask($sign->PRG_ID);
+                    $prgs[$i] = Projects::model()->getTask($sign->PRG_ID);
+                    $i = $i + 1;
                 }
         }
 
@@ -58,14 +62,18 @@ class ProjectsController extends Controller {
 
         if(!empty($categories)) {
             foreach($categories as $category) {
-                $cats[$category->ID] = $category->CAT_NAME;
+                if(!((It::getState('brand') == '0') && ($category->BRAND_SPEC == '1')))
+                    $cats[$category->ID] = $category->CAT_NAME;
             }
         }
+
+        $attach_form = array(new Attaches);
 
         if(!empty($_POST['Projects'])) {
             $form->attributes = $_POST['Projects'];
             $form->scenario = 'edit';
             if($form->validate()) {
+                $form->BRAND_ID = It::getState('brand');
                 $form->USER_ID = It::userId();
                 $form->PRJ_STATUS = '0';
                 $form->save(false);
@@ -87,6 +95,7 @@ class ProjectsController extends Controller {
                                     $sign->USER_ID = $user->USER_ID;
                                     $sign->PRG_ID = $prj->ID;
                                     $sign->FLAG = '0';
+                                    $sign->BRAND_ID = $user->BRAND;
                                     $sign->save(false);
                                 }
                             }
@@ -98,6 +107,7 @@ class ProjectsController extends Controller {
                                     $sign->USER_ID = $user->USER_ID;
                                     $sign->PRG_ID = $prj->ID;
                                     $sign->FLAG = '0';
+                                    $sign->BRAND_ID = $user->BRAND;
                                     $sign->save(false);
                                 }
                             }
@@ -110,9 +120,33 @@ class ProjectsController extends Controller {
                                     $sign->USER_ID = $user->USER_ID;
                                     $sign->PRG_ID = $prj->ID;
                                     $sign->FLAG = '0';
+                                    $sign->BRAND_ID = $user->BRAND;
                                     $sign->save(false);
                                 }
                             }
+                        }
+                    }
+                }
+
+                if(!empty($_REQUEST['Attaches'])) {
+                    $valid = true;
+
+                    foreach($_REQUEST['Attaches'] as $i => $item) {
+                        $attach_form[$i] = new Attaches;
+                        $attach_form[$i]->scenario = 'add';
+                        $attach_form[$i]->ATTACH_TYPE = 'project';
+                        $attach_form[$i]->ATTACH_TO = $prj->ID;
+                        $attach_form[$i]->ATTACH_FILE = CUploadedFile::getInstance($attach_form[$i], '['.$i.']ATTACH_FILE');
+
+                        $valid = $valid & $attach_form[$i]->validate();
+                    }
+
+                    if($valid) {
+                        foreach($attach_form as $i => $item) {
+                            if($item->save())
+                                if (!is_dir(Yii::getPathOfAlias('webroot').'/uploads/project_' . $prj->ID))
+                                    mkdir(Yii::getPathOfAlias('webroot').'/uploads/project_' . $prj->ID, 0777);
+                            $item->attach_file->saveAs(Yii::getPathOfAlias('webroot').'/uploads/project_' . $task . '/'.$item->ATTACH_FILE);
                         }
                     }
                 }
@@ -121,7 +155,7 @@ class ProjectsController extends Controller {
             }
         }
 
-        $this->render('edit', array('form' => $form, 'cats' => $cats));
+        $this->render('edit', array('form' => $form, 'cats' => $cats, 'attach_form' => $attach_form));
     }
 
     public function actionDetails() {

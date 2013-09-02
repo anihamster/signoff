@@ -17,6 +17,9 @@
             <th>
                 Key user
             </th>
+            <th>
+                Users func
+            </th>
 			<th>
 				Role
 			</th>
@@ -65,6 +68,9 @@
                 <td>
                     <?php echo $key = ($u_val['details']->KEY_USER == '1') ? 'Yes' : 'No';?>
                 </td>
+                <td>
+                    <?php echo $key = ($u_val['details']->HEAD_USER == '1') ? 'Yes' : 'No';?>
+                </td>
             <td>
                 <?php
                     $role = Roles::model()->findByPk($u_val['details']->ROLE_ID);
@@ -74,9 +80,9 @@
                         echo '-';
                 ?>
             </td>
-                <td>
-                    <?php echo $key = ($u_val['details']->CAN_ADD == '1') ? 'Yes' : 'No';?>
-                </td>
+            <td>
+                <?php echo $key = ($u_val['details']->CAN_ADD == '1') ? 'Yes' : 'No';?>
+            </td>
 			<td>
 				<?php echo $u_val['details']->NAME; ?>
 			</td>
@@ -93,6 +99,9 @@
 			<td>
 				<a href="<?php echo It::baseUrl(); ?>/admin/managers/editdetails/?user_id=<?php echo $u_val->ID; ?>">-</a>
 			</td>
+            <td>
+                <a href="<?php echo It::baseUrl(); ?>/admin/managers/editdetails/?user_id=<?php echo $u_val->ID; ?>">-</a>
+            </td>
             <td>
                 <a href="<?php echo It::baseUrl(); ?>/admin/managers/editdetails/?user_id=<?php echo $u_val->ID; ?>">-</a>
             </td>

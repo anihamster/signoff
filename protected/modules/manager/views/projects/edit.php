@@ -39,6 +39,27 @@
             </td>
         </tr>
     </table>
+    <div id="mainFilesForm">
+        <table>
+            <?php foreach($attach_form as $key => $val) :?>
+                <tr>
+                    <td>
+                        <?php echo CHtml::activeLabel($attach_form[$key], '['.$key.']ATTACH_FILE'); ?>
+                    </td>
+                    <td>
+                        <?php echo CHtml::activeFileField($attach_form[$key], '['.$key.']ATTACH_FILE'); ?>
+                        <br/>
+                        <font color="red"><?= CHtml::error($attach_form[$key], 'ATTACH_FILE' ) ?></font>
+                    </td>
+                    <td>
+                        <a href="#" onclick="addPictureForms(); return false;" onmousedown="return false;">
+                            <img src="<?php echo Yii::app()->baseUrl; ?>/images/ico/add.png" />
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
     <table>
         <tr>
             <td colspan="2">

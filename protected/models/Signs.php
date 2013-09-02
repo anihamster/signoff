@@ -8,6 +8,7 @@
  * @property integer $USER_ID
  * @property integer $PRG_ID
  * @property integer $FLAG
+ * @property integer $BRAND_ID
  * @property string $CREATED_AT
  * @property string $UPDATED_AT
  */
@@ -39,11 +40,11 @@ class Signs extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('USER_ID, PRG_ID, FLAG', 'numerical', 'integerOnly'=>true),
+			array('USER_ID, PRG_ID, FLAG, BRAND_ID', 'numerical', 'integerOnly'=>true),
 			array('CREATED_AT, UPDATED_AT', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ID, USER_ID, DEPT_ID, PRG_ID, FLAG, CREATED_AT, UPDATED_AT', 'safe', 'on'=>'search'),
+			array('ID, USER_ID, DEPT_ID, PRG_ID, FLAG, CREATED_AT, UPDATED_AT, BRAND_ID', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +57,7 @@ class Signs extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
             'details' => array(self::HAS_ONE, 'UserDetails', array('USER_ID' => 'USER_ID'), 'alias'=>'d'),
+            'brand' => array(self::HAS_ONE, 'Brands', array('ID' => 'BRAND_ID'), 'alias'=>'b'),
 		);
 	}
 
@@ -69,6 +71,7 @@ class Signs extends CActiveRecord
 			'USER_ID' => 'User',
 			'PRG_ID' => 'Prg',
 			'FLAG' => 'Flag',
+            'BRAND_ID' => 'Users brand',
 			'CREATED_AT' => 'Created At',
 			'UPDATED_AT' => 'Updated At',
 		);
@@ -89,6 +92,7 @@ class Signs extends CActiveRecord
 		$criteria->compare('USER_ID',$this->USER_ID);
 		$criteria->compare('PRG_ID',$this->PRG_ID);
 		$criteria->compare('FLAG',$this->FLAG);
+        $criteria->compare('BRAND_ID',$this->BRAND_ID);
 		$criteria->compare('CREATED_AT',$this->CREATED_AT,true);
 		$criteria->compare('UPDATED_AT',$this->UPDATED_AT,true);
 

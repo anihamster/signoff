@@ -36,6 +36,14 @@
             <?php echo CHtml::activeCheckBox($form, 'CAN_ADD'); ?>
         </td>
     </tr>
+    <tr>
+        <td>
+            <?php echo CHtml::activeLabel($form, 'HEAD_USER'); ?>
+        </td>
+        <td>
+            <?php echo CHtml::activeCheckBox($form, 'HEAD_USER'); ?>
+        </td>
+    </tr>
 	<tr>
 		<td>
 			<?php echo CHtml::activeLabel($form, 'NAME'); ?>

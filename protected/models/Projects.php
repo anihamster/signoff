@@ -9,6 +9,7 @@
  * @property string $DESCRIPTION
  * @property integer $PRJ_CAT
  * @property integer $PRJ_STATUS
+ * @property integer $BRAND_ID
  * @property string $CREATED_AT
  * @property string $UPDATED_AT
  */
@@ -40,13 +41,13 @@ class Projects extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('PRJ_CAT, PRJ_STATUS', 'numerical', 'integerOnly'=>true),
+			array('PRJ_CAT, PRJ_STATUS, BRAND_ID', 'numerical', 'integerOnly'=>true),
 			array('TITLE', 'length', 'max'=>1020),
 			array('DESCRIPTION', 'length', 'max'=>4000),
 			array('CREATED_AT, UPDATED_AT', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ID, TITLE, DESCRIPTION, PRJ_CAT, PRJ_STATUS, CREATED_AT, UPDATED_AT', 'safe', 'on'=>'search'),
+			array('ID, TITLE, DESCRIPTION, PRJ_CAT, PRJ_STATUS, CREATED_AT, UPDATED_AT, BRAND_ID', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -75,6 +76,7 @@ class Projects extends CActiveRecord
 			'PRJ_STATUS' => 'Prj Status',
 			'CREATED_AT' => 'Created At',
 			'UPDATED_AT' => 'Updated At',
+            'BRAND_ID' => 'Users Brand',
 		);
 	}
 
@@ -96,6 +98,7 @@ class Projects extends CActiveRecord
 		$criteria->compare('PRJ_STATUS',$this->PRJ_STATUS);
 		$criteria->compare('CREATED_AT',$this->CREATED_AT,true);
 		$criteria->compare('UPDATED_AT',$this->UPDATED_AT,true);
+        $criteria->compare('BRAND_ID',$this->BRAND_ID);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -114,29 +117,29 @@ class Projects extends CActiveRecord
 
     public function getAllTasks() {
         $criteria = new CDbCriteria;
-        $criteria->order = 't.id';
+        $criteria->order = '"t"."ID"';
 
         $tasks = Projects::model()->with('details')->findAll($criteria);
 
         $result = array();
 
         foreach($tasks as $task) {
-            $result[$task->id]['id'] = $task->ID;
-            $result[$task->id]['title'] = $task->TITLE;
-            $result[$task->id]['description'] = $task->DESCRIPTION;
-            $result[$task->id]['created'] = $task->CREATED_AT;
-            $result[$task->id]['updated'] = $task->UPDATED_AT;
-            $result[$task->id]['status'] = $task->PRJ_STATUS;
-            if(!empty($task['details'])) {
-                $result[$task->id]['name'] = $task['details']->NAME;
-                $result[$task->id]['surname'] = $task['details']->SURNAME;
-                $result[$task->id]['email'] = $task['details']->EMAIL;
-                $result[$task->id]['phone'] = $task['details']->PHONE;
+            $result[$task->ID]['ID'] = $task->ID;
+            $result[$task->ID]['TITLE'] = $task->TITLE;
+            $result[$task->ID]['DESCRIPTION'] = $task->DESCRIPTION;
+            $result[$task->ID]['CREATED'] = $task->CREATED_AT;
+            $result[$task->ID]['UPDATED'] = $task->UPDATED_AT;
+            $result[$task->ID]['STATUS'] = $task->PRJ_STATUS;
+            if(!empty($task['DETAILS'])) {
+                $result[$task->ID]['NAME'] = $task['details']->NAME;
+                $result[$task->ID]['SURNAME'] = $task['details']->SURNAME;
+                $result[$task->ID]['EMAIL'] = $task['details']->EMAIL;
+                $result[$task->ID]['PHONE'] = $task['details']->PHONE;
             } else {
-                $result[$task->id]['name'] = '';
-                $result[$task->id]['surname'] = '';
-                $result[$task->id]['email'] = '';
-                $result[$task->id]['phone'] = '';
+                $result[$task->ID]['NAME'] = '';
+                $result[$task->ID]['SURNAME'] = '';
+                $result[$task->ID]['EMAIL'] = '';
+                $result[$task->ID]['PHONE'] = '';
             }
         }
 
@@ -204,52 +207,39 @@ class Projects extends CActiveRecord
         return $result;
     }
 
-	public function getDeptTasks($dept_id) {
-		$criteria = new CDbCriteria;
-		$criteria->condition = 'PRJ_STATUS <> 3';
-		$criteria->order = 't.id';
-		$tasks = Projects::model()->with('details')->findAll($criteria);
-		
-		$result = array();
-		
-		if(!empty($tasks)) {
-			foreach($tasks as $task) {
-				$cs = Signs::model()->findAllByAttrubytes(array('DEPT_ID' => $dept_id));
+	public function getBrandTasks($brand_id) {
+        $criteria = new CDbCriteria;
+        $criteria->condition = 'BRAND_ID = :brand';
+        $criteria->params = array(':brand' => $brand_id);
+        $criteria->group = '"t".PRG_ID';
 
-$assigned = explode(',', $task->assigned_to);
-				if(in_array($dept_id, $assigned)) {
-					$result[$task->id]['id'] = $task->id;
-					$result[$task->id]['title'] = $task->title;
-					$result[$task->id]['description'] = $task->description;
-					$result[$task->id]['created'] = $task->created;
-					$result[$task->id]['updated'] = $task->updated;
-					$result[$task->id]['status'] = $task->status;
-					if(!empty($task['details'])) {
-						$result[$task->id]['name'] = $task['details']->name;
-						$result[$task->id]['surname'] = $task['details']->surname;
-						$result[$task->id]['email'] = $task['details']->email;
-						$result[$task->id]['phone'] = $task['details']->phone;
-					} else {
-						$result[$task->id]['name'] = '';
-						$result[$task->id]['surname'] = '';
-						$result[$task->id]['email'] = '';
-						$result[$task->id]['phone'] = '';
-					}
-					if(!empty($task->assigned_to)) {
-						$deps = array();
-						$depts = array();
-						$deps = explode(',', $task->assigned_to);
-						foreach($deps as $d_v) {
-							$tmp = Departments::model()->findByPk($d_v);
-							$depts[$tmp->id] = $tmp->name;
-						}
-						$result[$task->id]['assigned_to'] = $depts;
-					} else {
-						$result[$task->id]['assigned_to'] = '';
-					}
-				}
-			}
-		}
+        $cs = Signs::model()->findAll($criteria);
+
+        $result = array();
+
+        if(!empty($cs)) {
+            foreach($cs as $sign) {
+                $task = Projects::model()->getTask($sign->PRG_ID);
+
+                $result[$task->ID]['id'] = $task->ID;
+                $result[$task->ID]['title'] = $task->TITLE;
+                $result[$task->ID]['description'] = $task->DESCRIPTION;
+                $result[$task->ID]['created'] = $task->CREATED;
+                $result[$task->ID]['updated'] = $task->UPDATED;
+                $result[$task->ID]['status'] = $task->STATUS;
+                if(!empty($task['details'])) {
+                    $result[$task->ID]['name'] = $task['details']->NAME;
+                    $result[$task->ID]['surname'] = $task['details']->SURNAME;
+                    $result[$task->ID]['email'] = $task['details']->EMAIL;
+                    $result[$task->ID]['phone'] = $task['details']->PHONE;
+                } else {
+                    $result[$task->ID]['name'] = '';
+                    $result[$task->ID]['surname'] = '';
+                    $result[$task->ID]['email'] = '';
+                    $result[$task->ID]['phone'] = '';
+                }
+            }
+        }
 		
 		return $result;
 	}

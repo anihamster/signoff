@@ -27,6 +27,9 @@ class UserIdentity extends CUserIdentity
 
             if(!empty($details)) {
                 It::setState('tkam', $details->CAN_ADD);
+                It::setState('head', $details->HEAD_USER);
+                It::setState('brand', $details->BRAND);
+                It::setState('role', $details->ROLE_ID);
             }
             
             $this->errorCode=self::ERROR_NONE;

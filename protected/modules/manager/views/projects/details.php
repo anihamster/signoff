@@ -91,7 +91,4 @@
 	<?php endif; ?> <a href="#" class="button orange" id=cancel">Cancel</a>
 	<br /><br />
 	<div id="comment_area" style="display: none;"></div>
-        <textarea>
-            Write comment here
-        </textarea>
 </div>
