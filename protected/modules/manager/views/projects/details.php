@@ -1,7 +1,7 @@
-<?php Yii::app()->clientScript->registerScriptFile(IT::baseUrl() . '/js/user_signs_off.js') ?>
-<?php Yii::app()->clientScript->registerScriptFile(IT::baseUrl() . '/js/comments.js') ?>
+<?php Yii::app()->clientScript->registerScriptFile(It::baseUrl() . '/js/user_signs_off.js') ?>
+<?php Yii::app()->clientScript->registerScriptFile(It::baseUrl() . '/js/comments.js') ?>
 <?php if(Yii::app()->user->getState('user_role') == '3'): ?>
-<?php Yii::app()->clientScript->registerScriptFile(IT::baseUrl() . '/js/user_signs.js') ?>
+<?php Yii::app()->clientScript->registerScriptFile(It::baseUrl() . '/js/user_signs.js') ?>
 <?php endif; ?>
 <div id="leftbar">
 	<h2>Progress tracker</h2>
@@ -9,7 +9,7 @@
 		<div class="progress finished">
 			Project initiated
 		</div>
-		<div align="center"><img src="<?php echo IT::baseUrl(); ?>/images/ico/arrow-down.png" /></div>
+		<div align="center"><img src="<?php echo It::baseUrl(); ?>/images/ico/arrow-down.png" /></div>
 		<?php if(!empty($signs)): ?>
 			<?php foreach($signs as $s_k => $s_v): ?>
 			<div <?php if($s_v['flag'] == '0'): ?>class="progress inprogress"<?php elseif($s_v['flag'] == '1'): ?>class="progress finished"<?php elseif($s_v['flag'] == '2'): ?>class="progress cancelled"<?php endif; ?> id="<?php echo $s_v['user']; ?>">
@@ -20,7 +20,7 @@
                     <?php echo $s_v['role']; ?>
                 <?php endif; ?>
 			</div>
-            <div align="center"><img src="<?php echo IT::baseUrl(); ?>/images/ico/arrow-down.png" /></div>
+            <div align="center"><img src="<?php echo It::baseUrl(); ?>/images/ico/arrow-down.png" /></div>
 			<?php endforeach; ?>
 			<?php endif; ?>
 		<div class="progress finished">
