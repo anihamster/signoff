@@ -5,13 +5,14 @@ class ManagersController extends Controller {
 		if(Yii::app()->user->isGuest)
 			$this->redirect(It::baseUrl() . '/main/default/login');
 
-        if((!It::getState('user_role') == '1') || !(It::getState('head') == '1'))
-            $this->redirect(It::baseUrl() . '/main/default/login');
-	
-		$users = Users::model()->getAllUsers();
-		$levels = UserLevels::model()->getLevels();
+        if((It::getState('user_role') == '1') OR  (It::getState('head') == '1')) {
+            $users = Users::model()->getAllUsers();
+            $levels = UserLevels::model()->getLevels();
 
-		$this->render('index', array('users' => $users, 'levels' => $levels));
+            $this->render('index', array('users' => $users, 'levels' => $levels));
+        } else {
+            $this->redirect(It::baseUrl() . '/main/default/login');
+        }
 	}
 	
 	public function actionAdd() {

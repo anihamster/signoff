@@ -37,7 +37,7 @@
     <file path="/CategoriesController.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1377026513591" ignored="false" />
     <file path="/Departments.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1377148437409" ignored="false" />
     <file path="/DepartmentsController.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1377148631737" ignored="false" />
-    <file path="/ManagersController.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378194688375" ignored="false" />
+    <file path="/ManagersController.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378215730607" ignored="false" />
     <file path="/RelationsController.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1377807596802" ignored="false" />
     <file path="/settings.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378196385625" ignored="false" />
     <file path="/RolesController.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1377815412439" ignored="false" />
@@ -86,19 +86,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ManagersController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ManagersController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ManagersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="12" selection-start="1306" selection-end="1306" vertical-scroll-proportion="-29.423077">
+            <state line="14" column="9" selection-start="547" selection-end="547" vertical-scroll-proportion="0.28099173">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="details.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/manager/views/projects/details.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="55" selection-start="1255" selection-end="1255" vertical-scroll-proportion="-1.9352518">
+            <state line="22" column="55" selection-start="1255" selection-end="1255" vertical-scroll-proportion="62.076923">
               <folding />
             </state>
           </provider>
@@ -164,8 +164,8 @@
         <option value="$PROJECT_DIR$/protected/modules/admin/views/default/settings.php" />
         <option value="$PROJECT_DIR$/protected/messages/en/project.php" />
         <option value="$PROJECT_DIR$/protected/models/Signs.php" />
-        <option value="$PROJECT_DIR$/protected/modules/admin/controllers/ManagersController.php" />
         <option value="$PROJECT_DIR$/protected/modules/manager/views/projects/details.php" />
+        <option value="$PROJECT_DIR$/protected/modules/admin/controllers/ManagersController.php" />
       </list>
     </option>
   </component>
@@ -1127,7 +1127,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1213,13 +1213,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/models/UserDetails.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="27" selection-start="2283" selection-end="2283" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/Projects.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="237" column="0" selection-start="8200" selection-end="8200" vertical-scroll-proportion="0.0">
@@ -1234,7 +1227,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/Roles.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="7" selection-start="0" selection-end="3060" vertical-scroll-proportion="0.55569005" />
+        <state line="27" column="7" selection-start="0" selection-end="3060" vertical-scroll-proportion="0.55569005">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/categories/index.php">
@@ -1281,13 +1276,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ManagersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="12" selection-start="1306" selection-end="1306" vertical-scroll-proportion="-29.423077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/manager/views/projects/edit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="10" selection-start="153" selection-end="153" vertical-scroll-proportion="0.08028335">
@@ -1302,9 +1290,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/managers/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.67266184">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/manager/views/projects/details.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="55" selection-start="1255" selection-end="1255" vertical-scroll-proportion="-1.9352518">
+        <state line="22" column="55" selection-start="1255" selection-end="1255" vertical-scroll-proportion="62.076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ManagersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="9" selection-start="547" selection-end="547" vertical-scroll-proportion="0.28099173">
           <folding />
         </state>
       </provider>
