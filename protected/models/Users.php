@@ -4,10 +4,10 @@
  * This is the model class for table "users".
  *
  * The followings are the available columns in table 'users':
- * @property integer $id
- * @property string $login
- * @property string $password
- * @property integer $type
+ * @property integer $ID
+ * @property string $LOGIN
+ * @property string $PASSWORD
+ * @property integer $TYPE
  */
 class Users extends CActiveRecord
 {
@@ -99,9 +99,8 @@ class Users extends CActiveRecord
 	public function getAllUsers() {
 		$criteria = new CDbCriteria;		
 		$criteria->order = '"t"."ID"';
-		if(Yii::app()->user->getState('user_role') == '3') {
-			$ud = UserDetails::model()->findByAttributes(array('USER_ID' => Yii::app()->user->getId()));
-			$result = Users::model()->with(array('details'=>array('scopes'=>array('depart'=>$ud->DEPT_ID))))->findAll($criteria);
+		if(It::getState('head') == '1') {
+			$result = Users::model()->with(array('details'=>array('scopes'=>array('branded'=>It::getState('brand')))))->findAll($criteria);
 		} else {
 			$result = Users::model()->with('details')->findAll($criteria);
 		}

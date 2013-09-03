@@ -110,4 +110,32 @@ class Signs extends CActiveRecord
 
         return true;
     }
+
+    public function afterSave()
+    {
+        $user = UserDetails::model()->findAllByAttributes(array('USER_ID' => $this->USER_ID));
+        $data = array(
+            'email' => $user->EMAIL,
+            'task'  => $this->PRG_ID,
+        );
+       Signs::sendNotifocationEmail($data);
+
+        return parent::afterSave();
+    }
+
+
+    public function sendNotifocationEmail($data)
+    {
+        Yii::app()->setLanguage('en');
+        $email = Yii::app()->email;
+        $email->from = Yii::app()->params['mailFrom'];
+        $email->to = $data['email'];
+
+        $email->subject = Yii::t('project', 'notification_mail_subject');
+        $email->message = Yii::t('project', 'notification_mail_body', array(
+                '{project_link}' => It::baseUrl().'/manager/projects/details/?task_id='.$data['task'],
+            ));
+
+        $email->send();
+    }
 }

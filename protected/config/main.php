@@ -70,7 +70,10 @@ return array(
 			'password' => '1ddqdidkfa',
 			'charset' => 'utf8',
 		),*/
-		
+        'email' => array(
+            'class'=>'application.extensions.Email',
+            'delivery'=>'php',
+        ),
 		
 		'db'=>array(
 			'class'=>'CDbConnection',
@@ -117,5 +120,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
+        'mailerAddr' => 'mailer@example.com',
 	),
 );

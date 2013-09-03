@@ -12,7 +12,7 @@
 		<div align="center"><img src="<?php echo IT::baseUrl(); ?>/images/ico/arrow-down.png" /></div>
 		<?php if(!empty($signs)): ?>
 			<?php foreach($signs as $s_k => $s_v): ?>
-			<div <?php if($s_v['flag'] == '0'): ?>class="progress inprogress"<?php elseif($s_v['flag'] == '1'): ?>class="progress finished"<?php endif; ?> id="<?php echo $s_v['user']; ?>">
+			<div <?php if($s_v['flag'] == '0'): ?>class="progress inprogress"<?php elseif($s_v['flag'] == '1'): ?>class="progress finished"<?php elseif($s_v['flag'] == '2'): ?>class="progress cancelled"<?php endif; ?> id="<?php echo $s_v['user']; ?>">
 				<?php if(!empty($s_v['brand'])): ?>
                     <?php echo $s_v['brand']; ?>
                 <?php endif; ?>
@@ -85,10 +85,77 @@
 		<?php endforeach; ?>
 	<?php endif; ?>
 	<br />                     
-   	<?php if($signed == 1): ?>
-   	<input type="hidden" value="<?php echo $task['ID']; ?>">
-   	<a href="#" class="button orange" id="sign_that">Approve</a>
-	<?php endif; ?> <a href="#" class="button orange" id=cancel">Cancel</a>
-	<br /><br />
-	<div id="comment_area" style="display: none;"></div>
+   	<?php if($signed == 0): ?>
+   	<a href="#" class="button orange" id="sign_that"><img src="<?php echo It::baseUrl(); ?>/images/ico/ok.png" />&nbsp;Approve</a>
+    <?php endif; ?> <a href="#" class="button orange" id="cancel"><img src="<?php echo It::baseUrl(); ?>/images/ico/cancel.png" />&nbsp;Cancel</a>
+    <a href="#" class="button orange" id="ask"><img src="<?php echo It::baseUrl(); ?>/images/ico/help.png" />&nbsp;Ask</a>
+    <br /><br />
+	<div id="comment_area">
+        <?php if(!empty($comments)): ?>
+            <table>
+            <?php foreach($comments as $comment): ?>
+                <tr class="bordered">
+                    <td>
+                        <?php if(!empty($comment['details'])): ?>
+                            <?php echo $comment['details']->NAME; ?>  <?php echo $comment['details']->SURNAME; ?>
+                        <?php else: ?>
+                            Someone
+                        <?php endif; ?>
+                        on  <?php echo $comment->CREATED_AT; ?>
+                        <?php if($comment->COMMENT_TYPE == 'ask'): ?>
+                            asked
+                        <?php elseif($comment->COMMENT_TYPE == 'cancel'): ?>
+                            said when cancel project
+                        <?php elseif($comment->COMMENT_TYPE == 'approve'): ?>
+                            said when approve project
+                        <?php endif; ?>
+                    </td>
+                    <td>
+                        #<?php echo $comment->ID; ?>
+                    </td>
+                </tr>
+                    <tr>
+                        <td colspan="2">
+                            <?php echo $comment->COMMENT_TEXT; ?>
+                        </td>
+                    </tr>
+            <?php endforeach; ?>
+            </table>
+        <?php endif; ?>
+	</div>
+    <div style="display: none;">
+        <div class="box-modal" id="approveModal">
+            <div class="box-modal_close arcticmodal-close">X</div>
+            <input type="hidden" value="<?php echo $task['ID']; ?>">
+            If you have any comments you can write it in form below:
+            <textarea class="comment-area"></textarea>
+            <br />
+            <br />
+            <a href="#" class="button orange" id="approve-comment">Send</a>
+        </div>
+    </div>
+    <div style="display: none;">
+        <div class="box-modal" id="cancelModal">
+            <div class="box-modal_close arcticmodal-close">X</div>
+            <input type="hidden" value="<?php echo $task['ID']; ?>">
+            Please write your reason to cancel this project in form below:
+            <div class="comment-error"></div>
+            <textarea class="comment-area"></textarea>
+            <br />
+            <br />
+            <a href="#" class="button orange" id="cancel-comment">Send</a>
+        </div>
+    </div>
+    <div style="display: none;">
+        <div class="box-modal" id="askModal">
+            <div class="box-modal_close arcticmodal-close">X</div>
+            <input type="hidden" value="<?php echo $task['ID']; ?>">
+            Please write your question in form below:
+            <div class="comment-error"></div>
+            <textarea class="comment-area"></textarea>
+            <br />
+            <br />
+            <a href="#" class="button orange" id="ask-comment">Ask</a>
+        </div>
+    </div>
 </div>

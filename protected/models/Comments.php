@@ -4,13 +4,13 @@
  * This is the model class for table "comments".
  *
  * The followings are the available columns in table 'comments':
- * @property integer $id
- * @property integer $task_id
- * @property integer $user_id
- * @property integer $dept_id
- * @property string $comment_text
- * @property string $created
- * @property string $updated
+ * @property integer $ID
+ * @property integer $PRJ_ID
+ * @property integer $USER_ID
+ * @property integer $COMMENT_TYPE
+ * @property string $COMMENT_TEXT
+ * @property string $CREATED
+ * @property string $UPDATED
  */
 class Comments extends CActiveRecord
 {
@@ -29,7 +29,7 @@ class Comments extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'comments';
+		return 'COMMENTS';
 	}
 
 	/**
@@ -40,11 +40,11 @@ class Comments extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('comment_text', 'required'),
-			array('task_id, user_id, dept_id', 'numerical', 'integerOnly'=>true),
+			array('COMMENT_TEXT', 'required'),
+			array('PRJ_ID, USER_ID', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, task_id, user_id, dept_id, comment_text, created, updated', 'safe', 'on'=>'search'),
+			array('ID, PRJ_ID, USER_ID, COMMENT_TYPE, COMMENT_TEXT, CREATED, UPDATED', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,7 +56,7 @@ class Comments extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'details' => array(self::HAS_ONE, 'UserDetails', array('user_id' => 'user_id'), 'alias'=>'d'),
+			'details' => array(self::HAS_ONE, 'UserDetails', array('USER_ID' => 'USER_ID'), 'alias'=>'d'),
 		);
 	}
 
@@ -66,13 +66,13 @@ class Comments extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'task_id' => 'Task',
-			'user_id' => 'User',
-			'dept_id' => 'Department',
-			'comment_text' => 'Comment',
-			'created' => 'Created',
-			'updated' => 'Updated',
+			'ID' => 'ID',
+			'PRJ_ID' => 'Task',
+			'USER_ID' => 'User',
+			'COMMENT_TYPE' => 'Comment type',
+			'COMMENT_TEXT' => 'Comment',
+			'CREATED_AT' => 'Created',
+			'UPDATED_AT' => 'Updated',
 		);
 	}
 
@@ -87,27 +87,26 @@ class Comments extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('task_id',$this->task_id);
-		$criteria->compare('user_id',$this->user_id);
-		$criteria->compare('dept_id',$this->dept_id);
-		$criteria->compare('comment_text',$this->comment,true);
-		$criteria->compare('created',$this->created,true);
-		$criteria->compare('updated',$this->updated,true);
+		$criteria->compare('ID',$this->ID);
+		$criteria->compare('PRJ_ID',$this->PRJ_Id);
+		$criteria->compare('USER_ID',$this->USER_ID);
+        $criteria->compare('COMMENT_TYPE',$this->COMMENT_TYPE,true);
+		$criteria->compare('COMMENT_TEXT',$this->COMMENT_TEXT,true);
+		$criteria->compare('CREATED_AT',$this->CREATED_AT,true);
+		$criteria->compare('UPDATED_AT',$this->UPDATED_AT,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-	
-	public function beforeSave()
-	{
-		if ($this->isNewRecord) {
-			$this->created = date('Y-m-d G:i:s');
-			$this->updated = date('Y-m-d G:i:s');
-		}
-		$this->updated = date('Y-m-d G:i:s');
-	
-		return true;
-	}
+
+    public function beforeSave()
+    {
+        if ($this->isNewRecord) {
+            $this->CREATED_AT = new CDbExpression("TO_DATE('" . date('d/m/y') . "', 'DD/MM/YYYY')");
+        }
+        $this->UPDATED_AT = new CDbExpression("TO_DATE('" . date('d/m/y') . "', 'DD/MM/YYYY')");
+
+        return true;
+    }
 }

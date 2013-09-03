@@ -21,6 +21,9 @@
 	</script>
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="<?php echo It::baseUrl(); ?>/js/arctic/jquery.arcticmodal-0.3.min.js"></script>
+    <link rel="stylesheet" href="<?php echo It::baseUrl(); ?>/js/arctic/jquery.arcticmodal-0.3.css">
+    <link rel="stylesheet" href="<?php echo It::baseUrl(); ?>/js/arctic/themes/simple.css">
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -39,7 +42,7 @@
 		</div>
         <div id="menu">
             <ul>
-				<?php if(!It::isGuest() AND (It::getState('user_role') !== '2')): ?>
+				<?php if(!It::isGuest() AND ((It::getState('user_role') == '1') OR (It::getState('head') == '1'))): ?>
             	<li>
             		<a href="<?php echo It::baseUrl(); ?>/admin/managers" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'managers')): ?>class="active"<?php endif; ?>>Users</a>
             	</li>

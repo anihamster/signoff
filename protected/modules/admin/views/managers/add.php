@@ -21,7 +21,7 @@
 			<?php echo CHtml::activeTextField($form, 'PASSWORD'); ?>
 		</td>
 	</tr>
-	<?php if(!(Yii::app()->user->getState('user_role') == '3')): ?>
+	<?php if(!(It::getState('head') == '1')): ?>
 	<tr>
 		<td>
 			<?php echo CHtml::activeLabel($form, 'TYPE'); ?>
@@ -38,7 +38,6 @@
             <?php echo CHtml::activeCheckBox($form2, 'KEY_USER'); ?>
         </td>
     </tr>
-	<?php endif; ?>
     <tr>
         <td>
             <?php echo CHtml::activeLabel($form2, 'BRAND'); ?>
@@ -47,6 +46,7 @@
             <?php echo CHtml::activeDropDownList($form2, 'BRAND', $brands); ?>
         </td>
     </tr>
+    <?php endif; ?>
     <tr>
         <td>
             <?php echo CHtml::activeLabel($form2, 'ROLE_ID'); ?>

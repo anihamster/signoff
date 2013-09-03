@@ -1,4 +1,4 @@
-<div id="text_full">
+a<div id="text_full">
     <h1>Categories</h1><br />
     <?php if(!empty($cats)): ?>
         <table>

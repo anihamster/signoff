@@ -44,7 +44,7 @@
 	</thead>
 	<tbody>
 <?php foreach($users as $u_val): ?>
-<?php if((It::getState('user_role') == '3') AND (!empty($u_val['details'])) OR (It::getState('user_role') == '1')): ?>
+<?php if((It::getState('head') == '1') AND (!empty($u_val['details'])) OR (It::getState('user_role') == '1')): ?>
 		<tr>
 			<td>
 				<?php echo $u_val->ID; ?>

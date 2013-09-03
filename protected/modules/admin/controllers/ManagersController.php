@@ -4,10 +4,13 @@ class ManagersController extends Controller {
 	public function actionIndex() {
 		if(Yii::app()->user->isGuest)
 			$this->redirect(It::baseUrl() . '/main/default/login');
+
+        if((!It::getState('user_role') == '1') || !(It::getState('head') == '1'))
+            $this->redirect(It::baseUrl() . '/main/default/login');
 	
 		$users = Users::model()->getAllUsers();
 		$levels = UserLevels::model()->getLevels();
-	
+
 		$this->render('index', array('users' => $users, 'levels' => $levels));
 	}
 	
@@ -15,17 +18,18 @@ class ManagersController extends Controller {
 		if(Yii::app()->user->isGuest)
 			$this->redirect(It::baseUrl() . '/main/default/login');
 	
-		$levels = UserLevels::model()->getLevels();
-		
-		$nodes = Brands::model()->findAll();
-		
-		$brands = array();
 
-        $brands[0] = 'General user';
+            $levels = UserLevels::model()->getLevels();
+		
+		    $nodes = Brands::model()->findAll();
+		
+		    $brands = array();
 
-		foreach($nodes as $val) {
-			$brands[$val->ID] = $val->BRAND_NAME;
-		}
+            $brands[0] = 'General user';
+
+		    foreach($nodes as $val) {
+			    $brands[$val->ID] = $val->BRAND_NAME;
+		    }
 
         $roles = Roles::model()->getRoles();
 	
@@ -38,10 +42,9 @@ class ManagersController extends Controller {
 			$form->scenario = 'add';
 			$form2->scenario = 'add';
 			
-			if(Yii::app()->user->getState('user_role') == '3') {
-				$form->type = '2';
-				$ud = UserDetails::model()->findByAttributes(array('USER_ID' => Yii::app()->user->getId()));
-				$form2->DEPT_ID = $ud->DEPT_ID;
+			if(It::getState('head') == '1') {
+				$form->TYPE = '2';
+				$form2->BRAND = It::getState('brand');
 			}
 			
 			$valid=$form->validate();

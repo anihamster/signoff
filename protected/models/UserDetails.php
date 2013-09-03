@@ -70,7 +70,7 @@ class UserDetails extends CActiveRecord
 		);
 	}
 	
-	public function depart($dept) {
+	public function branded($dept) {
 		$this->getDbCriteria()->mergeWith(array('condition'=>'BRAND=:dept', 'params'=>array(':dept'=>$dept),));
 	
 		return $this;

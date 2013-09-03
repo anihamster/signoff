@@ -175,16 +175,8 @@ class ProjectsController extends Controller {
 
         if(!empty($sign))
             $status = $sign->FLAG;
-        else {
-            $user = UserDetails::model()->findByAttributes(array('USER_ID' => Yii::app()->user->getId()));
-            $sign = Signs::model()->findByAttributes(array('USER_ID' => $user->USER_ID, 'PRG_ID' => $tid));
-            if(!empty($sign))
-                $status = $sign->FLAG;
-            else
-                $status = 0;
-        }
 
-        if($status == 0)
+        if($status == 1)
             $signed = 1;
         else
             $signed = 0;
@@ -208,9 +200,8 @@ class ProjectsController extends Controller {
             }
         }
 
-        //$form = new Comments;
+        $comments = Comments::model()->with('details')->findAllByAttributes(array('PRJ_ID' => $tid));
 
-
-        $this->render('details', array('task' => $task, 'signed' => $signed, 'signs' => $signs, 'attaches' => $attaches));
+        $this->render('details', array('task' => $task, 'signed' => $signed, 'signs' => $signs, 'attaches' => $attaches, 'comments' => $comments));
     }
 }

@@ -101,17 +101,21 @@ class DefaultController extends Controller
 		if(!It::isAjaxRequest())
 			$this->redirect(It::baseUrl());
 		
-		if(empty($_GET['task_id']))
+		if(empty($_GET['task_id']) || empty($_GET['action']))
 			$this->redirect(It::baseUrl());
 		
 		$tid = $_GET['task_id'];
+        $action = $_GET['action'];
 		
 		$check = Signs::model()->findByAttributes(array('USER_ID' => Yii::app()->user->getId(), 'PRG_ID' => $tid));
 
 		$result = array();
 		
 		if(!empty($check)) {
-			$check->FLAG = 1;
+            if($action == 'approve')
+			    $check->FLAG = 1;
+            elseif($action === 'cancel')
+                $check->FLAG = 2;
 			$check->save(false);
 			$result['status'] = 'Ok';
 			$result['result'] = 'Success!';
@@ -234,6 +238,24 @@ class DefaultController extends Controller
                     }
                 }
             }
+        }
+    }
+
+    public function actionSaveComment() {
+        if(!It::isAjaxRequest())
+            $this->redirect(It::baseUrl());
+
+        if(!empty($_REQUEST['comment']) && !empty($_REQUEST['prj']) && !empty($_REQUEST['type'])) {
+            $comment = $_REQUEST['comment'];
+            $task = $_REQUEST['prj'];
+            $type = $_REQUEST['type'];
+
+            $comments = new Comments;
+            $comments->COMMENT_TYPE = $type;
+            $comments->COMMENT_TEXT = $comment;
+            $comments->USER_ID = It::userId();
+            $comments->PRJ_ID = intval($task);
+            $comments->save(false);
         }
     }
 }

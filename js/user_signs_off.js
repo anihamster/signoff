@@ -33,21 +33,105 @@ $(document).ready(function() {
     });
 
     $('#sign_that').click(function() {
-        var task = $(this).siblings('input').val();
+        $('#approveModal').arcticmodal();
+    });
 
-        $.ajaxSetup({
-            async: false
-        });
+    $('#cancel').click(function() {
+        $('#cancelModal').arcticmodal();
+    });
 
-        $.getJSON(
-            '/ajax/default/setsign/?task_id='+task,
-            function(data) {
-                alert(data.result);
-                $('#sign_that').hide();
-            }
-        );
+    $('#ask').click(function() {
+        $('#askModal').arcticmodal();
     });
 });
+
+$(document).on('click', '#approve-comment', function() {
+    var task = $(this).siblings('input').val();
+    var type = 'approve';
+
+    if($(this).siblings('textarea').val().length <= 1) {
+        $(this).siblings('textarea').css('background-color', 'lemonchiffon');
+        var err = "<span class=\"error\">You must fill this form before submit!</span>";
+        $(this).siblings('.comment-error').html(err);
+    } else {
+        var comment = $(this).siblings('textarea').val();
+        $.post(BaseUrl+"/ajax/default/savecomment",
+            {'comment': comment,
+             'prj': task,
+             'type': type},
+            function(result){
+
+            }
+        );
+    }
+
+    $.ajaxSetup({
+        async: false
+    });
+
+    $.getJSON(
+        '/ajax/default/setsign/?task_id='+task+'&action=approve',
+        function(data) {
+            alert(data.result);
+            $(location).attr('href',BaseUrl+'/manager/projects/details/?task_id='+task);
+
+        }
+    );
+});
+
+$(document).on('click', '#ask-comment', function() {
+    var task = $(this).siblings('input').val();
+    var type = 'ask';
+
+    if($(this).siblings('textarea').val().length <= 1) {
+        $(this).siblings('textarea').css('background-color', 'lemonchiffon');
+        var err = "<span class=\"error\">You must fill this form before submit!</span>";
+        $(this).siblings('.comment-error').html(err);
+    } else {
+        var comment = $(this).siblings('textarea').val();
+        $.post(BaseUrl+"/ajax/default/savecomment",
+            {'comment': comment,
+             'prj': task,
+             'type': type},
+            function(result){
+                $(location).attr('href',BaseUrl+'/manager/projects/details/?task_id='+task);
+            }
+        );
+    }
+});
+
+$(document).on('click', '#cancel-comment', function() {
+    var task = $(this).siblings('input').val();
+    var type = 'cancel';
+
+    if($(this).siblings('textarea').val().length <= 1) {
+        $(this).siblings('textarea').css('background-color', 'lemonchiffon');
+        var err = "<span class=\"error\">You must fill this form before submit!</span>";
+        $(this).siblings('.comment-error').html(err);
+    } else {
+        var comment = $(this).siblings('textarea').val();
+        $.post(BaseUrl+"/ajax/default/savecomment",
+            {'comment': comment,
+                'prj': task,
+                'type': type},
+            function(result){
+                $.ajaxSetup({
+                    async: false
+                });
+
+                $.getJSON(
+                    '/ajax/default/setsign/?task_id='+task+'&action=cancel',
+                    function(data) {
+                        alert(data.result);
+                        $(location).attr('href',BaseUrl+'/manager/projects/details/?task_id='+task);
+
+                    }
+                );
+            }
+        );
+    }
+});
+
 
 $(document).on('click', '#savebutton', function() {
     var task = $('.prj').attr('id');
