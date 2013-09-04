@@ -72,9 +72,7 @@ $(document).on('click', '#approve-comment', function() {
     $.getJSON(
         '/ajax/default/setsign/?task_id='+task+'&action=approve',
         function(data) {
-            alert(data.result);
             $(location).attr('href',BaseUrl+'/manager/projects/details/?task_id='+task);
-
         }
     );
 });
@@ -122,9 +120,7 @@ $(document).on('click', '#cancel-comment', function() {
                 $.getJSON(
                     '/ajax/default/setsign/?task_id='+task+'&action=cancel',
                     function(data) {
-                        alert(data.result);
                         $(location).attr('href',BaseUrl+'/manager/projects/details/?task_id='+task);
-
                     }
                 );
             }
