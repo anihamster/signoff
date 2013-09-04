@@ -146,7 +146,7 @@ class ProjectsController extends Controller {
                             if($item->save())
                                 if (!is_dir(Yii::getPathOfAlias('webroot').'/uploads/project_' . $prj->ID))
                                     mkdir(Yii::getPathOfAlias('webroot').'/uploads/project_' . $prj->ID, 0777);
-                            $item->attach_file->saveAs(Yii::getPathOfAlias('webroot').'/uploads/project_' . $task . '/'.$item->ATTACH_FILE);
+                            $item->ATTACH_FILE->saveAs(Yii::getPathOfAlias('webroot').'/uploads/project_' . $prj->ID . '/'.$item->ATTACH_FILE);
                         }
                     }
                 }
@@ -175,6 +175,8 @@ class ProjectsController extends Controller {
 
         if(!empty($sign))
             $status = $sign->FLAG;
+        else
+            $status = 0;
 
         if($status == 1)
             $signed = 1;

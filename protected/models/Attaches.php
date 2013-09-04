@@ -39,9 +39,10 @@ class Attaches extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ATTACH_TO, ATTACH_FILE', 'numerical', 'integerOnly'=>true),
+			array('ATTACH_TO', 'numerical', 'integerOnly'=>true),
 			array('ATTACH_TYPE', 'length', 'max'=>1020),
 			array('CREATED_AT, UPDATED_AT', 'safe'),
+            array('ATTACH_TYPE', 'file', 'allowEmpty' => true, 'types' => 'doc,pdf,ppt,txt,jpg,gif,png', 'on' => 'add'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('ID, ATTACH_TYPE, ATTACH_TO, ATTACH_FILE, CREATED_AT, UPDATED_AT', 'safe', 'on'=>'search'),
