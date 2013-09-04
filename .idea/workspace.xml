@@ -116,7 +116,7 @@
       <file leaf-file-name="Signs.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/models/Signs.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="12" selection-start="3478" selection-end="3478" vertical-scroll-proportion="0.49822906">
+            <state line="123" column="12" selection-start="3589" selection-end="3589" vertical-scroll-proportion="0.5383707">
               <folding />
             </state>
           </provider>
@@ -1307,7 +1307,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/Signs.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="12" selection-start="3478" selection-end="3478" vertical-scroll-proportion="0.49822906">
+        <state line="123" column="12" selection-start="3589" selection-end="3589" vertical-scroll-proportion="0.5383707">
           <folding />
         </state>
       </provider>
