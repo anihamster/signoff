@@ -113,13 +113,14 @@ class Signs extends CActiveRecord
 
     public function afterSave()
     {
-        $user = UserDetails::model()->findAllByAttributes(array('USER_ID' => $this->USER_ID));
-        $data = array(
-            'email' => $user->EMAIL,
-            'task'  => $this->PRG_ID,
-        );
-       Signs::sendNotifocationEmail($data);
-
+        $users = UserDetails::model()->findAllByAttributes(array('USER_ID' => $this->USER_ID));
+        foreach($users as $user) {
+            $data = array(
+                'email' => $user->EMAIL,
+                'task'  => $this->PRG_ID,
+            );
+            Signs::sendNotifocationEmail($data);
+        }
         return parent::afterSave();
     }
 

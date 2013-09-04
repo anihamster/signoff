@@ -55,7 +55,7 @@
     <file path="/RelationRules.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1377805347949" ignored="false" />
     <file path="/UserIdentity.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1377935223861" ignored="false" />
     <file path="/user_signs_off.js" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378186345062" ignored="false" />
-    <file path="/Signs.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378198981484" ignored="false" />
+    <file path="/Signs.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378302079192" ignored="false" />
     <file path="/style.css" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378188677656" ignored="false" />
     <file path="/Comments.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378183855203" ignored="false" />
     <file path="/Users.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378193609562" ignored="false" />
@@ -89,16 +89,16 @@
       <file leaf-file-name="ManagersController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ManagersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="9" selection-start="547" selection-end="547" vertical-scroll-proportion="-0.65384614">
+            <state line="14" column="9" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RelationsController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RelationsController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/RelationsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="802" selection-end="802" vertical-scroll-proportion="0.501771">
+            <state line="25" column="0" selection-start="802" selection-end="802" vertical-scroll-proportion="-16.346153">
               <folding />
             </state>
           </provider>
@@ -113,10 +113,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Signs.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Signs.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/models/Signs.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="1" selection-start="4028" selection-end="4028" vertical-scroll-proportion="0.0">
+            <state line="121" column="12" selection-start="3478" selection-end="3478" vertical-scroll-proportion="0.49822906">
               <folding />
             </state>
           </provider>
@@ -171,10 +171,10 @@
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/LettersController.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/views/default/settings.php" />
         <option value="$PROJECT_DIR$/protected/messages/en/project.php" />
-        <option value="$PROJECT_DIR$/protected/models/Signs.php" />
         <option value="$PROJECT_DIR$/protected/modules/manager/views/projects/details.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/ManagersController.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/RelationsController.php" />
+        <option value="$PROJECT_DIR$/protected/models/Signs.php" />
       </list>
     </option>
   </component>
@@ -233,7 +233,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1066,16 +1065,17 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="File.Encoding" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="File.Encoding" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1144,7 +1144,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6703663" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2828175" sideWeight="0.67074525" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2860192" sideWeight="0.67074525" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1222,11 +1222,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="10" selection-start="2133" selection-end="2133" vertical-scroll-proportion="0.49815497" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/Roles.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="7" selection-start="0" selection-end="3060" vertical-scroll-proportion="0.55569005" />
@@ -1249,9 +1244,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/Users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="90" selection-start="2871" selection-end="2871" vertical-scroll-proportion="-24.73077">
-          <folding />
-        </state>
+        <state line="102" column="90" selection-start="2871" selection-end="2871" vertical-scroll-proportion="-24.73077" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/groups/edit.php">
@@ -1267,13 +1260,6 @@
     <entry file="file://$PROJECT_DIR$/js/user_signs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="54" column="44" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.52577317" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/Signs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="1" selection-start="4028" selection-end="4028" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/manager/views/projects/edit.php">
@@ -1300,14 +1286,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ManagersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="9" selection-start="547" selection-end="547" vertical-scroll-proportion="-0.65384614">
+        <state line="14" column="9" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/Projects.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="237" column="0" selection-start="8200" selection-end="8200" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/RelationsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="802" selection-end="802" vertical-scroll-proportion="0.501771">
+        <state line="25" column="0" selection-start="802" selection-end="802" vertical-scroll-proportion="-16.346153">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/Signs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="12" selection-start="3478" selection-end="3478" vertical-scroll-proportion="0.49822906">
           <folding />
         </state>
       </provider>
