@@ -23,9 +23,8 @@ class RelationsController extends Controller {
 
         $cats = Categories::model()->getCategories();
         $roles = Roles::model()->getRoles();
-        $deps = Departments::model()->getDeps();
 
-        $this->render('build', array('cats' => $cats, 'roles' => $roles, 'deps' => $deps));
+        $this->render('build', array('cats' => $cats, 'roles' => $roles));
     }
 
 }
