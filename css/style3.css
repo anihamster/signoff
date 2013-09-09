@@ -1,0 +1,226 @@
+body, html {
+margin:0px;
+padding:0px;
+height: 100%;
+}
+
+body {
+    background-color: #FFFFFF;
+    background-repeat: repeat-x;
+    color: #333333;
+    font: 12px Verdana,Arial,Helvetica,sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+* html #maket {
+height: 100%;
+}
+
+
+.clear {
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+}
+
+#maket {
+width:960px;
+margin:0 auto;
+min-height: 100%;
+margin-top: 50px;
+}
+
+#header{
+    background: none repeat scroll 0 0 #C80000;
+    height: 165px;
+    position: relative;
+}
+
+
+#header #ident {
+    display: block;
+    float: left;
+    margin-left: 15px;
+}
+
+
+#header #h_title {
+    float: right;
+    margin: 37px 20px 0 0;
+    position: relative;
+    text-align: right;
+}
+
+.grid {
+    clear: both;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    width: 1000px;
+}
+
+#menu_panel {
+    border-top: 1px solid #D54444;
+}
+
+
+#mainmenu {
+    float: none;
+    height: 35px;
+    margin: 0 2%;
+    padding: 0;
+    position: relative;
+    width: 96%;
+    z-index: 1;
+}
+
+#mainmenu ul {
+    background: none repeat scroll 0 0 #C80000;
+    border: medium none;
+    display: block;
+    float: none;
+    height: 35px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+
+#mainmenu ul li {
+    display: block;
+    float: left;
+    height: 35px;
+    position: relative;
+    text-align: center;
+}
+
+#mainmenu ul li a.current:after {
+    color: #C80000;
+    content: "▼";
+    font-size: 14px;
+    left: 10px;
+    position: absolute;
+    top: 23px;
+    z-index: 2000;
+}
+
+.left{
+	float: left;
+    background: none repeat scroll 0 0 white;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 5px #999999;
+    display: block;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-decoration: none;
+    transition: margin 0.05s ease 0s;
+    width: 180px;
+}
+
+.right{
+width:180px;
+    background: none repeat scroll 0 0 white;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 5px #999999;
+    display: block;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-decoration: none;
+    transition: margin 0.05s ease 0s;
+float:right;
+}
+
+.content{
+margin-left:202px;
+margin-right:202px;
+}
+
+#footer{
+clear:both;
+height: 50px;
+margin-top:-50px;
+width:1000px;
+margin-left: auto;
+margin-right: auto;
+background: none repeat scroll 0 0 #C80000;
+}
+
+#footer #copy {
+    display: block;
+    float: left;
+    margin-left: 15px;
+	margin-top: 15px;
+	color: #fff;
+}
+
+#garant {
+height: 50px;
+}
+
+.project {
+	height: auto;
+}
+
+.project_title a {
+    background: url("../imgs/ico/plus.gif") no-repeat scroll 5px 0 transparent;
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 35px;
+    text-decoration: none;
+    width: 100%;
+	height: 22px;
+}
+
+.project_title a.opened {
+    background: url("../imgs/ico/minus.gif") no-repeat scroll 5px 0 transparent;
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 35px;
+    text-decoration: none;
+    width: 100%;
+	height: 22px;
+}
+
+.project_details {
+	height: 100%;
+}
+
+.button {
+    background: -moz-linear-gradient(center top , #F9F9F9 10%, #EEEEEE 70%) repeat scroll 0 0 white;
+    border: 1px solid #DDDDDD;
+    color: #C80000;
+    font-size: 14px;
+}
+
+.progress {
+	border-radius: .5em;
+	display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+	color: #000;
+	padding: .3em 1em .25em;
+	width: 140px;
+}
+
+.finished {
+	background: #0f0;
+}
+
+.inprogress {
+	background: #f00;
+}
+
+.cancelled {
+	background: #0ff;
+}

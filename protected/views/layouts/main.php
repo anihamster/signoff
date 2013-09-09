@@ -13,7 +13,8 @@
 	<![endif]--> 
 
 
-	<link rel="stylesheet" type="text/css" href="<?php echo It::baseUrl(); ?>/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo It::baseUrl(); ?>/css/style3.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo It::baseUrl(); ?>/css/screen-nlr.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo It::baseUrl(); ?>/css/form.css" />
 
 	<script type="text/javascript">
@@ -29,76 +30,69 @@
 </head>
 
 <body>
-	<!-- header -->
-    <div id="header">    	
-    	<div id="logo">
-    		<div style="float:left;">
-    			<img src="<?php echo It::baseUrl(); ?>/images/head.png" />
-    		</div>
-    		<div style="float:left; padding-top: 20px; padding-left: 45px;">
-    			<a href="#"><?php echo CHtml::encode(Yii::app()->name); ?></a>
-    		</div>
-    		<div class="clear"></div>	
-		</div>
-        <div id="menu">
-            <ul>
-				<?php if(!It::isGuest() AND ((It::getState('user_role') == '1') OR (It::getState('head') == '1'))): ?>
-            	<li>
-            		<a href="<?php echo It::baseUrl(); ?>/admin/managers" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'managers')): ?>class="active"<?php endif; ?>>Users</a>
-            	</li>
-            	<?php endif; ?>
-                <?php if(!It::isGuest() AND (It::getState('user_role') == '1')): ?>
-                <li>
-                    <a href="<?php echo It::baseUrl(); ?>/admin/default/settings" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'default')): ?>class="active"<?php endif; ?>>Settings</a>
-                </li>
-                <?php endif; ?>
-            	<?php if(It::getState('user_role') == '1'):?>
-           		<li>
-           			<a href="<?php echo It::baseUrl(); ?>/admin/projects" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'projects')): ?>class="active"<?php endif; ?>>Projects</a>
-           		</li>
-            	<?php endif; ?>
-            	<?php if(!It::isGuest() AND (It::getState('user_role') !== '1')): ?>
-            	<li>
-            		<a href="<?php echo It::baseUrl(); ?>/manager/projects" <?php if((Yii::app()->controller->module->id == 'manager') && (Yii::app()->controller->id == 'projects') && (Yii::app()->controller->action->id == 'index')): ?>class="active"<?php endif; ?>>For signing</a>
-            	</li>
-            	<?php endif; ?>
-            	<?php if(!It::isGuest() AND (It::getState('user_role') !== '1')): ?>
-           		<li>
-           			<a href="<?php echo It::baseUrl(); ?>/manager/projects/my" <?php if((Yii::app()->controller->module->id == 'manager') && (Yii::app()->controller->id == 'projects') && (Yii::app()->controller->action->id == 'my')): ?>class="active"<?php endif; ?>>My projects</a>
-           		</li>
-            	<?php endif; ?>
-            	<?php if(It::isGuest()):?>
-            	<li>
-            		<a href="<?php echo It::baseUrl(); ?>/main/default/login" <?php if(It::isGuest()): ?>class="active"<?php endif; ?>>Login</a>
-            	</li>
-            	<?php else: ?>
-           		<li>
-           			<a href="<?php echo It::baseUrl(); ?>/main/default/logout">Logout</a>
-           		</li>
-            	<?php endif; ?>
-        	</ul>
+<div id="header">
+    <div class="grid">
+        <div id="ident">
+            <img src="<?php echo It::baseUrl(); ?>/imgs/logo.png" />
+        </div>
+        <div id="h_title">
+            <h2>Sign-off</h2>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div id="menu_panel">
+        <div class="grid">
+            <div id="mainmenu">
+                <ul>
+                    <?php if(!It::isGuest() AND ((It::getState('user_role') == '1') OR (It::getState('head') == '1'))): ?>
+                        <li>
+                            <a href="<?php echo It::baseUrl(); ?>/admin/managers" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'managers')): ?>class="current"<?php endif; ?>>Users</a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if(!It::isGuest() AND (It::getState('user_role') == '1')): ?>
+                        <li>
+                            <a href="<?php echo It::baseUrl(); ?>/admin/default/settings" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'default')): ?>class="current"<?php endif; ?>>Settings</a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if(It::getState('user_role') == '1'):?>
+                        <li>
+                            <a href="<?php echo It::baseUrl(); ?>/admin/projects" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'projects')): ?>class="current"<?php endif; ?>>Projects</a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if(!It::isGuest() AND (It::getState('user_role') !== '1')): ?>
+                        <li>
+                            <a href="<?php echo It::baseUrl(); ?>/manager/projects" <?php if((Yii::app()->controller->module->id == 'manager') && (Yii::app()->controller->id == 'projects') && (Yii::app()->controller->action->id == 'index')): ?>class="current"<?php endif; ?>>For signing</a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if(!It::isGuest() AND (It::getState('user_role') !== '1')): ?>
+                        <li>
+                            <a href="<?php echo It::baseUrl(); ?>/manager/projects/my" <?php if((Yii::app()->controller->module->id == 'manager') && (Yii::app()->controller->id == 'projects') && (Yii::app()->controller->action->id == 'my')): ?>class="current"<?php endif; ?>>My projects</a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if(It::isGuest()):?>
+                        <li>
+                            <a href="<?php echo It::baseUrl(); ?>/main/default/login" <?php if(It::isGuest()): ?>class="active"<?php endif; ?>>Login</a>
+                        </li>
+                    <?php else: ?>
+                        <li>
+                            <a href="<?php echo It::baseUrl(); ?>/main/default/logout">Logout</a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+                <div class="clear"></div>
+            </div>
         </div>
     </div>
-    <!--end header -->
-    <!-- main -->
-<!-- container -->
-<div id="container">
-    <div id="main">
-    	<?php echo $content; ?>
-
-		<div class="clear"></div>
-		<div id="garant"></div>
-    </div>
-    <!-- end main -->
 </div>
-<!-- end container -->
-    <!-- footer -->    
-    <div id="footer">
-    <div id="left_footer">Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-	</div>
-    <div id="right_footer"><?php echo Yii::powered(); ?></div>
+<div id="maket">
+    <?php echo $content; ?>
+    <div class="clear"></div>
+    <div id="garant"></div>
+</div>
+<div id="footer">
+    <div id="copy">
+        <strong>&copy; My company, 2013.</strong>
     </div>
-    <!-- end footer -->
+</div>
 </body>
 </html>
