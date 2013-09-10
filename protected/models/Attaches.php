@@ -7,7 +7,7 @@
  * @property integer $ID
  * @property string $ATTACH_TYPE
  * @property integer $ATTACH_TO
- * @property integer $ATTACH_FILEAG
+ * @property integer $ATTACH_FILE
  * @property string $CREATED_AT
  * @property string $UPDATED_AT
  */

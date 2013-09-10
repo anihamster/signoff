@@ -1,31 +1,17 @@
-<h1>Login page*</h1>
-<br />
-<div id="full_text">
+<div id="full_text" align="center">
+    <div class="form-container">
 <?php echo CHtml::form(); ?>
 <?php echo CHtml::errorSummary($form); ?>
-<table>
-    <tr>
-        <td>
-            <?php echo Chtml::activeLabel($form, 'LOGIN'); ?>
-        </td>
-        <td>
-            <?php echo Chtml::activeTextField($form, 'LOGIN'); ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <?php echo CHtml::activeLabel($form, 'PASSWORD'); ?>
-        </td>
-        <td>
-            <?php echo CHtml::activePasswordField($form, 'PASSWORD'); ?>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <?php echo CHtml::submitButton('Sign in', array('class' => 'button orange')); ?>
-        </td>
-    </tr>
-</table>
+    <div class="form-title"><h2>Sign up*</h2></div>
+    <div class="form-title"><?php echo Chtml::activeLabel($form, 'LOGIN'); ?></div>
+    <img src="<?php echo It::baseUrl() ?>/images/ico/forms/login.png" />&nbsp;&nbsp;<?php echo Chtml::activeTextField($form, 'LOGIN', array('class' => 'form-field')); ?><br />
+    <div class="form-title"><?php echo Chtml::activeLabel($form, 'PASSWORD'); ?></div>
+    <img src="<?php echo It::baseUrl() ?>/images/ico/forms/password.png" />&nbsp;&nbsp;<?php echo CHtml::activePasswordField($form, 'PASSWORD', array('class' => 'form-field')); ?><br />
+    <div class="submit-container">
+        <?php echo CHtml::submitButton('Sign in', array('class' => 'submit-button')); ?>
+    </div>
 <?php echo CHtml::endForm(); ?>
+    </div>
+    <br />
 <small>* You must to sign in to get access to the system.</small>
 </div>

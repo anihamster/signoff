@@ -1,40 +1,44 @@
-$(document).ready(function() {
-	$('#techlist').click(function() {
-		var dept = $(this).siblings('input').val();
-		var cont = $('#usrs');
-		
-		$.ajaxSetup({
-	        async: false
-	    });	
-		
-		$.getJSON(
-			BaseUrl + '/ajax/default/getusers/?dept_id='+dept,
-			function(data) {
-		        if(data.status == "Ok") {	        	
-		        	var response = data.result		    
-		        	
-		        	var html="";
-		        			        	
-		        	for(var i in response) {
-		        		var obj = response[i];
-		        		if(response[i].signed == '1') {
-		        			html += "<input type=\"radio\" name=\"assigned\" value=\""+response[i].user_id+"\" id=\""+response[i].user_id+"\" checked>"+response[i].name+"<br />";
-		        		} 
+$(document).on('click', '.techlist', function() {
+    var dept = $(this).sibling('input').val();
+    var cont = $(this).sibling('.usrs');
 
-		        		if(response[i].signed == '0') {
-		        			html += "<input type=\"radio\" name=\"assigned\" value=\""+response[i].user_id+"\" id=\""+response[i].user_id+"\">"+response[i].name+"<br />";
-		        		}
-		        	}
-		        	
-		        	html += "<br /><a href=\"Javascript:void[0]\" id=\"savebutton\" class=\"button orange\">Add user to signs list</a>"
-		        	        		
-		        	cont.html(html);
-		        	
-		        	$('#userlist').hide();
-		        }
-		    }
-		); 
-	});
+    console.log(dept);
+
+    $.ajaxSetup({
+        async: false
+    });
+
+    $.getJSON(
+        BaseUrl + '/ajax/default/getusers/?dept_id='+dept,
+        function(data) {
+            if(data.status == "Ok") {
+                var response = data.result
+
+                var html="";
+
+                for(var i in response) {
+                    var obj = response[i];
+                    if(response[i].signed == '1') {
+                        html += "<input type=\"radio\" name=\"assigned\" value=\""+response[i].user_id+"\" id=\""+response[i].user_id+"\" checked>"+response[i].name+"<br />";
+                    }
+
+                    if(response[i].signed == '0') {
+                        html += "<input type=\"radio\" name=\"assigned\" value=\""+response[i].user_id+"\" id=\""+response[i].user_id+"\">"+response[i].name+"<br />";
+                    }
+                }
+
+                html += "<br /><a href=\"Javascript:void[0]\" class=\"savebutton button orange\">Add user to signs list</a>"
+
+                cont.html(html);
+
+                $('#userlist').hide();
+            }
+        }
+    );
+});
+
+$(document).ready(function() {
+
 	
 	$('.deplist').click(function() {
 		var dept = $(this).siblings('input').val();
@@ -67,19 +71,19 @@ $(document).ready(function() {
 		        	
 		        	cont.html(html);
 		        	
-		        	$('#userlist').hide();
+		        	$('.userlist').hide();
 		        }
 		    }
 		); 
 	});
 });
 
-$(document).on('click', '#savebutton', function() {
+$(document).on('click', '.savebutton', function() {
 	var user = $(this).siblings('input[type=radio]:checked').attr('id');
 	
-	var cont = $('#usrs');
+	var cont = $('.usrs');
 	
-	var task = $(this).closest('table').attr('id');
+	var task = $(this).closest('.prj').attr('id');
 	
 	var html = '';
 	
@@ -103,7 +107,7 @@ $(document).on('click', '#savebutton', function() {
 	        	
 	        	cont.html(html);
 	        	
-	        	$('#userlist').show();
+	        	$('.userlist').show();
 	        }
 	    }
 	);

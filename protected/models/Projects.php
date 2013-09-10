@@ -128,6 +128,7 @@ class Projects extends CActiveRecord
 
         foreach($tasks as $task) {
             $result[$task->ID]['ID'] = $task->ID;
+            $result[$task->ID]['USER_ID'] = $task->USER_ID;
             $result[$task->ID]['TITLE'] = $task->TITLE;
             $result[$task->ID]['DESCRIPTION'] = $task->DESCRIPTION;
             $result[$task->ID]['CREATED'] = $task->CREATED_AT;
@@ -144,6 +145,12 @@ class Projects extends CActiveRecord
                 $result[$task->ID]['EMAIL'] = '';
                 $result[$task->ID]['PHONE'] = '';
             }
+            if(!empty($task['attaches'])) {
+                $result[$task->ID]['ATTACHES'] = array();
+                foreach($task['attaches'] as $attach) {
+                    $result[$task->ID]['ATTACHES'][$attach->ID]['FILENAME'] = $attach->ATTACH_FILE;
+                }
+            }
         }
 
         return $result;
@@ -156,6 +163,7 @@ class Projects extends CActiveRecord
         if(!empty($task)) {
             $result = array();
             $result['ID'] = $task->ID;
+            $result['USER_ID'] = $task->USER_ID;
             $result['TITLE'] = $task->TITLE;
             $result['DESCRIPTION'] = $task->DESCRIPTION;
             $result['CREATED'] = $task->CREATED_AT;
@@ -171,6 +179,12 @@ class Projects extends CActiveRecord
                 $result['SURNAME'] = '';
                 $result['EMAIL'] = '';
                 $result['PHONE'] = '';
+            }
+            if(!empty($task['attaches'])) {
+                $result[$task->ID]['ATTACHES'] = array();
+                foreach($task['attaches'] as $attach) {
+                    $result[$task->ID]['ATTACHES'][$attach->ID]['FILENAME'] = $attach->ATTACH_FILE;
+                }
             }
         }
 
@@ -189,6 +203,7 @@ class Projects extends CActiveRecord
 
         foreach($tasks as $task) {
             $result[$task->ID]['ID'] = $task->ID;
+            $result[$task->ID]['USER_ID'] = $task->USER_ID;
             $result[$task->ID]['TITLE'] = $task->TITLE;
             $result[$task->ID]['DESCRIPTION'] = $task->DESCRIPTION;
             $result[$task->ID]['CREATED'] = $task->CREATED_AT;
@@ -204,6 +219,12 @@ class Projects extends CActiveRecord
                 $result[$task->ID]['SURNAME'] = '';
                 $result[$task->ID]['EMAIL'] = '';
                 $result[$task->ID]['PHONE'] = '';
+            }
+            if(!empty($task['attaches'])) {
+                $result[$task->ID]['ATTACHES'] = array();
+                foreach($task['attaches'] as $attach) {
+                    $result[$task->ID]['ATTACHES'][$attach->ID]['FILENAME'] = $attach->ATTACH_FILE;
+                }
             }
         }
 
@@ -227,6 +248,7 @@ class Projects extends CActiveRecord
 
                 if(!empty($task)) {
                     $result[$task['ID']]['ID'] = $task['ID'];
+                    $result[$task['ID']]['USER_ID'] = $task['USER_ID'];
                     $result[$task['ID']]['TITLE'] = $task['TITLE'];
                     $result[$task['ID']]['DESCRIPTION'] = $task['DESCRIPTION'];
                     $result[$task['ID']]['CREATED'] = $task['CREATED'];

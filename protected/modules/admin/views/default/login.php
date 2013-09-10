@@ -3,13 +3,15 @@
 <div id="full_text">
 <?php echo CHtml::form(); ?>
 <?php echo CHtml::errorSummary($form); ?>
+
+
 <table>
     <tr>
         <td>
-            <?php echo Chtml::activeLabel($form, 'login'); ?>
+
         </td>
         <td>
-            <?php echo Chtml::activeTextField($form, 'login'); ?>
+
         </td>
     </tr>
     <tr>

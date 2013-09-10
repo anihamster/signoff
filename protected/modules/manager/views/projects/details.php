@@ -1,8 +1,3 @@
-<?php Yii::app()->clientScript->registerScriptFile(It::baseUrl() . '/js/user_signs_off.js') ?>
-<?php Yii::app()->clientScript->registerScriptFile(It::baseUrl() . '/js/comments.js') ?>
-<?php if(Yii::app()->user->getState('user_role') == '3'): ?>
-<?php Yii::app()->clientScript->registerScriptFile(It::baseUrl() . '/js/user_signs.js') ?>
-<?php endif; ?>
 <div id="leftbar">
 	<h2>Progress tracker</h2>
 	<div id="<?php echo $task['ID']; ?>" class="progress_bar">
@@ -76,14 +71,7 @@
 	<b>Project name:</b> <?php echo $task['TITLE']; ?><br />
 	<b>Description:</b><br />
 	<?php echo $task['DESCRIPTION']; ?><br />
-	<?php if(!empty($attaches)): ?>
-		<b>Attached files:</b><br />
-		<?php foreach($attaches as $attach): ?>
-			<a href="<?php echo IT::baseUrl(); ?>/uploads/project_<?php echo $task['ID']; ?>/<?php echo $attach->ATTACH_FILE; ?>">
-				<img src="<?php echo IT::baseUrl(); ?>/images/ico/attach.png" /><?php echo $attach->ATTACH_FILE; ?>
-			</a><br />
-		<?php endforeach; ?>
-	<?php endif; ?>
+
 	<br />                     
    	<?php if($signed == 0): ?>
    	<a href="#" class="button orange" id="sign_that"><img src="<?php echo It::baseUrl(); ?>/images/ico/ok.png" />&nbsp;Approve</a>
@@ -95,7 +83,7 @@
             <table>
             <?php foreach($comments as $comment): ?>
                 <tr class="bordered">
-                    <td>
+                    <td>45
                         <?php if(!empty($comment['details'])): ?>
                             <?php echo $comment['details']->NAME; ?>  <?php echo $comment['details']->SURNAME; ?>
                         <?php else: ?>
@@ -123,39 +111,5 @@
             </table>
         <?php endif; ?>
 	</div>
-    <div style="display: none;">
-        <div class="box-modal" id="approveModal">
-            <div class="box-modal_close arcticmodal-close">X</div>
-            <input type="hidden" value="<?php echo $task['ID']; ?>">
-            If you have any comments you can write it in form below:
-            <textarea class="comment-area"></textarea>
-            <br />
-            <br />
-            <a href="#" class="button orange" id="approve-comment">Send</a>
-        </div>
-    </div>
-    <div style="display: none;">
-        <div class="box-modal" id="cancelModal">
-            <div class="box-modal_close arcticmodal-close">X</div>
-            <input type="hidden" value="<?php echo $task['ID']; ?>">
-            Please write your reason to cancel this project in form below:
-            <div class="comment-error"></div>
-            <textarea class="comment-area"></textarea>
-            <br />
-            <br />
-            <a href="#" class="button orange" id="cancel-comment">Send</a>
-        </div>
-    </div>
-    <div style="display: none;">
-        <div class="box-modal" id="askModal">
-            <div class="box-modal_close arcticmodal-close">X</div>
-            <input type="hidden" value="<?php echo $task['ID']; ?>">
-            Please write your question in form below:
-            <div class="comment-error"></div>
-            <textarea class="comment-area"></textarea>
-            <br />
-            <br />
-            <a href="#" class="button orange" id="ask-comment">Ask</a>
-        </div>
-    </div>
+
 </div>

@@ -2121,17 +2121,6 @@ body {
   padding: 0;
   margin: 0 0 0 0;
 }
-/* line 58, ../sass/_screen-header.scss */
-#header #ident h2 a {
-  display: block;
-  background: url(https://onecall.no/img/onecall_logo.png) bottom no-repeat;
-  background-size: 150px;
-  width: 150px;
-  height: 47px;
-  border: none;
-  line-height: 1000px;
-  overflow: hidden;
-}
 /* line 71, ../sass/_screen-header.scss */
 #header #search {
   float: right;
@@ -2250,7 +2239,7 @@ body {
 }
 /* line 200, ../sass/_screen-header.scss */
 #mainmenu ul li:last-child a:before {
-  content: '\1F464';
+  content: url('../images/ico/login.png');
   color: white;
   margin-right: 10px;
   font-size: 14px;

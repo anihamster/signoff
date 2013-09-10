@@ -46,27 +46,37 @@
                 <ul>
                     <?php if(!It::isGuest() AND ((It::getState('user_role') == '1') OR (It::getState('head') == '1'))): ?>
                         <li>
-                            <a href="<?php echo It::baseUrl(); ?>/admin/managers" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'managers')): ?>class="current"<?php endif; ?>>Users</a>
+                            <a href="<?php echo It::baseUrl(); ?>/admin/managers" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'managers')): ?>class="current"<?php endif; ?>>
+                                <img src="<?php echo It::baseUrl()?>/images/ico/users.png" />&nbsp;&nbsp;Users
+                            </a>
                         </li>
                     <?php endif; ?>
                     <?php if(!It::isGuest() AND (It::getState('user_role') == '1')): ?>
                         <li>
-                            <a href="<?php echo It::baseUrl(); ?>/admin/default/settings" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'default')): ?>class="current"<?php endif; ?>>Settings</a>
+                            <a href="<?php echo It::baseUrl(); ?>/admin/default/settings" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'default')): ?>class="current"<?php endif; ?>>
+                                <img src="<?php echo It::baseUrl()?>/images/ico/settings.png" />&nbsp;&nbsp;Settings
+                            </a>
                         </li>
                     <?php endif; ?>
                     <?php if(It::getState('user_role') == '1'):?>
                         <li>
-                            <a href="<?php echo It::baseUrl(); ?>/admin/projects" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'projects')): ?>class="current"<?php endif; ?>>Projects</a>
+                            <a href="<?php echo It::baseUrl(); ?>/admin/projects" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'projects')): ?>class="current"<?php endif; ?>>
+                                <img src="<?php echo It::baseUrl()?>/images/ico/allprojects.png" />&nbsp;&nbsp;Projects
+                            </a>
                         </li>
                     <?php endif; ?>
                     <?php if(!It::isGuest() AND (It::getState('user_role') !== '1')): ?>
                         <li>
-                            <a href="<?php echo It::baseUrl(); ?>/manager/projects" <?php if((Yii::app()->controller->module->id == 'manager') && (Yii::app()->controller->id == 'projects') && (Yii::app()->controller->action->id == 'index')): ?>class="current"<?php endif; ?>>For signing</a>
+                            <a href="<?php echo It::baseUrl(); ?>/manager/projects" <?php if((Yii::app()->controller->module->id == 'manager') && (Yii::app()->controller->id == 'projects') && (Yii::app()->controller->action->id == 'index')): ?>class="current"<?php endif; ?>>
+                                <img src="<?php echo It::baseUrl()?>/images/ico/allprojects.png" />&nbsp;&nbsp;For signing
+                            </a>
                         </li>
                     <?php endif; ?>
                     <?php if(!It::isGuest() AND (It::getState('user_role') !== '1')): ?>
                         <li>
-                            <a href="<?php echo It::baseUrl(); ?>/manager/projects/my" <?php if((Yii::app()->controller->module->id == 'manager') && (Yii::app()->controller->id == 'projects') && (Yii::app()->controller->action->id == 'my')): ?>class="current"<?php endif; ?>>My projects</a>
+                            <a href="<?php echo It::baseUrl(); ?>/manager/projects/my" <?php if((Yii::app()->controller->module->id == 'manager') && (Yii::app()->controller->id == 'projects') && (Yii::app()->controller->action->id == 'my')): ?>class="current"<?php endif; ?>>
+                                <img src="<?php echo It::baseUrl()?>/images/ico/projects.png" />&nbsp;&nbsp;My projects
+                            </a>
                         </li>
                     <?php endif; ?>
                     <?php if(It::isGuest()):?>

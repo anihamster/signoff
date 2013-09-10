@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    $('#techlist').click(function() {
-        var prj = $('.prj').attr('id');
+    $('.techlist').click(function() {
+        var prj = $(this).parent().attr('id');
 
         $.ajaxSetup({
             async: false
@@ -23,24 +23,30 @@ $(document).ready(function() {
                     }
                 }
 
-                html += "<br /><a href=\"Javascript:void[0]\" id=\"savebutton\" class=\"button orange\">Add to signs list</a>"
+                html += "<a href=\"Javascript:void[0]\" id=\"savebutton\" class=\"button orange\">Add to signs list</a>"
 
-                $('#usrs').html(html);
+                $('.usrs').html(html);
 
-                $('#techlist').hide();
+                $('.techlist').hide();
             }
         );
     });
 
-    $('#sign_that').click(function() {
+    $('.sign_that').click(function() {
+        var task = $(this).attr('id');
+        $('#approveModal').children('.task').val(task);
         $('#approveModal').arcticmodal();
     });
 
-    $('#cancel').click(function() {
+    $('.cancel').click(function() {
+        var task = $(this).attr('id');
+        $('#cancelModal').children('.task').val(task);
         $('#cancelModal').arcticmodal();
     });
 
-    $('#ask').click(function() {
+    $('.ask').click(function() {
+        var task = $(this).attr('id');
+        $('#askModal').children('.task').val(task);
         $('#askModal').arcticmodal();
     });
 });
@@ -72,7 +78,7 @@ $(document).on('click', '#approve-comment', function() {
     $.getJSON(
         BaseUrl+'/ajax/default/setsign/?task_id='+task+'&action=approve',
         function(data) {
-            $(location).attr('href',BaseUrl+'/manager/projects/details/?task_id='+task);
+            $(location).attr('href',BaseUrl+'/manager/projects');
         }
     );
 });
@@ -92,7 +98,7 @@ $(document).on('click', '#ask-comment', function() {
              'prj': task,
              'type': type},
             function(result){
-                $(location).attr('href',BaseUrl+'/manager/projects/details/?task_id='+task);
+                $(location).attr('href',BaseUrl+'/manager/projects');
             }
         );
     }
@@ -120,7 +126,7 @@ $(document).on('click', '#cancel-comment', function() {
                 $.getJSON(
                     BaseUrl+'/ajax/default/setsign/?task_id='+task+'&action=cancel',
                     function(data) {
-                        $(location).attr('href',BaseUrl+'/manager/projects/details/?task_id='+task);
+                        $(location).attr('href',BaseUrl+'/manager/projects');
                     }
                 );
             }
@@ -158,7 +164,22 @@ $(document).on('click', '#savebutton', function() {
         {'roles': rls,
          'prj': task},
         function(result){
-            $(location).attr('href',BaseUrl+'/manager/projects/details/?task_id='+task);
+            $(location).attr('href',BaseUrl+'/manager/projects');
         }
     );
+});
+
+$(document).on('click', '.answer_button', function() {
+    var task = $(this).siblings('.ans_task').val();
+    var type = 'answer';
+
+    var comment = $(this).siblings('textarea').val();
+        $.post(BaseUrl+"/ajax/default/savecomment",
+            {'comment': comment,
+                'prj': task,
+                'type': type},
+            function(result){
+                $(location).attr('href',BaseUrl+'/manager/projects');
+            }
+        );
 });

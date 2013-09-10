@@ -39,7 +39,7 @@ class ProjectsController extends Controller {
 
         $tasks = Projects::model()->getManagersTask(It::userId());
 
-        $this->render('my', array('tasks' => $tasks));
+        $this->render('my', array('prgs' => $tasks));
     }
 
     public function actionEdit() {
