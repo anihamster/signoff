@@ -71,8 +71,8 @@ if(!empty($signs_obj)) {
                     <a href="Javascript:void[0]" class="show"><strong>Questions</strong></a>
                     <div class="prj" id="<?php echo $p_v['ID']; ?>" style="display: none;">
                         <?php foreach($asks as $a_k => $a_v): ?>
-                            <p class="triangle-border <?php if($a_v['TYPE'] == 'ask'): ?>left<?php elseif($a_v['TYPE'] == 'answer'): ?>right<?php endif; ?>">
-                                <?php echo $a_v['NAME']; ?> <?php echo $a_v['SURNAME']; ?>
+                            <p class="triangle-border <?php if($a_v['TYPE'] == 'ask'): ?>arr_left<?php elseif($a_v['TYPE'] == 'answer'): ?>arr_right<?php endif; ?>">
+                                <?php echo $a_v['NAME']; ?> <?php echo $a_v['SURNAME']; ?><br />
                                 <?php if($a_v['TYPE'] == 'ask'): ?>asks<?php elseif($a_v['TYPE'] == 'answer'): ?>answers<?php endif; ?>:<br />
                                 <?php echo($a_v['COMMENT_TEXT']);  ?>
                             </p>
@@ -105,8 +105,8 @@ if(!empty($signs_obj)) {
             <div class="ProgressBar">
                 <?php if(!empty($signs)): ?>
                     <?php $z = count($signs) + 1; ?>
-                    <div class="Step" style="width: 15%; color: #000000 ; background-color: #00ff00; z-index: <?php echo $z + 1; ?>;">
-                        Initiated
+                    <div class="Step" style="width: *; color: #000000 ; background-color: #00ff00; z-index: <?php echo $z + 1; ?>;">
+                        <div style="padding-left: 25px; padding-right: 15px;">Initiated</div>
                         <div class="Arrow">
                             <div class="Arrow-Head">
                                 <div style="border-color: transparent transparent transparent #00ff00;"></div>
@@ -114,8 +114,15 @@ if(!empty($signs_obj)) {
                         </div>
                     </div>
                     <?php foreach($signs as $s_k => $s_v): ?>
-                        <div class="Step" style="width: 15%; color: #000000 ; background-color: <?php if($s_v['flag'] == '0'): ?>#ff0000<?php elseif($s_v['flag'] == '1'): ?>#00ff00<?php elseif($s_v['flag'] == '2'): ?>#00ffff<?php endif; ?>; z-index: <?php echo $z; ?>;">
-                            Text
+                        <div class="Step" style="width: *; color: #000000 ; background-color: <?php if($s_v['flag'] == '0'): ?>#ff0000<?php elseif($s_v['flag'] == '1'): ?>#00ff00<?php elseif($s_v['flag'] == '2'): ?>#00ffff<?php endif; ?>; z-index: <?php echo $z; ?>;">
+                            <div style="padding-left: 25px; padding-right: 15px;">
+                            <?php if(!empty($s_v['brand'])): ?>
+                                <?php echo $s_v['brand']; ?>
+                            <?php endif; ?>
+                            <?php if(!empty($s_v['role'])): ?>
+                                <?php echo $s_v['role']; ?>
+                            <?php endif; ?>
+                            </div>
                             <div class="Arrow">
                                 <div class="Arrow-Head">
                                     <div style="border-color: transparent transparent transparent <?php if($s_v['flag'] == '0'): ?>#ff0000<?php elseif($s_v['flag'] == '1'): ?>#00ff00<?php elseif($s_v['flag'] == '2'): ?>#00ffff<?php endif; ?>;"></div>
@@ -124,8 +131,8 @@ if(!empty($signs_obj)) {
                         </div>
                         <?php $z = $z - 1;?>
                     <?php endforeach; ?>
-                    <div class="Step" style="width: 15%; color: #000000 ; background-color: #00ff00; z-index: 0;">
-                        Finished
+                    <div class="Step" style="width: *%; color: #000000 ; background-color: #00ff00; z-index: 0;">
+                        <div style="padding-left: 25px; padding-right: 15px;">Finished</div>
                         <div class="Arrow">
                             <div class="Arrow-Head">
                                 <div style="border-color: transparent transparent transparent #00ff00;"></div>
@@ -144,7 +151,7 @@ if(!empty($signs_obj)) {
                 <?php if(!empty($comments)): ?>
                     <table>
                         <?php foreach($comments as $comment): ?>
-                            <?php if(!($comment->COMMENT_TYPE == 'ask') || !($comment->COMMENT_TYPE == 'answer')): ?>
+                            <?php if(!($comment->COMMENT_TYPE == 'ask') && !($comment->COMMENT_TYPE == 'answer')): ?>
                             <tr>
                                 <td>
                                     <?php if(!empty($comment['details'])): ?>

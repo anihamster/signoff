@@ -407,7 +407,7 @@ a.hide {
 /* Variant : for top positioned triangle
 ------------------------------------------ */
 
-.triangle-isosceles.top {
+.triangle-isosceles.arr_top {
     background:-webkit-gradient(linear, 0 0, 0 100%, from(#f3961c), to(#f9d835));
     background:-moz-linear-gradient(#f3961c, #f9d835);
     background:-o-linear-gradient(#f3961c, #f9d835);
@@ -564,7 +564,7 @@ a.hide {
 ------------------------------------------ */
 
 /* creates the larger triangle */
-.triangle-border.left:before {
+.triangle-border.arr_left:before {
     top:10px; /* controls vertical position */
     bottom:auto;
     left:-30px; /* value = - border-left-width - border-right-width */
@@ -573,7 +573,7 @@ a.hide {
 }
 
 /* creates the smaller  triangle */
-.triangle-border.left:after {
+.triangle-border.arr_left:after {
     top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
     bottom:auto;
     left:-21px; /* value = - border-left-width - border-right-width */
@@ -585,7 +585,7 @@ a.hide {
 ------------------------------------------ */
 
 /* creates the larger triangle */
-.triangle-border.right:before {
+.triangle-border.arr_right:before {
     top:10px; /* controls vertical position */
     bottom:auto;
     left:auto;
@@ -595,7 +595,7 @@ a.hide {
 }
 
 /* creates the smaller  triangle */
-.triangle-border.right:after {
+.triangle-border.arr_right:after {
     top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
     bottom:auto;
     left:auto;
