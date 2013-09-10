@@ -8,7 +8,7 @@
     <file path="/It.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1376914865606" ignored="false" />
     <file path="/Categories.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1377661734271" ignored="false" />
     <file path="/Projects.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378799267585" ignored="false" />
-    <file path="/edit.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378197504640" ignored="false" />
+    <file path="/edit.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378802754132" ignored="false" />
     <file path="/ProjectsController.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378188289281" ignored="false" />
     <file path="/a.coffee" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1376931583931" ignored="false" />
     <file path="/a.feature" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1376931586308" ignored="false" />
@@ -132,10 +132,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_project.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_project.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/manager/views/projects/_project.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="74" selection-start="8509" selection-end="8509" vertical-scroll-proportion="1.8764988">
+            <state line="153" column="74" selection-start="8509" selection-end="8509" vertical-scroll-proportion="-60.192307">
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -155,6 +155,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="edit.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/modules/manager/views/projects/edit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="6" selection-start="117" selection-end="117" vertical-scroll-proportion="0.060212515">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/modules/main/views/default/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="10" selection-start="40" selection-end="913" vertical-scroll-proportion="-9.153846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ProjectsController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/manager/controllers/ProjectsController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -167,16 +187,7 @@
       <file leaf-file-name="style3.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style3.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="587" column="35" selection-start="14476" selection-end="14476" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="details.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/manager/views/projects/details.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="31" selection-start="590" selection-end="837" vertical-scroll-proportion="-9.807693">
+            <state line="268" column="1" selection-start="5077" selection-end="5077" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -192,7 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/css/screen-nlr.css" />
         <option value="$PROJECT_DIR$/protected/modules/admin/views/default/index.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/views/default/login.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/views/default/settings.php" />
@@ -204,10 +214,11 @@
         <option value="$PROJECT_DIR$/protected/modules/manager/views/projects/index.php" />
         <option value="$PROJECT_DIR$/protected/modules/manager/controllers/ProjectsController.php" />
         <option value="$PROJECT_DIR$/js/hide_show.js" />
-        <option value="$PROJECT_DIR$/protected/models/Projects.php" />
         <option value="$PROJECT_DIR$/js/user_signs_off.js" />
         <option value="$PROJECT_DIR$/css/style3.css" />
         <option value="$PROJECT_DIR$/protected/modules/manager/views/projects/_project.php" />
+        <option value="$PROJECT_DIR$/protected/models/Projects.php" />
+        <option value="$PROJECT_DIR$/protected/modules/manager/views/projects/edit.php" />
       </list>
     </option>
   </component>
@@ -1311,13 +1322,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ManagersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="27" selection-start="1303" selection-end="1303" vertical-scroll-proportion="-0.65384614">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/ajax/controllers/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="122" column="41" selection-start="3312" selection-end="3312" vertical-scroll-proportion="0.0">
@@ -1358,20 +1362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/views/default/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="40" selection-start="180" selection-end="180" vertical-scroll-proportion="0.08153477">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/manager/controllers/ProjectsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="39" selection-start="1306" selection-end="1306" vertical-scroll-proportion="-22.884615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/manager/views/projects/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="48" selection-start="648" selection-end="648" vertical-scroll-proportion="-6.5384617">
@@ -1397,20 +1387,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/Projects.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="250" column="66" selection-start="8737" selection-end="8737" vertical-scroll-proportion="0.7390791">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style3.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="587" column="35" selection-start="14476" selection-end="14476" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/manager/views/projects/details.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="31" selection-start="590" selection-end="837" vertical-scroll-proportion="-9.807693">
@@ -1427,7 +1403,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/manager/views/projects/_project.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="74" selection-start="8509" selection-end="8509" vertical-scroll-proportion="1.8764988">
+        <state line="153" column="74" selection-start="8509" selection-end="8509" vertical-scroll-proportion="-60.192307">
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -1442,6 +1418,43 @@
             <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/views/default/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="10" selection-start="40" selection-end="913" vertical-scroll-proportion="-9.153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/Projects.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="36" selection-start="2116" selection-end="2116" vertical-scroll-proportion="0.26876512">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style3.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="268" column="1" selection-start="5077" selection-end="5077" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/manager/controllers/ProjectsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="39" selection-start="1306" selection-end="1306" vertical-scroll-proportion="-22.884615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/manager/views/projects/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="6" selection-start="117" selection-end="117" vertical-scroll-proportion="0.060212515">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
