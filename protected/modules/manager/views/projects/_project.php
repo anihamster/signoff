@@ -142,10 +142,12 @@ if(!empty($signs_obj)) {
                 <?php endif; ?>
             </div>
             <br />
+            <?php if($p_v['USER_ID'] !== It::userId()):?>
             <?php if($signed == 0): ?>
                 <a href="#" class="button sign_that" id="<?php echo $p_v['ID']; ?>"><img src="<?php echo It::baseUrl(); ?>/images/ico/ok.png" />&nbsp;Approve</a>
             <?php endif; ?> <a href="#" class="button cancel" id="<?php echo $p_v['ID']; ?>"><img src="<?php echo It::baseUrl(); ?>/images/ico/cancel.png" />&nbsp;Cancel</a>
             <a href="#" class="button ask" id="<?php echo $p_v['ID']; ?>"><img src="<?php echo It::baseUrl(); ?>/images/ico/help.png" />&nbsp;Ask</a>
+            <?php endif; ?>
             <br /><br />
             <div id="comment_area" style="width: 600px;">
                 <?php if(!empty($comments)): ?>

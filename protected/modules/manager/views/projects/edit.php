@@ -1,7 +1,7 @@
 <?php Yii::app()->clientScript->registerScriptFile(It::baseUrl() . '/js/attaches.js') ?>
 
-<div id="text_full">
-    <div class="form-container" style="width: 700px;">
+<div id="text_full" align="center">
+    <div class="form-container" style="width: 700px;" align="left">
         <?php echo CHtml::beginForm('', 'post', array('enctype'=>'multipart/form-data')); ?>
         <?php echo CHtml::errorSummary($form); ?>
         <div class="form-title"><h2>Edit project</h2></div>

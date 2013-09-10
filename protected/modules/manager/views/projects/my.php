@@ -1,51 +1,54 @@
-<div id="full_text">
-<h1>My projects</h1>
-<br />
-<?php if(!empty($tasks)): ?>
-<table>
-	<thead>
-		<tr>
-			<th>
-				ID
-			</th>
-			<th>
-				Title
-			</th>
-			<th>
-				Created
-			</th>
-			<th>
-				Status
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-<?php foreach($tasks as $t_k => $t_v): ?>
-		<tr>
-			<td>
-				<?php echo $t_v['ID']; ?>
-			</td>
-			<td>
-				<a href="<?php echo It::baseUrl(); ?>/manager/projects/details/?task_id=<?php echo $t_v['ID']; ?>"><?php echo $t_v['TITLE']; ?></a>
-			</td>
-			<td>
-				<?php echo $t_v['CREATED']; ?>
-			</td>
-			<td>
-				<?php if($t_v['STATUS'] == '0'): ?>
-					On submition
-				<?php elseif($t_v['STATUS'] == '1'): ?>
-					In progress
-				<?php elseif($t_v['STATUS'] == '2'): ?>
-					Finished
-				<?php endif; ?>
-			</td>
-		</tr>
-<?php endforeach; ?>	
-	</tbody>
-</table>
-<a href="<?php echo It::baseUrl(); ?>/manager/projects/edit" class="button orange">Create</a>
-<?php else: ?>
-There is no current projects. Do you want to <a href="<?php echo It::baseUrl(); ?>/manager/projects/edit">create</a> one?
-<?php endif;?>
+<?php Yii::app()->clientScript->registerScriptFile(It::baseUrl() . '/js/user_signs_off.js') ?>
+<?php Yii::app()->clientScript->registerScriptFile(It::baseUrl() . '/js/hide_show.js') ?>
+<?php Yii::app()->clientScript->registerScriptFile(It::baseUrl() . '/js/comments.js') ?>
+<?php if(Yii::app()->user->getState('user_role') == '3'): ?>
+    <?php Yii::app()->clientScript->registerScriptFile(It::baseUrl() . '/js/user_signs.js') ?>
+<?php endif; ?>
+<div id="text_full">
+    <h1>My projects</h1>
+    <?php if(!empty($prgs)): ?>
+        <?php foreach($prgs as $p_k => $p_v): ?>
+            <?php $this->renderPartial('_project', array('p_v' => $p_v)); ?>
+        <?php endforeach; ?>
+    <a href="<?php echo It::baseUrl(); ?>/manager/projects/edit" class="button"><img src="<?php echo It::baseUrl() ?>/images/ico/add.png" />&nbsp;&nbsp;Create</a>
+    <?php else: ?>
+    There is no current projects.<br />
+    <a href="<?php echo It::baseUrl(); ?>/manager/projects/edit" class="button"><img src="<?php echo It::baseUrl() ?>/images/ico/add.png" />&nbsp;&nbsp;Create</a>
+    <?php endif;?>
+</div>
+    <div style="display: none;">
+        <div class="box-modal" id="approveModal">
+            <div class="box-modal_close arcticmodal-close">X</div>
+            <input type="hidden" value="" class="task">
+            If you have any comments you can write it in form below:
+            <textarea class="comment-area"></textarea>
+            <br />
+            <br />
+            <a href="#" class="button orange" id="approve-comment">Send</a>
+        </div>
+    </div>
+    <div style="display: none;">
+        <div class="box-modal" id="cancelModal">
+            <div class="box-modal_close arcticmodal-close">X</div>
+            <input type="hidden" value="" class="task">
+            Please write your reason to cancel this project in form below:
+            <div class="comment-error"></div>
+            <textarea class="comment-area"></textarea>
+            <br />
+            <br />
+            <a href="#" class="button orange" id="cancel-comment">Send</a>
+        </div>
+    </div>
+    <div style="display: none;">
+        <div class="box-modal" id="askModal">
+            <div class="box-modal_close arcticmodal-close">X</div>
+            <input type="hidden" value="" class="task">
+            Please write your question in form below:
+            <div class="comment-error"></div>
+            <textarea class="comment-area"></textarea>
+            <br />
+            <br />
+            <a href="#" class="button orange" id="ask-comment">Ask</a>
+        </div>
+    </div>
 </div>

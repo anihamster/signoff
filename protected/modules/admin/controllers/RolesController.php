@@ -21,7 +21,11 @@ class RolesController extends Controller {
         if(It::getState('user_role') !== '1')
             throw new CDbExeption('You have not access to this page');
 
-        $form = new Roles;
+        if(empty($_GET['role_id']))
+            $form = new Roles;
+        else
+            $form = Roles::model()->findByPk(intval($_GET['role_id']));
+
         $roles = Roles::model()->findAll();
 
         $parents = array();

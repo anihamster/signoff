@@ -1,113 +1,38 @@
 <div id="text_full">
-<h1>User add</h1>
-<br />
-<?php echo CHtml::beginForm(); ?>
-<?php echo CHtml::errorSummary($form); ?>
-<?php echo CHtml::errorSummary($form2); ?>
-<table>
-	<tr>
-		<td>
-			<?php echo CHtml::activeLabel($form, 'LOGIN'); ?>
-		</td>
-		<td>
-			<?php echo CHtml::activeTextField($form, 'LOGIN'); ?>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<?php echo CHtml::activeLabel($form, 'PASSWORD'); ?>
-		</td>
-		<td>
-			<?php echo CHtml::activeTextField($form, 'PASSWORD'); ?>
-		</td>
-	</tr>
-	<?php if(!(It::getState('head') == '1')): ?>
-	<tr>
-		<td>
-			<?php echo CHtml::activeLabel($form, 'TYPE'); ?>
-		</td>
-		<td>
-			<?php echo CHtml::activeDropDownList($form, 'TYPE', $levels); ?>
-		</td>
-	</tr>
-    <tr>
-        <td>
-            <?php echo CHtml::activeLabel($form2, 'KEY_USER'); ?>
-        </td>
-        <td>
-            <?php echo CHtml::activeCheckBox($form2, 'KEY_USER'); ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <?php echo CHtml::activeLabel($form2, 'BRAND'); ?>
-        </td>
-        <td>
-            <?php echo CHtml::activeDropDownList($form2, 'BRAND', $brands); ?>
-        </td>
-    </tr>
-    <?php endif; ?>
-    <tr>
-        <td>
-            <?php echo CHtml::activeLabel($form2, 'ROLE_ID'); ?>
-        </td>
-        <td>
-            <?php echo CHtml::activeDropDownList($form2, 'ROLE_ID', $roles); ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <?php echo CHtml::activeLabel($form2, 'CAN_ADD'); ?>
-        </td>
-        <td>
-            <?php echo CHtml::activeCheckBox($form2, 'CAN_ADD'); ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <?php echo CHtml::activeLabel($form2, 'HEAD_USER'); ?>
-        </td>
-        <td>
-            <?php echo CHtml::activeCheckBox($form2, 'HEAD_USER'); ?>
-        </td>
-    </tr>
-	<tr>
-		<td>
-			<?php echo CHtml::activeLabel($form2, 'NAME'); ?>
-		</td>
-		<td>
-			<?php echo CHtml::activeTextField($form2, 'NAME'); ?>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<?php echo CHtml::activeLabel($form2, 'SURNAME'); ?>
-		</td>
-		<td>
-			<?php echo CHtml::activeTextField($form2, 'SURNAME'); ?>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<?php echo CHtml::activeLabel($form2, 'PHONE'); ?>
-		</td>
-		<td>
-			<?php echo CHtml::activeTextField($form2, 'PHONE'); ?>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<?php echo CHtml::activeLabel($form2, 'EMAIL'); ?>
-		</td>
-		<td>
-			<?php echo CHtml::activeTextField($form2, 'EMAIL'); ?>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2">
-			<?php echo Chtml::submitButton('Save', array('class' => 'button orange')); ?>
-		</td>
-	</tr>
-</table>
-<?php echo Chtml::endForm(); ?>
+    <div class="form-container" style="width: 700px;" align="left">
+        <?php echo CHtml::beginForm(); ?>
+        <?php echo CHtml::errorSummary($form); ?>
+        <?php echo CHtml::errorSummary($form2); ?>
+        <div class="form-title"><h2>Users add</h2></div>
+        <div class="form-title"><?php echo CHtml::activeLabel($form, 'LOGIN'); ?></div>
+        <?php echo Chtml::activeTextField($form, 'LOGIN', array('class' => 'form-field')); ?><br />
+        <div class="form-title"><?php echo CHtml::activeLabel($form, 'PASSWORD'); ?></div>
+        <?php echo Chtml::activeTextField($form, 'PASSWORD', array('class' => 'form-field')); ?><br />
+        <?php if(!(It::getState('head') == '1')): ?>
+        <div class="form-title"><?php echo CHtml::activeLabel($form, 'TYPE'); ?></div>
+        <?php echo CHtml::activeDropDownList($form, 'TYPE', $levels, array('class' => 'form-field', 'style' => 'height: 40px;')); ?><br />
+        <div class="form-title"><?php echo CHtml::activeLabel($form2, 'KEY_USER'); ?></div>
+        <?php echo CHtml::activeCheckBox($form2, 'KEY_USER', array('class' => 'form-field')); ?><br />
+        <div class="form-title"><?php echo CHtml::activeLabel($form2, 'BRAND'); ?></div>
+        <?php echo CHtml::activeDropDownList($form2, 'BRAND', $brands, array('class' => 'form-field', 'style' => 'height: 40px;')); ?><br />
+        <?php endif; ?>
+        <div class="form-title"><?php echo CHtml::activeLabel($form2, 'ROLE_ID'); ?></div>
+        <?php echo CHtml::activeDropDownList($form2, 'ROLE_ID', $roles, array('class' => 'form-field', 'style' => 'height: 40px;')); ?><br />
+        <div class="form-title"><?php echo CHtml::activeLabel($form2, 'CAN_ADD'); ?></div>
+        <?php echo CHtml::activeCheckBox($form2, 'CAN_ADD', array('class' => 'form-field')); ?><br />
+        <div class="form-title"><?php echo CHtml::activeLabel($form2, 'HEAD_USER'); ?></div>
+        <?php echo CHtml::activeCheckBox($form2, 'HEAD_USER', array('class' => 'form-field')); ?><br />
+        <div class="form-title"><?php echo CHtml::activeLabel($form, 'NAME'); ?></div>
+        <?php echo Chtml::activeTextField($form2, 'NAME', array('class' => 'form-field')); ?><br />
+        <div class="form-title"><?php echo CHtml::activeLabel($form2, 'SURNAME'); ?></div>
+        <?php echo Chtml::activeTextField($form2, 'SURNAME', array('class' => 'form-field')); ?><br />
+        <div class="form-title"><?php echo CHtml::activeLabel($form2, 'PHONE'); ?></div>
+        <?php echo Chtml::activeTextField($form2, 'PHONE', array('class' => 'form-field')); ?><br />
+        <div class="form-title"><?php echo CHtml::activeLabel($form2, 'EMAIL'); ?></div>
+        <?php echo Chtml::activeTextField($form2, 'EMAIL', array('class' => 'form-field')); ?><br />
+        <div class="submit-container">
+            <?php echo CHtml::submitButton('Save', array('class' => 'submit-button')); ?>
+        </div>
+        <?php echo CHtml::endForm(); ?>
+    </div>
 </div>

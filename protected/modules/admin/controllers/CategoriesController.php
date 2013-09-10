@@ -21,7 +21,11 @@ class CategoriesController extends Controller {
         if(!(It::getState('user_role') == '1'))
             throw new CDbExeption('You have not access to this function');
 
-        $form = new Categories;
+        if(empty($_GET['cat_id']))
+            $form = new Categories;
+        else
+            $form = Categories::model()->findByPk(intval($_GET['cat_id']));
+
         $cats = array();
         $cats[0] = 'Main category';
         $categories = Categories::model()->getCategories();

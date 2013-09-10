@@ -28,7 +28,11 @@ class BrandsController extends Controller {
         if(!(It::getState('user_role') == '1'))
             throw new CDbExeption('You have not access to this function');
 
-        $form = new Brands;
+        if(empty($_GET['brand_id']))
+            $form = new Brands;
+        else
+            $form = Brands::model()->findByPk(intval($_GET['brand_id']));;
+
         $brands = array();
         $brands[0] = 'Select brand';
         $brnds = Brands::model()->getBrands();

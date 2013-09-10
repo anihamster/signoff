@@ -128,7 +128,7 @@ class ProjectsController extends Controller {
                     }
                 }
 
-                if(!empty($_REQUEST['Attaches'])) {
+                if(!empty($_REQUEST['Attaches']) && ($_REQUEST['Attaches'][0]['ATTACH_FILE'] !== '')) {
                     $valid = true;
 
                     foreach($_REQUEST['Attaches'] as $i => $item) {
@@ -143,10 +143,11 @@ class ProjectsController extends Controller {
 
                     if($valid) {
                         foreach($attach_form as $i => $item) {
-                            if($item->save())
+                            if($item->save()){
                                 if (!is_dir(Yii::getPathOfAlias('webroot').'/uploads/project_' . $prj->ID))
                                     mkdir(Yii::getPathOfAlias('webroot').'/uploads/project_' . $prj->ID, 0777);
-                            $item->ATTACH_FILE->saveAs(Yii::getPathOfAlias('webroot').'/uploads/project_' . $prj->ID . '/'.$item->ATTACH_FILE);
+                                $item->ATTACH_FILE->saveAs(Yii::getPathOfAlias('webroot').'/uploads/project_' . $prj->ID . '/'.$item->ATTACH_FILE);
+                            }
                         }
                     }
                 }
