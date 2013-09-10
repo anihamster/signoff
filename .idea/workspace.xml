@@ -63,7 +63,7 @@
     <file path="/Letters.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378196034328" ignored="false" />
     <file path="/project.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378779250179" ignored="false" />
     <file path="/screen-nlr.css" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378781576820" ignored="false" />
-    <file path="/login.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378791572179" ignored="false" />
+    <file path="/login.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378809056234" ignored="false" />
     <file path="/_project.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378807736875" ignored="false" />
     <file path="/hide_show.js" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378797187648" ignored="false" />
     <file path="/user_signs.js" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378787554820" ignored="false" />
@@ -158,10 +158,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrandsController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BrandsController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/BrandsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="41" selection-start="956" selection-end="956" vertical-scroll-proportion="0.5497006">
+            <state line="33" column="41" selection-start="956" selection-end="956" vertical-scroll-proportion="-17.653847">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/modules/main/views/default/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="39" selection-start="179" selection-end="179" vertical-scroll-proportion="0.08272506">
               <folding />
             </state>
           </provider>
@@ -194,15 +203,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style3.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style3.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="268" column="1" selection-start="5077" selection-end="5077" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -214,7 +214,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/js/user_signs.js" />
-        <option value="$PROJECT_DIR$/protected/modules/main/views/default/login.php" />
         <option value="$PROJECT_DIR$/protected/modules/manager/views/projects/details.php" />
         <option value="$PROJECT_DIR$/js/hide_show.js" />
         <option value="$PROJECT_DIR$/js/user_signs_off.js" />
@@ -229,6 +228,7 @@
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/RolesController.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/CategoriesController.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/BrandsController.php" />
+        <option value="$PROJECT_DIR$/protected/modules/main/views/default/login.php" />
       </list>
     </option>
   </component>
@@ -1339,13 +1339,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/views/default/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="10" selection-start="40" selection-end="913" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/style3.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="268" column="1" selection-start="5077" selection-end="5077" vertical-scroll-proportion="0.0">
@@ -1460,7 +1453,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/BrandsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="41" selection-start="956" selection-end="956" vertical-scroll-proportion="0.5497006">
+        <state line="33" column="41" selection-start="956" selection-end="956" vertical-scroll-proportion="-17.653847">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/views/default/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="39" selection-start="179" selection-end="179" vertical-scroll-proportion="0.08272506">
           <folding />
         </state>
       </provider>

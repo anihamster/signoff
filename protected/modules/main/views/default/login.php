@@ -2,7 +2,7 @@
     <div class="form-container">
 <?php echo CHtml::form(); ?>
 <?php echo CHtml::errorSummary($form); ?>
-    <div class="form-title"><h2>Sign up*</h2></div>
+    <div class="form-title"><h2>Sign in*</h2></div>
     <div class="form-title"><?php echo Chtml::activeLabel($form, 'LOGIN'); ?></div>
     <img src="<?php echo It::baseUrl() ?>/images/ico/forms/login.png" />&nbsp;&nbsp;<?php echo Chtml::activeTextField($form, 'LOGIN', array('class' => 'form-field')); ?><br />
     <div class="form-title"><?php echo Chtml::activeLabel($form, 'PASSWORD'); ?></div>
