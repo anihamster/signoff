@@ -23,7 +23,7 @@ $(document).ready(function() {
                     }
                 }
 
-                html += "<a href=\"Javascript:void[0]\" id=\"savebutton\" class=\"button orange\">Add to signs list</a>"
+                html += "<a href=\"Javascript:void[0]\" class=\"button savebutton\">Add to signs list</a>"
 
                 $('.usrs').html(html);
 
@@ -135,15 +135,15 @@ $(document).on('click', '#cancel-comment', function() {
 });
 
 
-$(document).on('click', '#savebutton', function() {
-    var task = $('.prj').attr('id');
+$(document).on('click', '.savebutton', function() {
+    var task = $(this).parent().parent().attr('id');
     var rls = Array();
 
     $.ajaxSetup({
         async: false
     });
 
-    $('.assigned').each(function(){
+    $(this).siblings('.assigned').each(function(){
         var chk = $(this).is(':checked');
         var id = $(this).val();
         var arr = Array();
