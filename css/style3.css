@@ -300,6 +300,7 @@ a.hide {
 .submit-container {
     margin:8px 0;
     text-align:right;
+    height: 60px;
 }
 .submit-button {
     border: 1px solid #447314;

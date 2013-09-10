@@ -58,13 +58,6 @@
                             </a>
                         </li>
                     <?php endif; ?>
-                    <?php if(It::getState('user_role') == '1'):?>
-                        <li>
-                            <a href="<?php echo It::baseUrl(); ?>/admin/projects" <?php if((Yii::app()->controller->module->id == 'admin') && (Yii::app()->controller->id == 'projects')): ?>class="current"<?php endif; ?>>
-                                <img src="<?php echo It::baseUrl()?>/images/ico/allprojects.png" />&nbsp;&nbsp;Projects
-                            </a>
-                        </li>
-                    <?php endif; ?>
                     <?php if(!It::isGuest() AND (It::getState('user_role') !== '1')): ?>
                         <li>
                             <a href="<?php echo It::baseUrl(); ?>/manager/projects" <?php if((Yii::app()->controller->module->id == 'manager') && (Yii::app()->controller->id == 'projects') && (Yii::app()->controller->action->id == 'index')): ?>class="current"<?php endif; ?>>

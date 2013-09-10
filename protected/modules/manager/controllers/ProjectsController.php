@@ -128,25 +128,32 @@ class ProjectsController extends Controller {
                     }
                 }
 
-                if(!empty($_REQUEST['Attaches']) && ($_REQUEST['Attaches'][0]['ATTACH_FILE'] !== '')) {
+                if(Yii::app()->request->isPostRequest && $_FILES['Attaches']) {
+                    print_r($_FILES);
+
                     $valid = true;
 
-                    foreach($_REQUEST['Attaches'] as $i => $item) {
+                    foreach($_POST['Attaches'] as $i => $item) {
                         $attach_form[$i] = new Attaches;
                         $attach_form[$i]->scenario = 'add';
                         $attach_form[$i]->ATTACH_TYPE = 'project';
                         $attach_form[$i]->ATTACH_TO = $prj->ID;
-                        $attach_form[$i]->ATTACH_FILE = CUploadedFile::getInstance($attach_form[$i], '['.$i.']ATTACH_FILE');
+                        $attach_form[$i]->attach_rule = CUploadedFile::getInstance($attach_form[$i], '['.$i.']ATTACH_FILE');
+                        $attach_form[$i]->ATTACH_FILE = $attach_form[$i]->attach_rule->getName();
 
                         $valid = $valid & $attach_form[$i]->validate();
                     }
 
                     if($valid) {
+                        $savePath = $_SERVER['DOCUMENT_ROOT'] . Yii::app()->getBaseUrl().'/uploads/project_' . $prj->ID . '/';
+                        if (!is_dir($savePath)) {
+                            mkdir($savePath, 0777);
+                        }
+
+
                         foreach($attach_form as $i => $item) {
                             if($item->save()){
-                                if (!is_dir(Yii::getPathOfAlias('webroot').'/uploads/project_' . $prj->ID))
-                                    mkdir(Yii::getPathOfAlias('webroot').'/uploads/project_' . $prj->ID, 0777);
-                                $item->ATTACH_FILE->saveAs(Yii::getPathOfAlias('webroot').'/uploads/project_' . $prj->ID . '/'.$item->ATTACH_FILE);
+                                    $item->attach_rule->saveAs($savePath . $item->ATTACH_FILE);
                             }
                         }
                     }
