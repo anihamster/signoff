@@ -139,7 +139,8 @@ class ProjectsController extends Controller {
                         $attach_form[$i]->ATTACH_TYPE = 'project';
                         $attach_form[$i]->ATTACH_TO = $prj->ID;
                         $attach_form[$i]->attach_rule = CUploadedFile::getInstance($attach_form[$i], '['.$i.']ATTACH_FILE');
-                        $attach_form[$i]->ATTACH_FILE = $attach_form[$i]->attach_rule->getName();
+                        if(is_object($attach_form[$i]->attach_rule))
+                            $attach_form[$i]->ATTACH_FILE = $attach_form[$i]->attach_rule->getName();
 
                         $valid = $valid & $attach_form[$i]->validate();
                     }
@@ -153,6 +154,7 @@ class ProjectsController extends Controller {
 
                         foreach($attach_form as $i => $item) {
                             if($item->save()){
+                                if(is_object($item->attach_rule))
                                     $item->attach_rule->saveAs($savePath . $item->ATTACH_FILE);
                             }
                         }

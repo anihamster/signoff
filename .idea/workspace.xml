@@ -9,7 +9,7 @@
     <file path="/Categories.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1377661734271" ignored="false" />
     <file path="/Projects.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378799267585" ignored="false" />
     <file path="/edit.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378869908781" ignored="false" />
-    <file path="/ProjectsController.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378829373632" ignored="false" />
+    <file path="/ProjectsController.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378892142890" ignored="false" />
     <file path="/a.coffee" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1376931583931" ignored="false" />
     <file path="/a.feature" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1376931586308" ignored="false" />
     <file path="$PROJECT_DIR$/framework/gii/generators/form/views/index.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1376931600929" ignored="false" />
@@ -130,16 +130,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="effects.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="effects.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/effects.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="27" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.5948081">
+            <state line="31" column="27" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.0">
               <folding>
                 <marker date="1378891569015" expanded="true" signature="556:566" placeholder="..." />
                 <marker date="1378891569015" expanded="true" signature="761:771" placeholder="..." />
                 <marker date="1378891569015" expanded="true" signature="966:976" placeholder="..." />
                 <marker date="1378891569015" expanded="true" signature="1173:1183" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectsController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/modules/manager/controllers/ProjectsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="156" column="63" selection-start="6651" selection-end="6651" vertical-scroll-proportion="0.58488375">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -182,15 +191,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDetails.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/models/UserDetails.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="21.576923">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Signs.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/models/Signs.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -210,7 +210,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/protected/modules/admin/views/groups/index.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/GroupsController.php" />
         <option value="$PROJECT_DIR$/protected/models/TrackerGroups.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/views/roles/index.php" />
@@ -226,6 +225,7 @@
         <option value="$PROJECT_DIR$/protected/modules/ajax/controllers/DefaultController.php" />
         <option value="$PROJECT_DIR$/protected/modules/manager/views/projects/_project.php" />
         <option value="$PROJECT_DIR$/js/effects.js" />
+        <option value="$PROJECT_DIR$/protected/modules/manager/controllers/ProjectsController.php" />
       </list>
     </option>
   </component>
@@ -981,13 +981,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/modules/manager/controllers/ProjectsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="0" selection-start="7176" selection-end="7176" vertical-scroll-proportion="-109.84615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/main/views/default/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="81" selection-start="841" selection-end="841" vertical-scroll-proportion="0.19767442">
@@ -1098,13 +1091,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/effects.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="27" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.5948081">
+        <state line="31" column="27" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.0">
           <folding>
             <marker date="1378891569015" expanded="true" signature="556:566" placeholder="..." />
             <marker date="1378891569015" expanded="true" signature="761:771" placeholder="..." />
             <marker date="1378891569015" expanded="true" signature="966:976" placeholder="..." />
             <marker date="1378891569015" expanded="true" signature="1173:1183" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/manager/controllers/ProjectsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="63" selection-start="6651" selection-end="6651" vertical-scroll-proportion="0.58488375">
+          <folding />
         </state>
       </provider>
     </entry>
