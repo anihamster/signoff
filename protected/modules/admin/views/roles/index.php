@@ -20,6 +20,9 @@
                    Technical role
                 </th>
                 <th>
+                    Tracker group
+                </th>
+                <th>
 
                 </th>
             </tr>
@@ -41,6 +44,9 @@
                     </td>
                     <td>
                         <?php echo $root = ($role->TECH == '1') ? 'Yes' : 'No'; ?>
+                    </td>
+                    <td>
+                        <?php echo $group = (!empty($role['tracker'])) ? $role['tracker']->GROUP_NAME : 'Not defined'; ?>
                     </td>
                     <td>
                         <a href="<?php echo It::baseUrl(); ?>/admin/roles/edit/?role_id=<?php echo $role->ID; ?>"><img src="<?php echo It::baseUrl(); ?>/images/ico/edit.png" /></a>

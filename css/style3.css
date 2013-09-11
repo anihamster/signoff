@@ -605,5 +605,21 @@ a.hide {
     border-color:transparent #fff;
 }
 
-
+.sprite {
+    height: 50px;
+    width: 150px;
+    padding-left: 13px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    background-image: url('../imgs/tracker/tracker.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+.canceled { width: 150px; height: 50px; background-position: 0px -208px; }
+.head { width: 150px; height: 50px; background-position: 0px -156px; color: #ffffff}
+.inactive { width: 150px; height: 50px; background-position: 0px -104px; }
+.notsigned { width: 150px; height: 50px; background-position: 0px -52px; }
+.signed { width: 150px; height: 50px; background-position: 0px 0px; }
 

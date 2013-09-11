@@ -27,6 +27,7 @@ class RolesController extends Controller {
             $form = Roles::model()->findByPk(intval($_GET['role_id']));
 
         $roles = Roles::model()->findAll();
+        $groups = TrackerGroups::model()->getGroups();
 
         $parents = array();
         $parents[0] = 'General role';
@@ -47,6 +48,6 @@ class RolesController extends Controller {
             }
         }
 
-        $this->render('edit', array('form' => $form, 'parents' => $parents));
+        $this->render('edit', array('form' => $form, 'parents' => $parents, 'groups' => $groups));
     }
 }

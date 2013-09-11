@@ -1,5 +1,5 @@
 <div id="text_full">
-    <h1>Departments group edit</h1>
+    <h1>Project tracker group edit</h1>
     <br />
     <?php echo CHtml::beginForm(); ?>
     <?php echo CHtml::errorSummary($form); ?>

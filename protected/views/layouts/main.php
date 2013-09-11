@@ -23,8 +23,22 @@
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="<?php echo It::baseUrl(); ?>/js/arctic/jquery.arcticmodal-0.3.min.js"></script>
+    <script src="<?php echo It::baseUrl(); ?>/js/jquery-ui-1.10.1.custom.min.js"></script>
+    <script src="<?php echo It::baseUrl(); ?>/js/jquery.plugin.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
+    <script src="<?php echo It::baseUrl(); ?>/js/onecall.js"></script>
     <link rel="stylesheet" href="<?php echo It::baseUrl(); ?>/js/arctic/jquery.arcticmodal-0.3.css">
     <link rel="stylesheet" href="<?php echo It::baseUrl(); ?>/js/arctic/themes/simple.css">
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NW6N"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NW6N');</script>
+    <!-- End Google Tag Manager -->
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>

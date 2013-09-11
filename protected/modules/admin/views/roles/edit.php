@@ -22,6 +22,14 @@
         </tr>
         <tr>
             <td>
+                <?php echo CHtml::activeLabel($form, 'TR_GRP_ID'); ?>
+            </td>
+            <td>
+                <?php echo CHtml::activeDropDownList($form, 'TR_GRP_ID', $groups); ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 <?php echo CHtml::activeLabel($form, 'SPEC'); ?>
             </td>
             <td>

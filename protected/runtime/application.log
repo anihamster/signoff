@@ -9343,3 +9343,939 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2013/09/11 04:40:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/11 04:40:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/11 04:56:03 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\framework\db\ar\CActiveFinder.php:784)
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveFinder.php(68): CJoinElement->find()
+#1 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1302): CActiveFinder->query()
+#2 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1416): TrackerGroups->query()
+#3 C:\xampp\htdocs\protected\modules\admin\controllers\GroupsController.php(12): TrackerGroups->findAll()
+#4 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): GroupsController->actionIndex()
+#5 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\framework\web\CController.php(286): GroupsController->runAction()
+#7 C:\xampp\htdocs\framework\web\CController.php(265): GroupsController->runActionWithFilters()
+#8 C:\xampp\htdocs\framework\web\CWebApplication.php(282): GroupsController->run()
+#9 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/groups
+in C:\xampp\htdocs\protected\modules\admin\controllers\GroupsController.php (12)
+in C:\xampp\htdocs\index.php (13)
+2013/09/11 04:57:49 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\framework\db\ar\CActiveFinder.php:784)
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveFinder.php(68): CJoinElement->find()
+#1 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1302): CActiveFinder->query()
+#2 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1416): TrackerGroups->query()
+#3 C:\xampp\htdocs\protected\modules\admin\controllers\GroupsController.php(12): TrackerGroups->findAll()
+#4 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): GroupsController->actionIndex()
+#5 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\framework\web\CController.php(286): GroupsController->runAction()
+#7 C:\xampp\htdocs\framework\web\CController.php(265): GroupsController->runActionWithFilters()
+#8 C:\xampp\htdocs\framework\web\CWebApplication.php(282): GroupsController->run()
+#9 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/groups
+in C:\xampp\htdocs\protected\modules\admin\controllers\GroupsController.php (12)
+in C:\xampp\htdocs\index.php (13)
+2013/09/11 05:03:03 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\framework\db\ar\CActiveFinder.php:451)
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(179): TrackerGroups->getRelated()
+#1 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1866): TrackerGroups->__isset()
+#2 C:\xampp\htdocs\protected\modules\admin\views\groups\index.php(28): TrackerGroups->offsetExists()
+#3 C:\xampp\htdocs\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\framework\web\CBaseController.php(95): GroupsController->renderInternal()
+#5 C:\xampp\htdocs\framework\web\CController.php(869): GroupsController->renderFile()
+#6 C:\xampp\htdocs\framework\web\CController.php(782): GroupsController->renderPartial()
+#7 C:\xampp\htdocs\protected\modules\admin\controllers\GroupsController.php(14): GroupsController->render()
+#8 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): GroupsController->actionIndex()
+#9 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\framework\web\CController.php(286): GroupsController->runAction()
+#11 C:\xampp\htdocs\framework\web\CController.php(265): GroupsController->runActionWithFilters()
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(282): GroupsController->run()
+#13 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/groups
+in C:\xampp\htdocs\protected\modules\admin\views\groups\index.php (28)
+in C:\xampp\htdocs\protected\modules\admin\controllers\GroupsController.php (14)
+in C:\xampp\htdocs\index.php (13)
+2013/09/11 05:04:43 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\framework\db\ar\CActiveFinder.php:784)
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveFinder.php(68): CJoinElement->find()
+#1 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1302): CActiveFinder->query()
+#2 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1416): TrackerGroups->query()
+#3 C:\xampp\htdocs\protected\modules\admin\controllers\GroupsController.php(12): TrackerGroups->findAll()
+#4 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): GroupsController->actionIndex()
+#5 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\framework\web\CController.php(286): GroupsController->runAction()
+#7 C:\xampp\htdocs\framework\web\CController.php(265): GroupsController->runActionWithFilters()
+#8 C:\xampp\htdocs\framework\web\CWebApplication.php(282): GroupsController->run()
+#9 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/groups
+in C:\xampp\htdocs\protected\modules\admin\controllers\GroupsController.php (12)
+in C:\xampp\htdocs\index.php (13)
+2013/09/11 05:28:54 [error] [exception.CException] exception 'CException' with message 'Property "Roles.GROUP_NAME" is not defined.' in C:\xampp\htdocs\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(143): CComponent->__get('GROUP_NAME')
+#1 C:\xampp\htdocs\protected\modules\admin\views\roles\index.php(49): CActiveRecord->__get('GROUP_NAME')
+#2 C:\xampp\htdocs\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\protected\modules\admin\controllers\RolesController.php(14): CController->render('index', Array)
+#7 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): RolesController->actionIndex()
+#8 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\framework\web\CWebApplication.php(282): CController->run('')
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/roles')
+#13 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/admin/roles
+HTTP_REFERER=http://localhost/admin/roles/edit/?role_id=1
+---
+2013/09/11 05:48:36 [error] [php] Array to string conversion (C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php:105)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#1 C:\xampp\htdocs\protected\modules\manager\views\projects\index.php(12): ProjectsController->renderPartial()
+#2 C:\xampp\htdocs\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\framework\web\CBaseController.php(95): ProjectsController->renderInternal()
+#4 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#5 C:\xampp\htdocs\framework\web\CController.php(782): ProjectsController->renderPartial()
+#6 C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php(33): ProjectsController->render()
+#7 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): ProjectsController->actionIndex()
+#8 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\framework\web\CController.php(286): ProjectsController->runAction()
+#10 C:\xampp\htdocs\framework\web\CController.php(265): ProjectsController->runActionWithFilters()
+#11 C:\xampp\htdocs\framework\web\CWebApplication.php(282): ProjectsController->run()
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/manager/projects
+in C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php (105)
+in C:\xampp\htdocs\protected\modules\manager\views\projects\index.php (12)
+in C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php (33)
+2013/09/11 06:23:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/expand_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/e...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/expand_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:23:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/iphone-ios6-1.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/iphone-i...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/iphone-ios6-1.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:23:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/kampanje-oppdrag-utland.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/kampanje...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/kampanje-oppdrag-utland.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:23:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/grey_repeater.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/g...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/grey_repeater.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:23:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/komigang-ikon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/komigang-ik...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/komigang-ikon.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:23:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/icon-smiley-good.svg".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/icon-smiley...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/icon-smiley-good.svg
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:23:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.woff".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.woff
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:23:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/expand_icon_hover.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/e...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/expand_icon_hover.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:23:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.ttf".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.ttf
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:27:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/iphone-ios6-1.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/iphone-i...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/iphone-ios6-1.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:27:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/komigang-ikon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/komigang-ik...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/komigang-ikon.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:27:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/kampanje-oppdrag-utland.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/kampanje...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/kampanje-oppdrag-utland.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:27:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/grey_repeater.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/g...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/grey_repeater.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:27:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/expand_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/e...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/expand_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:27:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.woff".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.woff
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:27:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/icon-smiley-good.svg".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/icon-smiley...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/icon-smiley-good.svg
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:27:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/expand_icon_hover.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/e...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/expand_icon_hover.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:27:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.ttf".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.ttf
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:29:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/iphone-ios6-1.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/iphone-i...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/iphone-ios6-1.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:29:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/kampanje-oppdrag-utland.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/kampanje...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/kampanje-oppdrag-utland.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:29:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/komigang-ikon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/komigang-ik...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/komigang-ikon.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:29:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.woff".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.woff
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:29:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/grey_repeater.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/g...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/grey_repeater.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:29:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/expand_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/e...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/expand_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:29:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/icon-smiley-good.svg".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/icon-smiley...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/icon-smiley-good.svg
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:29:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/expand_icon_hover.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/e...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/expand_icon_hover.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:29:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.ttf".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.ttf
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:36:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/komigang-ikon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/komigang-ik...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/komigang-ikon.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:36:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/kampanje-oppdrag-utland.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/kampanje...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/kampanje-oppdrag-utland.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:36:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/iphone-ios6-1.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/iphone-i...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/iphone-ios6-1.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:36:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/grey_repeater.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/g...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/grey_repeater.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:36:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.woff".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.woff
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:36:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/expand_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/e...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/expand_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:36:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/icon-smiley-good.svg".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/icon-smiley...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/icon-smiley-good.svg
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:36:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.ttf".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.ttf
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:36:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/expand_icon_hover.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/e...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/expand_icon_hover.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:37:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/komigang-ikon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/komigang-ik...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/komigang-ikon.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:37:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/kampanje-oppdrag-utland.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/kampanje...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/kampanje-oppdrag-utland.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:37:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/iphone-ios6-1.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/iphone-i...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/iphone-ios6-1.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:37:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.woff".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.woff
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:37:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/grey_repeater.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/g...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/grey_repeater.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:37:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/expand_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/e...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/expand_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:37:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/icon-smiley-good.svg".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/icon-smiley...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/icon-smiley-good.svg
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:37:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.ttf".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.ttf
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:37:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/expand_icon_hover.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/e...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/expand_icon_hover.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:37:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/general/bomb.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/general/bom...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/general/bomb.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:37:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/contract_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/c...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/contract_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:39:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.woff".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.woff
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:39:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/icon-smiley-good.svg".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/icon-smiley...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/icon-smiley-good.svg
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:39:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.ttf".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.ttf
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:40:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/icon-smiley-good.svg".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/icon-smiley...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/icon-smiley-good.svg
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:40:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.woff".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.woff
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:40:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "fonts/vagroundedstd-light-webfont.ttf".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('fonts/vagrounde...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/fonts/vagroundedstd-light-webfont.ttf
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:43:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/iphone-ios6-1.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/iphone-i...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/iphone-ios6-1.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:43:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/grey_repeater.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/g...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/grey_repeater.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:43:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/expand_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/e...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/expand_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:43:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/expand_icon_hover.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/e...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/expand_icon_hover.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:43:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/general/bomb.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/general/bom...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/general/bomb.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:43:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/contract_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/c...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/contract_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:45:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/iphone-ios6-1.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/iphone-i...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/iphone-ios6-1.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:45:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/grey_repeater.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/g...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/grey_repeater.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:45:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/expand_icon_hover.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/e...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/expand_icon_hover.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:46:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/iphone-ios6-1.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/iphone-i...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/iphone-ios6-1.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:48:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/iphone-ios6-1.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/iphone-i...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/iphone-ios6-1.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:50:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/iphone-ios6-1.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('images/iphone-i...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/images/iphone-ios6-1.png
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 06:50:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/contract_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/c...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/contract_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:50:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/general/bomb.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/general/bom...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/general/bomb.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:50:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/contract_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/c...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/contract_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:56:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/contract_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/c...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/contract_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:58:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/contract_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/c...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/contract_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:58:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/contract_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/c...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/contract_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:58:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/contract_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/c...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/contract_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:59:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/contract_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/c...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/contract_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 06:59:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/contract_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/c...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/contract_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 07:00:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/accordion/contract_icon.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/accordion/c...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/accordion/contract_icon.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/11 07:09:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/11 08:51:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/tracker.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('css/tracker.png')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/tracker.png
+HTTP_REFERER=http://localhost/css/style3.css
+---
+2013/09/11 08:51:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/tracker.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('css/tracker.png')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/css/tracker.png
+---
+2013/09/11 08:57:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/11 08:57:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/11 10:08:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/11 10:08:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/11 10:31:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('index')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 10:32:54 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\protected\modules\ajax\controllers\DefaultController.php:279)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(286): DefaultController->runAction()
+#1 C:\xampp\htdocs\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#2 C:\xampp\htdocs\framework\web\CWebApplication.php(282): DefaultController->run()
+#3 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/ajax/default/getsignsprj/?prj=26&grp=1
+in C:\xampp\htdocs\protected\modules\ajax\controllers\DefaultController.php (279)
+in C:\xampp\htdocs\index.php (13)
+2013/09/11 10:34:51 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\protected\modules\ajax\controllers\DefaultController.php:277)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(286): DefaultController->runAction()
+#1 C:\xampp\htdocs\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#2 C:\xampp\htdocs\framework\web\CWebApplication.php(282): DefaultController->run()
+#3 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/ajax/default/getsignsprj/?prj=26&grp=2
+in C:\xampp\htdocs\protected\modules\ajax\controllers\DefaultController.php (277)
+in C:\xampp\htdocs\index.php (13)
+2013/09/11 10:43:39 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\protected\modules\ajax\controllers\DefaultController.php:277)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(286): DefaultController->runAction()
+#1 C:\xampp\htdocs\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#2 C:\xampp\htdocs\framework\web\CWebApplication.php(282): DefaultController->run()
+#3 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/ajax/default/getsignsprj/?prj=26&grp=2
+in C:\xampp\htdocs\protected\modules\ajax\controllers\DefaultController.php (277)
+in C:\xampp\htdocs\index.php (13)
+2013/09/11 10:47:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('index')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 10:52:43 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\protected\modules\ajax\controllers\DefaultController.php:277)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(286): DefaultController->runAction()
+#1 C:\xampp\htdocs\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#2 C:\xampp\htdocs\framework\web\CWebApplication.php(282): DefaultController->run()
+#3 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/ajax/default/getsignsprj/?prj=26&grp=2
+in C:\xampp\htdocs\protected\modules\ajax\controllers\DefaultController.php (277)
+in C:\xampp\htdocs\index.php (13)
+2013/09/11 10:53:41 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\protected\modules\ajax\controllers\DefaultController.php:277)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(286): DefaultController->runAction()
+#1 C:\xampp\htdocs\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#2 C:\xampp\htdocs\framework\web\CWebApplication.php(282): DefaultController->run()
+#3 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/ajax/default/getsignsprj/?prj=26&grp=2
+in C:\xampp\htdocs\protected\modules\ajax\controllers\DefaultController.php (277)
+in C:\xampp\htdocs\index.php (13)

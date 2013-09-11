@@ -12,4 +12,7 @@
     <a href="<?php echo It::baseUrl();?>/admin/brands" class="button orange">
         <img src="<?php echo It::baseUrl()?>/images/ico/brand.png" />&nbsp;&nbsp;Brands
     </a>
+    <a href="<?php echo It::baseUrl();?>/admin/groups" class="button orange">
+        <img src="<?php echo It::baseUrl()?>/images/ico/group.png" />&nbsp;&nbsp;Tracker groups
+    </a>
 </div>

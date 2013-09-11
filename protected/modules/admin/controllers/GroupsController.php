@@ -9,7 +9,7 @@ class GroupsController extends Controller {
         if(It::getState('user_role') !== '1')
             throw new CDbExeption('You have not access to this page');
 
-        $groups = DeptGroups::model()->with('parent')->findAll();
+        $groups = TrackerGroups::model()->with('parents')->findAll();
 
         $this->render('index', array('groups' => $groups));
     }
@@ -21,16 +21,20 @@ class GroupsController extends Controller {
         if(It::getState('user_role') !== '1')
             throw new CDbExeption('You have not access to this page');
 
-        $form = new DeptGroups;
-        $groups = DeptGroups::model()->findAll();
+        if(empty($_GET['grp_id']))
+            $form = new TrackerGroups;
+        else
+            $form = TrackerGroups::model()->findByPk(intval($_GET['grp_id']));
+
+        $groups = TrackerGroups::model()->findAll();
         $grps = array();
         $grps[0] = 'Main group';
         foreach($groups as $group) {
             $grps[$group->ID] = $group->GROUP_NAME;
         }
 
-        if(!empty($_POST['DeptGroups'])) {
-            $form->attributes = $_POST['DeptGroups'];
+        if(!empty($_POST['TrackerGroups'])) {
+            $form->attributes = $_POST['TrackerGroups'];
             $form->scenario = 'edit';
 
             if($form->validate()) {
