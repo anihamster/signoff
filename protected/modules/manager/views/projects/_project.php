@@ -80,7 +80,7 @@ if(!empty($signs_obj)) {
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </div>
-                        <div class="track_content" style="width: 150px;">&nbsp;</div>
+                        <div class="track_content" align="center;">&nbsp;</div>
                      <br /><br />
             </div>
             <div>

@@ -10,23 +10,21 @@ $(document).on('click', '.sprite', function() {
                 var response = data.response
                 for(var i in response) {
                     if(response[i].sign == 0) {
-                        html += "<div class=\"sprite notsigned\" style=\"z-index: 1\">"+response[i].brand+" "+response[i].role+"</div><br />";
+                        html += "<div class=\"sprite notsigned\" style=\"z-index: 1\">"+response[i].brand+" "+response[i].role+"</div>";
                     }
 
                     if(response[i].sign == 1) {
-                        html += "<div class=\"sprite signed\" style=\"z-index: 1\">"+response[i].brand+" "+response[i].role+"</div><br />";
+                        html += "<div class=\"sprite signed\" style=\"z-index: 1\">"+response[i].brand+" "+response[i].role+"</div>";
                     }
 
                     if(response[i].sign == 2) {
-                        html += "<div class=\"sprite cancel\" style=\"z-index: 1\">"+response[i].brand+" "+response[i].role+"</div><br />";
+                        html += "<div class=\"sprite cancel\" style=\"z-index: 1\">"+response[i].brand+" "+response[i].role+"</div>";
                     }
 
                     if(response[i].sign == 6) {
-                        html += "<div class=\"sprite inactive\" style=\"z-index: 1\">"+response[i].brand+" "+response[i].role+"</div><br />";
+                        html += "<div class=\"sprite inactive\" style=\"z-index: 1\">"+response[i].brand+" "+response[i].role+"</div>";
                     }
                 }
-
-                console.log(cont);
 
                 cont.html(html);
             }
