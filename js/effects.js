@@ -26,8 +26,13 @@ $(document).on('click', '.sprite', function() {
                     }
                 }
 
-                cont.html(html);
+
             }
+            if(data.code == 'Fail') {
+                html += "";
+            }
+
+            cont.html(html);
         }
     );
 });
