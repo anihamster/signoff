@@ -134,12 +134,12 @@
       <file leaf-file-name="effects.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/effects.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="13" selection-start="1389" selection-end="1389" vertical-scroll-proportion="0.5948081">
+            <state line="4" column="57" selection-start="201" selection-end="201" vertical-scroll-proportion="0.07674944">
               <folding>
-                <marker date="1378889478500" expanded="true" signature="561:571" placeholder="..." />
-                <marker date="1378889478500" expanded="true" signature="772:782" placeholder="..." />
-                <marker date="1378889478500" expanded="true" signature="983:993" placeholder="..." />
-                <marker date="1378889478500" expanded="true" signature="1196:1206" placeholder="..." />
+                <marker date="1378889931562" expanded="true" signature="556:566" placeholder="..." />
+                <marker date="1378889931562" expanded="true" signature="767:777" placeholder="..." />
+                <marker date="1378889931562" expanded="true" signature="978:988" placeholder="..." />
+                <marker date="1378889931562" expanded="true" signature="1191:1201" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -223,8 +223,8 @@
         <option value="$PROJECT_DIR$/css/style3.css" />
         <option value="$PROJECT_DIR$/protected/modules/manager/views/projects/index.php" />
         <option value="$PROJECT_DIR$/protected/modules/ajax/controllers/DefaultController.php" />
-        <option value="$PROJECT_DIR$/js/effects.js" />
         <option value="$PROJECT_DIR$/protected/modules/manager/views/projects/_project.php" />
+        <option value="$PROJECT_DIR$/js/effects.js" />
       </list>
     </option>
   </component>
@@ -1098,12 +1098,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/effects.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="13" selection-start="1389" selection-end="1389" vertical-scroll-proportion="0.5948081">
+        <state line="4" column="57" selection-start="201" selection-end="201" vertical-scroll-proportion="0.07674944">
           <folding>
-            <marker date="1378889478500" expanded="true" signature="561:571" placeholder="..." />
-            <marker date="1378889478500" expanded="true" signature="772:782" placeholder="..." />
-            <marker date="1378889478500" expanded="true" signature="983:993" placeholder="..." />
-            <marker date="1378889478500" expanded="true" signature="1196:1206" placeholder="..." />
+            <marker date="1378889931562" expanded="true" signature="556:566" placeholder="..." />
+            <marker date="1378889931562" expanded="true" signature="767:777" placeholder="..." />
+            <marker date="1378889931562" expanded="true" signature="978:988" placeholder="..." />
+            <marker date="1378889931562" expanded="true" signature="1191:1201" placeholder="..." />
           </folding>
         </state>
       </provider>

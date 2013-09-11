@@ -10279,3 +10279,12 @@ Stack trace:
 REQUEST_URI=/ajax/default/getsignsprj/?prj=26&grp=2
 in C:\xampp\htdocs\protected\modules\ajax\controllers\DefaultController.php (277)
 in C:\xampp\htdocs\index.php (13)
+2013/09/11 10:58:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('index')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index
+HTTP_REFERER=http://localhost/manager/projects
+---

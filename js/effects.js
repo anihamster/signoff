@@ -2,7 +2,7 @@ $(document).on('click', '.sprite', function() {
     var prj = $(this).parent().attr('id');
     var grp = $(this).attr('id');
     var html = "";
-    var cont = $(this).parent().siblings('.track_content_'+grp);
+    var cont = $(this).parent().siblings('.track_content');
     $.getJSON(
         BaseUrl + '/ajax/default/getsignsprj/?prj='+prj+'&grp='+grp,
         function(data) {
