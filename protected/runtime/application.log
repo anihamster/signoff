@@ -10288,3 +10288,23 @@ Stack trace:
 REQUEST_URI=/index
 HTTP_REFERER=http://localhost/manager/projects
 ---
+2013/09/11 11:09:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('index')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index
+HTTP_REFERER=http://localhost/manager/projects
+---
+2013/09/11 11:10:01 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\protected\modules\ajax\controllers\DefaultController.php:274)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(286): DefaultController->runAction()
+#1 C:\xampp\htdocs\framework\web\CController.php(265): DefaultController->runActionWithFilters()
+#2 C:\xampp\htdocs\framework\web\CWebApplication.php(282): DefaultController->run()
+#3 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/ajax/default/getsignsprj/?prj=26&grp=2
+in C:\xampp\htdocs\protected\modules\ajax\controllers\DefaultController.php (274)
+in C:\xampp\htdocs\index.php (13)

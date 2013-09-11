@@ -263,9 +263,6 @@ class DefaultController extends Controller
         if(!It::isAjaxRequest())
             $this->redirect(It::baseUrl());
 
-        if(empty($_GET['prj']) || empty($_GET['grp']))
-            $this->redirect(It::baseUrl());
-
         $result = array();
         $arr = array();
 
@@ -274,21 +271,23 @@ class DefaultController extends Controller
         if(!empty($roles)) {
             foreach($roles as $role) {
                 $user = UserDetails::model()->with('brand', 'role')->findByAttributes(array('ROLE_ID' => $role->ID, 'KEY_USER' => '1'));
-                $sign = Signs::model()->findByAttributes(array('USER_ID' => $user->USER_ID, 'PRG_ID' => intval($_GET['prj'])));
-                if(!empty($user['brand']))
-                    $arr[$role->ID]['brand'] = $user['brand']->BRAND_NAME;
-                else
-                    $arr[$role->ID]['brand'] = '';
+                if(!empty($user)) {
+                    $sign = Signs::model()->findByAttributes(array('USER_ID' => $user->USER_ID, 'PRG_ID' => intval($_GET['prj'])));
+                    if(!empty($user['brand']))
+                        $arr[$role->ID]['brand'] = $user['brand']->BRAND_NAME;
+                    else
+                        $arr[$role->ID]['brand'] = '';
 
-                if(!empty($user['role']))
-                    $arr[$role->ID]['role'] = $user['role']->ROLE_NAME;
-                else
-                    $arr[$role->ID]['role'] = '';
+                    if(!empty($user['role']))
+                        $arr[$role->ID]['role'] = $user['role']->ROLE_NAME;
+                    else
+                        $arr[$role->ID]['role'] = '';
 
-                if(!empty($sign)) {
-                    $arr[$role->ID]['sign'] = $sign->FLAG;
-                } else {
-                    $arr[$role->ID]['sign'] = '6';
+                    if(!empty($sign)) {
+                        $arr[$role->ID]['sign'] = $sign->FLAG;
+                    } else {
+                        $arr[$role->ID]['sign'] = '6';
+                    }
                 }
             }
             $result['code'] = 'Ok';
