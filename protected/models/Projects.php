@@ -131,6 +131,7 @@ class Projects extends CActiveRecord
             $result[$task->ID]['USER_ID'] = $task->USER_ID;
             $result[$task->ID]['TITLE'] = $task->TITLE;
             $result[$task->ID]['DESCRIPTION'] = $task->DESCRIPTION;
+            $result[$task->ID]['CAT'] = $task->PRJ_CAT;
             $result[$task->ID]['CREATED'] = $task->CREATED_AT;
             $result[$task->ID]['UPDATED'] = $task->UPDATED_AT;
             $result[$task->ID]['STATUS'] = $task->PRJ_STATUS;
@@ -166,6 +167,7 @@ class Projects extends CActiveRecord
             $result['USER_ID'] = $task->USER_ID;
             $result['TITLE'] = $task->TITLE;
             $result['DESCRIPTION'] = $task->DESCRIPTION;
+            $result['CAT'] = $task->PRJ_CAT;
             $result['CREATED'] = $task->CREATED_AT;
             $result['UPDATED'] = $task->UPDATED_AT;
             $result['STATUS'] = $task->PRJ_STATUS;
@@ -205,6 +207,7 @@ class Projects extends CActiveRecord
             $result[$task->ID]['ID'] = $task->ID;
             $result[$task->ID]['USER_ID'] = $task->USER_ID;
             $result[$task->ID]['TITLE'] = $task->TITLE;
+            $result[$task->ID]['CAT'] = $task->PRJ_CAT;
             $result[$task->ID]['DESCRIPTION'] = $task->DESCRIPTION;
             $result[$task->ID]['CREATED'] = $task->CREATED_AT;
             $result[$task->ID]['UPDATED'] = $task->UPDATED_AT;
@@ -250,6 +253,7 @@ class Projects extends CActiveRecord
                     $result[$task['ID']]['ID'] = $task['ID'];
                     $result[$task['ID']]['USER_ID'] = $task['USER_ID'];
                     $result[$task['ID']]['TITLE'] = $task['TITLE'];
+                    $result[$task['ID']]['CAT'] = $task['CAT'];
                     $result[$task['ID']]['DESCRIPTION'] = $task['DESCRIPTION'];
                     $result[$task['ID']]['CREATED'] = $task['CREATED'];
                     $result[$task['ID']]['UPDATED'] = $task['UPDATED'];

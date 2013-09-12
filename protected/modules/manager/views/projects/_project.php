@@ -45,16 +45,21 @@ else
                 } else {
                     $brands = Brands::model()->findAll();
                     foreach($brands as $brand) {
-                        $user = UserDetails::model()->with('brand', 'role')->findByAttributes(array('ROLE_ID' => $role->ID, 'KEY_USER' => '1'));
-                            $sign = Signs::model()->findByAttributes(array('USER_ID' => $user->USER_ID, 'PRG_ID' => $p_v['ID']));
-                                $subtrack[$i]['brand'] = $brand->BRAND_NAME;
-                                $subtrack[$i]['role'] = $role->ROLE_NAME;
+                            $subtrack[$i]['brand'] = $brand->BRAND_NAME;
+                            $subtrack[$i]['role'] = $role->ROLE_NAME;
+                            $user = UserDetails::model()->findByAttributes(array('ROLE_ID' => $role->ID, 'KEY_USER' => '1'));
 
-                            if(!empty($sign)) {
-                                $subtrack[$i]['sign'] = $sign->FLAG;
+                            if(!empty($user)) {
+                                $sign = Signs::model()->findByAttributes(array('USER_ID' => $user->USER_ID, 'PRG_ID' => $p_v['ID']));
+                                if(!empty($sign)) {
+                                    $subtrack[$i]['sign'] = $sign->FLAG;
+                                } else {
+                                    $subtrack[$i]['sign'] = '6';
+                                }
                             } else {
                                 $subtrack[$i]['sign'] = '6';
                             }
+
                         $i = $i + 1;
                     }
                 }
@@ -78,6 +83,8 @@ else
     $tracker[$count + 1]['title'] = 'Final sign off';
     if($p_v['STATUS'] == 1)
         $tracker[$count + 1]['state'] = '1';
+
+print_r($tracker);
 ?>
 
 <?php
