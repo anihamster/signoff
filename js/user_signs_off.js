@@ -55,11 +55,7 @@ $(document).on('click', '#approve-comment', function() {
     var task = $(this).siblings('input').val();
     var type = 'approve';
 
-    if($(this).siblings('textarea').val().length <= 1) {
-        $(this).siblings('textarea').css('background-color', 'lemonchiffon');
-        var err = "<span class=\"error\">You must fill this form before submit!</span>";
-        $(this).siblings('.comment-error').html(err);
-    } else {
+    if($(this).siblings('textarea').val().length > 1) {
         var comment = $(this).siblings('textarea').val();
         $.post(BaseUrl+"/ajax/default/savecomment",
             {'comment': comment,
