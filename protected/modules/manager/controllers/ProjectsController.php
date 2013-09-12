@@ -113,18 +113,7 @@ class ProjectsController extends Controller {
                             }
                         }
                     } else {
-                        foreach($rules as $rule) {
-                            $gusers = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $rule->ROLE_ID, 'BRAND' => '0', 'KEY_USER' => '1'));
-                            if(!empty($gusers)) {
-                                foreach($gusers as $guser) {
-                                    $sign = new Signs;
-                                    $sign->USER_ID = $guser->USER_ID;
-                                    $sign->PRG_ID = $prj->ID;
-                                    $sign->FLAG = '0';
-                                    $sign->BRAND_ID = $guser->BRAND;
-                                    $sign->save(false);
-                                }
-                            }
+                        foreach($rules as $rule) {                        
 
                             $users = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $rule->ROLE_ID, 'BRAND' => $rule->BRAND_ID, 'KEY_USER' => '1'));
 
