@@ -62,6 +62,8 @@ else
             $tracker[$key]['state'] = '0';
     }
     $tracker[$count + 1]['title'] = 'Final sign off';
+    if($p_v['STATUS'] == 1)
+        $tracker[$count + 1]['state'] = '1';
 ?>
 
 <?php
