@@ -116,10 +116,10 @@ if(!empty($signs_obj)) {
                         <div class="trk">
                         <?php foreach($tracker as $k => $v): ?>
                             <div style="width:150px; display: table-cell; vertical-align: top;" >
-                            <div id="<?php echo $k ?>" class="sprite <?php if(!empty($v['state']) && ($v['state'] == 1)): ?>signed<?php elseif(empty($v['state']) || ($v['state'] == 0)): ?>head<?php endif; ?>" style="z-index: <?php echo $ind; ?>">
+                            <div id="<?php echo $k ?>" class="sprite <?php if(!empty($v['state']) && ($v['state'] == 1) || ($k == 0)): ?>signed<?php elseif(empty($v['state']) || ($v['state'] == 0)): ?>head<?php endif; ?>" style="z-index: <?php echo $ind; ?>">
                                 <?php echo $v['title']; ?>
                             </div><br />
-                            <div class="track_content" align="center;">
+                            <div class="track_content" align="center;" style="z-index: 50; display: none;">
                                 <?php if(!empty($v['subs'])): ?>
                                         <?php foreach($v['subs'] as $vk => $vv): ?>
                                             <div id="<?php echo $vk ?>" class="sprite_child <?php if($vv['sign'] == 1): ?>signed<?php elseif($vv['sign'] == 0): ?>notsigned<?php elseif($vv['sign'] == 2): ?>canceled<?php endif; ?>_child" style="z-index: 1">

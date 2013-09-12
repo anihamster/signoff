@@ -1,7 +1,10 @@
 $(document).on('click', '.sprite', function(){
-    if($(this).siblings('.track_content').is(':visible')) {
-        $(this).siblings('.track_content').fadeOut();
+    var ch = $(this).siblings('.track_content');
+    var pr = $(this).parent().parent();
+
+    if(ch.is(':visible')) {
+        pr.children('div').children('.track_content').each(function() {$(this).fadeOut();});
     } else {
-        $(this).siblings('.track_content').fadeIn();
+        pr.children('div').children('.track_content').each(function() {$(this).fadeIn();});
     }
 });
