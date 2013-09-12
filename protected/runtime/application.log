@@ -10753,3 +10753,165 @@ REQUEST_URI=/manager/projects
 in C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php (52)
 in C:\xampp\htdocs\protected\modules\manager\views\projects\index.php (16)
 in C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php (33)
+2013/09/12 13:34:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('index')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index
+---
+2013/09/12 13:36:09 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C006999) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "RELATION_RULES" ("CAT_ID", "ROLE_ID", "GRP_ID", "BRAND_ID") VALUES (:yp0, :yp1, :yp2, :yp3) RETURNING "ID" INTO :RETURN_ID.
+in C:\xampp\htdocs\protected\modules\ajax\controllers\RelationsController.php (186)
+in C:\xampp\htdocs\index.php (13)
+2013/09/12 13:36:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C006999) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "RELATION_RULES" ("CAT_ID", "ROLE_ID", "GRP_ID", "BRAND_ID") VALUES (:yp0, :yp1, :yp2, :yp3) RETURNING "ID" INTO :RETURN_ID' in C:\xampp\htdocs\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\protected\modules\ajax\controllers\RelationsController.php(186): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): RelationsController->actionSaveNonGeneralRelations()
+#4 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\framework\web\CWebApplication.php(282): CController->run('savenongeneralr...')
+#8 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('ajax/relations/...')
+#9 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ajax/relations/savenongeneralrelations
+HTTP_REFERER=http://localhost/admin/relations/build
+---
+2013/09/12 13:36:41 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C006997) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "REL_GROUPS" ("GROUP_NAME", "GROUP_PARENT") VALUES (:yp0, :yp1) RETURNING "ID" INTO :RETURN_ID.
+in C:\xampp\htdocs\protected\modules\ajax\controllers\RelationsController.php (163)
+in C:\xampp\htdocs\index.php (13)
+2013/09/12 13:36:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C006997) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "REL_GROUPS" ("GROUP_NAME", "GROUP_PARENT") VALUES (:yp0, :yp1) RETURNING "ID" INTO :RETURN_ID' in C:\xampp\htdocs\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\protected\modules\ajax\controllers\RelationsController.php(163): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): RelationsController->actionSaveNonGeneralRelations()
+#4 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\framework\web\CWebApplication.php(282): CController->run('savenongeneralr...')
+#8 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('ajax/relations/...')
+#9 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ajax/relations/savenongeneralrelations
+HTTP_REFERER=http://localhost/admin/relations/build
+---
+2013/09/12 13:41:02 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C006999) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "RELATION_RULES" ("CAT_ID", "ROLE_ID", "GRP_ID", "BRAND_ID") VALUES (:yp0, :yp1, :yp2, :yp3) RETURNING "ID" INTO :RETURN_ID.
+in C:\xampp\htdocs\protected\modules\ajax\controllers\RelationsController.php (174)
+in C:\xampp\htdocs\index.php (13)
+2013/09/12 13:41:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C006999) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "RELATION_RULES" ("CAT_ID", "ROLE_ID", "GRP_ID", "BRAND_ID") VALUES (:yp0, :yp1, :yp2, :yp3) RETURNING "ID" INTO :RETURN_ID' in C:\xampp\htdocs\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\protected\modules\ajax\controllers\RelationsController.php(174): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): RelationsController->actionSaveNonGeneralRelations()
+#4 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\framework\web\CWebApplication.php(282): CController->run('savenongeneralr...')
+#8 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('ajax/relations/...')
+#9 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ajax/relations/savenongeneralrelations
+HTTP_REFERER=http://localhost/admin/relations/build
+---
+2013/09/12 13:41:06 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C006999) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "RELATION_RULES" ("CAT_ID", "ROLE_ID", "GRP_ID", "BRAND_ID") VALUES (:yp0, :yp1, :yp2, :yp3) RETURNING "ID" INTO :RETURN_ID.
+in C:\xampp\htdocs\protected\modules\ajax\controllers\RelationsController.php (174)
+in C:\xampp\htdocs\index.php (13)
+2013/09/12 13:41:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C006999) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "RELATION_RULES" ("CAT_ID", "ROLE_ID", "GRP_ID", "BRAND_ID") VALUES (:yp0, :yp1, :yp2, :yp3) RETURNING "ID" INTO :RETURN_ID' in C:\xampp\htdocs\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\protected\modules\ajax\controllers\RelationsController.php(174): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): RelationsController->actionSaveNonGeneralRelations()
+#4 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\framework\web\CWebApplication.php(282): CController->run('savenongeneralr...')
+#8 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('ajax/relations/...')
+#9 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ajax/relations/savenongeneralrelations
+HTTP_REFERER=http://localhost/admin/relations/build
+---
+2013/09/12 13:42:07 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C006999) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "RELATION_RULES" ("CAT_ID", "ROLE_ID", "GRP_ID", "BRAND_ID") VALUES (:yp0, :yp1, :yp2, :yp3) RETURNING "ID" INTO :RETURN_ID.
+in C:\xampp\htdocs\protected\modules\ajax\controllers\RelationsController.php (174)
+in C:\xampp\htdocs\index.php (13)
+2013/09/12 13:42:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C006999) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "RELATION_RULES" ("CAT_ID", "ROLE_ID", "GRP_ID", "BRAND_ID") VALUES (:yp0, :yp1, :yp2, :yp3) RETURNING "ID" INTO :RETURN_ID' in C:\xampp\htdocs\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\protected\modules\ajax\controllers\RelationsController.php(174): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): RelationsController->actionSaveNonGeneralRelations()
+#4 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\framework\web\CWebApplication.php(282): CController->run('savenongeneralr...')
+#8 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('ajax/relations/...')
+#9 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ajax/relations/savenongeneralrelations
+HTTP_REFERER=http://localhost/admin/relations/build
+---
+2013/09/12 13:53:20 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C007009) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "USERS" ("LOGIN", "PASSWORD", "TYPE") VALUES (:yp0, :yp1, :yp2) RETURNING "ID" INTO :RETURN_ID.
+in C:\xampp\htdocs\protected\modules\admin\controllers\ManagersController.php (56)
+in C:\xampp\htdocs\index.php (13)
+2013/09/12 13:53:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C007009) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "USERS" ("LOGIN", "PASSWORD", "TYPE") VALUES (:yp0, :yp1, :yp2) RETURNING "ID" INTO :RETURN_ID' in C:\xampp\htdocs\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\protected\modules\admin\controllers\ManagersController.php(56): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): ManagersController->actionAdd()
+#4 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\framework\web\CWebApplication.php(282): CController->run('add')
+#8 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/managers/...')
+#9 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/managers/add
+HTTP_REFERER=http://localhost/admin/managers/add
+---
+2013/09/12 13:54:27 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C007009) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "USERS" ("LOGIN", "PASSWORD", "TYPE") VALUES (:yp0, :yp1, :yp2) RETURNING "ID" INTO :RETURN_ID.
+in C:\xampp\htdocs\protected\modules\admin\controllers\ManagersController.php (56)
+in C:\xampp\htdocs\index.php (13)
+2013/09/12 13:54:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1 OCIStmtExecute: ORA-00001: unique constraint (SYSTEM.SYS_C007009) violated
+ (ext\pdo_oci\oci_statement.c:148). The SQL statement executed was: INSERT INTO "USERS" ("LOGIN", "PASSWORD", "TYPE") VALUES (:yp0, :yp1, :yp2) RETURNING "ID" INTO :RETURN_ID' in C:\xampp\htdocs\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\protected\modules\admin\controllers\ManagersController.php(56): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): ManagersController->actionAdd()
+#4 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\framework\web\CWebApplication.php(282): CController->run('add')
+#8 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/managers/...')
+#9 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/managers/add
+HTTP_REFERER=http://localhost/admin/managers/add
+---

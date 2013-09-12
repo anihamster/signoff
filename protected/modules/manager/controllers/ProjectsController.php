@@ -82,12 +82,24 @@ class ProjectsController extends Controller {
                 $cat = Categories::model()->findByPk($prj->PRJ_CAT);
                 $curuser = UserDetails::model()->findByAttributes(array('USER_ID' => It::userId()));
 
-                $rules = RelationRules::model()->findAllByAttributes(array('CAT_ID' => $prj->PRJ_CAT));
+                $rules = RelationRules::model()->findAllByAttributes(array('CAT_ID' => $cat->ID));
 
                 if(!empty($rules)) {
-                    foreach($rules as $rule) {
-                        if($cat->BRAND_SPEC == '0') {
-                            $users = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $rule->ROLE_ID, 'BRAND' => $rule->BRAND_ID, 'KEY_USER' => '1'));
+                    if($cat->BRAND_SPEC == '1') {
+                        foreach($rules as $rule) {
+                            $gusers = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $rule->ROLE_ID, 'BRAND' => '0', 'KEY_USER' => '1'));
+                            if(!empty($gusers)) {
+                                foreach($gusers as $guser) {
+                                    $sign = new Signs;
+                                    $sign->USER_ID = $guser->USER_ID;
+                                    $sign->PRG_ID = $prj->ID;
+                                    $sign->FLAG = '0';
+                                    $sign->BRAND_ID = $guser->BRAND;
+                                    $sign->save(false);
+                                }
+                            }
+
+                            $users = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $rule->ROLE_ID, 'BRAND' => $curuser->BRAND, 'KEY_USER' => '1'));
 
                             if(!empty($users)) {
                                 foreach($users as $user) {
@@ -99,20 +111,22 @@ class ProjectsController extends Controller {
                                     $sign->save(false);
                                 }
                             }
-                        } else {
+                        }
+                    } else {
+                        foreach($rules as $rule) {
                             $gusers = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $rule->ROLE_ID, 'BRAND' => '0', 'KEY_USER' => '1'));
                             if(!empty($gusers)) {
-                                foreach($gusers as $user) {
+                                foreach($gusers as $guser) {
                                     $sign = new Signs;
-                                    $sign->USER_ID = $user->USER_ID;
+                                    $sign->USER_ID = $guser->USER_ID;
                                     $sign->PRG_ID = $prj->ID;
                                     $sign->FLAG = '0';
-                                    $sign->BRAND_ID = $user->BRAND;
+                                    $sign->BRAND_ID = $guser->BRAND;
                                     $sign->save(false);
                                 }
                             }
 
-                            $users = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $rule->ROLE_ID, 'BRAND' => $curuser->BRAND, 'KEY_USER' => '1'));
+                            $users = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $rule->ROLE_ID, 'BRAND' => $rule->BRAND_ID, 'KEY_USER' => '1'));
 
                             if(!empty($users)) {
                                 foreach($users as $user) {

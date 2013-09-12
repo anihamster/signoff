@@ -159,7 +159,6 @@ class RelationsController extends Controller {
         if(!empty($_REQUEST['general']) && !empty($_REQUEST['brands']) && !empty($_REQUEST['name']) && !empty($_REQUEST['cat'])) {
             $group = new RelGroups;
             $group->GROUP_NAME = $_REQUEST['name'];
-            $group->GROUP_PARENT = 0;
             $group->save(false);
 
             $grp = RelGroups::model()->findByAttributes(array('GROUP_NAME' => $_REQUEST['name']));
