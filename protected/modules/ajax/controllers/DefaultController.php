@@ -117,6 +117,16 @@ class DefaultController extends Controller
             elseif($action === 'cancel')
                 $check->FLAG = 2;
 			$check->save(false);
+
+            $sgns = Signs::model()->countByAttributes(array('PRG_ID' => $tid));
+            $counter = Signs::model()->countByAttributes(array('PRG_ID' => $tid, 'FLAG' => '1'));
+
+            if($sgns == $counter) {
+                $prg = Projects::model()->findByPk($tid);
+                $prg->PRJ_STATUS = '1';
+                $prg->save(false);
+            }
+
 			$result['status'] = 'Ok';
 			$result['result'] = 'Success!';
 		} else{
