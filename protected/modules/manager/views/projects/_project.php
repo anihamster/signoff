@@ -20,26 +20,45 @@ else
         $roles = Roles::model()->findAllByAttributes(array('TR_GRP_ID' => $key));
 
         if(!empty($roles)) {
+            $i = 0;
             foreach($roles as $role) {
-                $user = UserDetails::model()->with('brand', 'role')->findByAttributes(array('ROLE_ID' => $role->ID, 'KEY_USER' => '1'));
-                if(!empty($user)) {
-                    $sign = Signs::model()->findByAttributes(array('USER_ID' => $user->USER_ID, 'PRG_ID' => $p_v['ID']));
-                    if(!empty($user['brand']))
-                        $subtrack[$role->ID]['brand'] = $user['brand']->BRAND_NAME;
-                    else
-                        $subtrack[$role->ID]['brand'] = '';
+                if($role->SPEC == '0') {
+                    $user = UserDetails::model()->with('brand', 'role')->findByAttributes(array('ROLE_ID' => $role->ID, 'KEY_USER' => '1'));
+                    if(!empty($user)) {
+                        $sign = Signs::model()->findByAttributes(array('USER_ID' => $user->USER_ID, 'PRG_ID' => $p_v['ID']));
+                        if(!empty($user['brand']))
+                            $subtrack[$i]['brand'] = $user['brand']->BRAND_NAME;
+                        else
+                            $subtrack[$i]['brand'] = '';
 
-                    if(!empty($user['role']))
-                        $subtrack[$role->ID]['role'] = $user['role']->ROLE_NAME;
-                    else
-                        $subtrack[$role->ID]['role'] = '';
+                        if(!empty($user['role']))
+                            $subtrack[$i]['role'] = $user['role']->ROLE_NAME;
+                        else
+                            $subtrack[$i]['role'] = '';
 
-                    if(!empty($sign)) {
-                        $subtrack[$role->ID]['sign'] = $sign->FLAG;
-                    } else {
-                        $subtrack[$role->ID]['sign'] = '6';
+                        if(!empty($sign)) {
+                            $subtrack[$i]['sign'] = $sign->FLAG;
+                        } else {
+                            $subtrack[$i]['sign'] = '6';
+                        }
+                    }
+                } else {
+                    $brands = Brands::model()->findAll();
+                    foreach($brands as $brand) {
+                        $user = UserDetails::model()->with('brand', 'role')->findByAttributes(array('ROLE_ID' => $role->ID, 'KEY_USER' => '1'));
+                            $sign = Signs::model()->findByAttributes(array('USER_ID' => $user->USER_ID, 'PRG_ID' => $p_v['ID']));
+                                $subtrack[$i]['brand'] = $brand->BRAND_NAME;
+                                $subtrack[$i]['role'] = $role->ROLE_NAME;
+
+                            if(!empty($sign)) {
+                                $subtrack[$i]['sign'] = $sign->FLAG;
+                            } else {
+                                $subtrack[$i]['sign'] = '6';
+                            }
+                        $i = $i + 1;
                     }
                 }
+                $i = $i + 1;
             }
         }
 
