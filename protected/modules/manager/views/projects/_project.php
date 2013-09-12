@@ -124,7 +124,7 @@ if(!empty($signs_obj)) {
                             <div class="track_content" align="center;" style="z-index: 50; display: none;">
                                 <?php if(!empty($v['subs'])): ?>
                                         <?php foreach($v['subs'] as $vk => $vv): ?>
-                                            <div id="<?php echo $vk ?>" class="sprite_child <?php if($vv['sign'] == 1): ?>signed<?php elseif($vv['sign'] == 0): ?>notsigned<?php elseif($vv['sign'] == 2): ?>canceled<?php endif; ?>_child" style="z-index: 1">
+                                            <div id="<?php echo $vk ?>" class="sprite_child <?php if($vv['sign'] == 1): ?>signed<?php elseif($vv['sign'] == 0): ?>notsigned<?php elseif($vv['sign'] == 2): ?>canceled<?php elseif($vv['sign'] == 6): ?>inactive<?php endif; ?>_child" style="z-index: 1">
                                                 <?php echo $vv['brand']; ?> <?php echo $vv['role']; ?>
                                             </div><br />
                                         <?php endforeach; ?>
