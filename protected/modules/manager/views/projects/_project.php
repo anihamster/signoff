@@ -73,7 +73,7 @@ else
         $counter = count($subtrack);
         $signed = 0;
         foreach($subtrack as $k => $v) {
-            if($v['sign'] == '1')
+            if(($v['sign'] == '1') || ($v['sign'] == 6))
                 $signed = $signed +1;
         }
         if($signed == $counter)
