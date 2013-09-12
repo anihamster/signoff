@@ -64,7 +64,7 @@
     <file path="/project.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378779250179" ignored="false" />
     <file path="/screen-nlr.css" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378781576820" ignored="false" />
     <file path="/login.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378809056234" ignored="false" />
-    <file path="/_project.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378978978765" ignored="false" />
+    <file path="/_project.php" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378979444312" ignored="false" />
     <file path="/hide_show.js" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378797187648" ignored="false" />
     <file path="/user_signs.js" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378787554820" ignored="false" />
     <file path="/style3.css" changelist="c7a8369c-3d61-4185-84a7-ae0b6a4d9c27" time="1378956102546" ignored="false" />
@@ -99,7 +99,7 @@
       <file leaf-file-name="_project.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/modules/manager/views/projects/_project.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="36" selection-start="2754" selection-end="2754" vertical-scroll-proportion="0.81936246">
+            <state line="7" column="4" selection-start="400" selection-end="400" vertical-scroll-proportion="0.14049587">
               <folding>
                 <element signature="n#style#0;n#section#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
@@ -109,7 +109,7 @@
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1378979093546" expanded="true" signature="6230:6282" placeholder="..." />
+                <marker date="1378979469703" expanded="true" signature="6230:6282" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1120,7 +1120,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/manager/views/projects/_project.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="36" selection-start="2754" selection-end="2754" vertical-scroll-proportion="0.81936246">
+        <state line="7" column="4" selection-start="400" selection-end="400" vertical-scroll-proportion="0.14049587">
           <folding>
             <element signature="n#style#0;n#section#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
@@ -1130,7 +1130,7 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1378979093546" expanded="true" signature="6230:6282" placeholder="..." />
+            <marker date="1378979469703" expanded="true" signature="6230:6282" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -203,7 +203,7 @@ if(!empty($signs_obj)) {
                     <?php endif; ?>
                     <br />
                     <?php if($p_v['USER_ID'] !== It::userId()):?>
-                        <?php if($status == '0'): ?>
+                        <?php if(($status == '0') || ($status == '2')): ?>
                             <a href="#" class="button-secondary sign_that" id="<?php echo $p_v['ID']; ?>"><img src="<?php echo It::baseUrl(); ?>/images/ico/ok.png" />&nbsp;Approve</a>
                         <?php endif; ?> <a href="#" class="button-secondary cancel" id="<?php echo $p_v['ID']; ?>"><img src="<?php echo It::baseUrl(); ?>/images/ico/cancel.png" />&nbsp;Cancel</a>
                         <a href="#" class="button-secondary ask" id="<?php echo $p_v['ID']; ?>"><img src="<?php echo It::baseUrl(); ?>/images/ico/help.png" />&nbsp;Ask</a>
