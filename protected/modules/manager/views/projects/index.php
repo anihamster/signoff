@@ -7,9 +7,7 @@
 <?php endif; ?>
 
 <div id="wrapper" class="grid">
-
     <div id="content-wrapper" class="c3" style="width: 100%">
-
         <div id="content">
             <h1>Assigned projects</h1>
             <?php if(!empty($prgs)): ?>
@@ -22,7 +20,39 @@
             <?php endif; ?>
         </div>
     </div>
-
-
-
-</div>		
+</div>
+<div style="display: none; margin: 0 auto;">
+    <div class="box-modal" id="approveModal">
+        <div class="box-modal_close arcticmodal-close">X</div>
+        <input type="hidden" value="" class="task">
+        If you have any comments you can write it in form below:
+        <textarea class="comment-area"></textarea>
+        <br />
+        <br />
+        <a href="#" class="button-secondary" id="approve-comment">Send</a>
+    </div>
+</div>
+<div style="display: none; margin: 0 auto;">
+    <div class="box-modal" id="cancelModal">
+        <div class="box-modal_close arcticmodal-close">X</div>
+        <input type="hidden" value="" class="task">
+        Please write your reason to cancel this project in form below:
+        <div class="comment-error"></div>
+        <textarea class="comment-area"></textarea>
+        <br />
+        <br />
+        <a href="#" class="button-secondary" id="cancel-comment">Send</a>
+    </div>
+</div>
+<div style="display: none; margin: 0 auto;">
+    <div class="box-modal" id="askModal">
+        <div class="box-modal_close arcticmodal-close">X</div>
+        <input type="hidden" value="" class="task">
+        Please write your question in form below:
+        <div class="comment-error"></div>
+        <textarea class="comment-area"></textarea>
+        <br />
+        <br />
+        <a href="#" class="button-secondary" id="ask-comment">Ask</a>
+    </div>
+</div>

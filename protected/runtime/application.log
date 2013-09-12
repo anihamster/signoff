@@ -10330,3 +10330,230 @@ Stack trace:
 REQUEST_URI=/manager/projects/edit
 HTTP_REFERER=http://localhost/manager/projects/edit
 ---
+2013/09/11 12:13:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "TrNetSys".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('TrNetSys')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/TrNetSys
+---
+2013/09/11 12:13:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "TrNetSys".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('TrNetSys')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/TrNetSys
+---
+2013/09/12 04:20:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/12 04:20:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/12 05:19:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/general/bomb.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/general/bom...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/general/bomb.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/12 05:34:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/general/bomb.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/general/bom...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/general/bomb.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/12 05:40:55 [error] [php] Undefined index: brand (C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php:126)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#1 C:\xampp\htdocs\protected\modules\manager\views\projects\index.php(16): ProjectsController->renderPartial()
+#2 C:\xampp\htdocs\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\framework\web\CBaseController.php(95): ProjectsController->renderInternal()
+#4 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#5 C:\xampp\htdocs\framework\web\CController.php(782): ProjectsController->renderPartial()
+#6 C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php(33): ProjectsController->render()
+#7 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): ProjectsController->actionIndex()
+#8 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\framework\web\CController.php(286): ProjectsController->runAction()
+#10 C:\xampp\htdocs\framework\web\CController.php(265): ProjectsController->runActionWithFilters()
+#11 C:\xampp\htdocs\framework\web\CWebApplication.php(282): ProjectsController->run()
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/manager/projects
+in C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php (126)
+in C:\xampp\htdocs\protected\modules\manager\views\projects\index.php (16)
+in C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php (33)
+2013/09/12 05:41:11 [error] [php] Undefined variable: vc (C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php:126)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#1 C:\xampp\htdocs\protected\modules\manager\views\projects\index.php(16): ProjectsController->renderPartial()
+#2 C:\xampp\htdocs\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\framework\web\CBaseController.php(95): ProjectsController->renderInternal()
+#4 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#5 C:\xampp\htdocs\framework\web\CController.php(782): ProjectsController->renderPartial()
+#6 C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php(33): ProjectsController->render()
+#7 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): ProjectsController->actionIndex()
+#8 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\framework\web\CController.php(286): ProjectsController->runAction()
+#10 C:\xampp\htdocs\framework\web\CController.php(265): ProjectsController->runActionWithFilters()
+#11 C:\xampp\htdocs\framework\web\CWebApplication.php(282): ProjectsController->run()
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/manager/projects
+in C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php (126)
+in C:\xampp\htdocs\protected\modules\manager\views\projects\index.php (16)
+in C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php (33)
+2013/09/12 05:41:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/general/bomb.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/general/bom...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/general/bomb.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/12 05:42:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/general/bomb.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/general/bom...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/general/bomb.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/12 05:45:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/general/bomb.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/general/bom...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/general/bomb.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/12 05:48:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/general/bomb.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/general/bom...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/general/bomb.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/12 05:50:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/general/bomb.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/general/bom...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/general/bomb.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/12 05:51:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/general/bomb.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/general/bom...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/general/bomb.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/12 05:52:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/general/bomb.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/general/bom...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/general/bomb.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/12 05:54:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "img/general/bomb.png".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('img/general/bom...')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/img/general/bomb.png
+HTTP_REFERER=http://localhost/css/screen-nlr.css
+---
+2013/09/12 06:04:18 [error] [php] Undefined index: flag (C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php:126)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#1 C:\xampp\htdocs\protected\modules\manager\views\projects\index.php(16): ProjectsController->renderPartial()
+#2 C:\xampp\htdocs\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\framework\web\CBaseController.php(95): ProjectsController->renderInternal()
+#4 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#5 C:\xampp\htdocs\framework\web\CController.php(782): ProjectsController->renderPartial()
+#6 C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php(33): ProjectsController->render()
+#7 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): ProjectsController->actionIndex()
+#8 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\framework\web\CController.php(286): ProjectsController->runAction()
+#10 C:\xampp\htdocs\framework\web\CController.php(265): ProjectsController->runActionWithFilters()
+#11 C:\xampp\htdocs\framework\web\CWebApplication.php(282): ProjectsController->run()
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/manager/projects
+in C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php (126)
+in C:\xampp\htdocs\protected\modules\manager\views\projects\index.php (16)
+in C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php (33)
+2013/09/12 06:08:21 [error] [php] Undefined index: state (C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php:119)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#1 C:\xampp\htdocs\protected\modules\manager\views\projects\index.php(16): ProjectsController->renderPartial()
+#2 C:\xampp\htdocs\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\framework\web\CBaseController.php(95): ProjectsController->renderInternal()
+#4 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#5 C:\xampp\htdocs\framework\web\CController.php(782): ProjectsController->renderPartial()
+#6 C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php(33): ProjectsController->render()
+#7 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): ProjectsController->actionIndex()
+#8 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\framework\web\CController.php(286): ProjectsController->runAction()
+#10 C:\xampp\htdocs\framework\web\CController.php(265): ProjectsController->runActionWithFilters()
+#11 C:\xampp\htdocs\framework\web\CWebApplication.php(282): ProjectsController->run()
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/manager/projects
+in C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php (119)
+in C:\xampp\htdocs\protected\modules\manager\views\projects\index.php (16)
+in C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php (33)
+2013/09/12 06:11:10 [error] [php] Undefined index: state (C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php:119)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#1 C:\xampp\htdocs\protected\modules\manager\views\projects\index.php(16): ProjectsController->renderPartial()
+#2 C:\xampp\htdocs\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\framework\web\CBaseController.php(95): ProjectsController->renderInternal()
+#4 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#5 C:\xampp\htdocs\framework\web\CController.php(782): ProjectsController->renderPartial()
+#6 C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php(33): ProjectsController->render()
+#7 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): ProjectsController->actionIndex()
+#8 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\framework\web\CController.php(286): ProjectsController->runAction()
+#10 C:\xampp\htdocs\framework\web\CController.php(265): ProjectsController->runActionWithFilters()
+#11 C:\xampp\htdocs\framework\web\CWebApplication.php(282): ProjectsController->run()
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/manager/projects
+in C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php (119)
+in C:\xampp\htdocs\protected\modules\manager\views\projects\index.php (16)
+in C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php (33)

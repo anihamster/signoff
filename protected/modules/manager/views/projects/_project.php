@@ -21,6 +21,45 @@ else
     $count = count($tracker_groups);
     foreach($tracker_groups as $key => $val) {
         $tracker[$key]['title'] = $val;
+        $subtrack = array();
+        $roles = Roles::model()->findAllByAttributes(array('TR_GRP_ID' => $key));
+
+        if(!empty($roles)) {
+            foreach($roles as $role) {
+                $user = UserDetails::model()->with('brand', 'role')->findByAttributes(array('ROLE_ID' => $role->ID, 'KEY_USER' => '1'));
+                if(!empty($user)) {
+                    $sign = Signs::model()->findByAttributes(array('USER_ID' => $user->USER_ID, 'PRG_ID' => $p_v['ID']));
+                    if(!empty($user['brand']))
+                        $subtrack[$role->ID]['brand'] = $user['brand']->BRAND_NAME;
+                    else
+                        $subtrack[$role->ID]['brand'] = '';
+
+                    if(!empty($user['role']))
+                        $subtrack[$role->ID]['role'] = $user['role']->ROLE_NAME;
+                    else
+                        $subtrack[$role->ID]['role'] = '';
+
+                    if(!empty($sign)) {
+                        $subtrack[$role->ID]['sign'] = $sign->FLAG;
+                    } else {
+                        $subtrack[$role->ID]['sign'] = '6';
+                    }
+                }
+            }
+        }
+
+        $tracker[$key]['subs'] = $subtrack;
+
+        $counter = count($subtrack);
+        $signed = 0;
+        foreach($subtrack as $k => $v) {
+            if($v['sign'] == '1')
+                $signed = $signed +1;
+        }
+        if($signed == $counter)
+            $tracker[$key]['state'] = '1';
+        else
+            $tracker[$key]['state'] = '0';
     }
     $tracker[$count + 1]['title'] = 'Final sign off';
 ?>
@@ -74,16 +113,32 @@ if(!empty($signs_obj)) {
                 <div class="track" id="<?php echo $p_v['ID']; ?>">
                     <?php if(!empty($tracker)): ?>
                         <?php $ind = count($tracker); ?>
+                        <div class="trk">
                         <?php foreach($tracker as $k => $v): ?>
-                            <div id="<?php echo $k ?>" class="sprite head" style="z-index: <?php echo $ind; ?>"><?php echo $v['title']; ?></div>
+                            <div style="width:150px; display: table-cell; vertical-align: top;" >
+                            <div id="<?php echo $k ?>" class="sprite <?php if(!empty($v['state']) && ($v['state'] == 1)): ?>signed<?php elseif(empty($v['state']) || ($v['state'] == 0)): ?>head<?php endif; ?>" style="z-index: <?php echo $ind; ?>">
+                                <?php echo $v['title']; ?>
+                            </div><br />
+                            <div class="track_content" align="center;">
+                                <?php if(!empty($v['subs'])): ?>
+                                        <?php foreach($v['subs'] as $vk => $vv): ?>
+                                            <div id="<?php echo $vk ?>" class="sprite_child <?php if($vv['sign'] == 1): ?>signed<?php elseif($vv['sign'] == 0): ?>notsigned<?php elseif($vv['sign'] == 2): ?>canceled<?php endif; ?>_child" style="z-index: 1">
+                                                <?php echo $vv['brand']; ?> <?php echo $vv['role']; ?>
+                                            </div><br />
+                                        <?php endforeach; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                             <?php $ind = $ind - 1; ?>
                         <?php endforeach; ?>
+                        </div>
                     <?php endif; ?>
                 </div>
-                        <div class="track_content" align="center;">&nbsp;</div>
+
                      <br /><br />
             </div>
             <div>
+                <?php if((It::getState('tkam') == '1') || (!empty($asks))): ?>
                 <div class="right">
                     <?php if(It::getState('tkam') == '1'): ?>
                         <div class="tkam">
@@ -114,6 +169,7 @@ if(!empty($signs_obj)) {
                         </div>
                     <?php endif; ?>
                 </div>
+                <?php endif; ?>
                 <div class="pr_content">
                     <strong>Project proposal:</strong> <?php echo $p_v['TITLE']; ?><br /><br />
                     <strong>Initiated by:</strong> <?php echo $p_v['NAME']; ?> <?php echo $p_v['SURNAME']; ?><br />

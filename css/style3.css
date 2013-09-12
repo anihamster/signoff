@@ -623,3 +623,19 @@ a.hide {
 .notsigned { width: 150px; height: 50px; background-position: 0px -52px; }
 .signed { width: 150px; height: 50px; background-position: 0px 0px; }
 
+.sprite_child {
+    height: 30px;
+    width: 150px;
+    padding-left: 13px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    background-image: url('../imgs/tracker/child/tracker_child.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+.canceled_child { width: 150px; height: 30px; background-position: 0px -96px; }
+.inactive_child { width: 150px; height: 30px; background-position: 0px -64px; }
+.notsigned_child { width: 150px; height: 30px; background-position: 0px -32px; }
+.signed_child { width: 150px; height: 30px; background-position: 0px 0px; }

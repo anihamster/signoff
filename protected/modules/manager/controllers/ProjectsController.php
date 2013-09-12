@@ -129,8 +129,6 @@ class ProjectsController extends Controller {
                 }
 
                 if(Yii::app()->request->isPostRequest && $_FILES['Attaches']) {
-                    print_r($_FILES);
-
                     $valid = true;
 
                     foreach($_POST['Attaches'] as $i => $item) {
@@ -161,7 +159,7 @@ class ProjectsController extends Controller {
                     }
                 }
 
-                $this->redirect(It::baseUrl() . '/manager/projects/index');
+                $this->redirect(It::baseUrl() . '/manager/projects/my');
             }
         }
 

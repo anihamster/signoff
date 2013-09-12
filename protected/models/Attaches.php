@@ -44,7 +44,7 @@ class Attaches extends CActiveRecord
 			array('ATTACH_TO', 'numerical', 'integerOnly'=>true),
 			array('ATTACH_TYPE, ATTACH_FILE', 'length', 'max'=>1020),
 			array('CREATED_AT, UPDATED_AT', 'safe'),
-            array('attach_rule', 'file', 'allowEmpty' => true, 'types' => 'doc,pdf,ppt,txt,jpg,gif,png', 'on' => 'add'),
+            array('attach_rule', 'file', 'allowEmpty' => true, 'types' => 'doc,docx,pdf,ppt,pptx,xls,xlsx,txt,jpg,gif,png', 'on' => 'add'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('ID, ATTACH_TYPE, ATTACH_TO, ATTACH_FILE, CREATED_AT, UPDATED_AT', 'safe', 'on'=>'search'),
