@@ -47,14 +47,15 @@ else
                     foreach($brands as $brand) {
                             $subtrack[$i]['brand'] = $brand->BRAND_NAME;
                             $subtrack[$i]['role'] = $role->ROLE_NAME;
-                            $user = UserDetails::model()->findByAttributes(array('ROLE_ID' => $role->ID, 'KEY_USER' => '1'));
-
-                            if(!empty($user)) {
-                                $sign = Signs::model()->findByAttributes(array('USER_ID' => $user->USER_ID, 'PRG_ID' => $p_v['ID']));
-                                if(!empty($sign)) {
-                                    $subtrack[$i]['sign'] = $sign->FLAG;
-                                } else {
-                                    $subtrack[$i]['sign'] = '6';
+                            $users = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $role->ID, 'BRAND'=>$brand->ID, 'KEY_USER' => '1'));
+                            if(!empty($users)) {
+                                foreach($users as $user) {
+                                    $sign = Signs::model()->findByAttributes(array('USER_ID' => $user->USER_ID, 'PRG_ID' => $p_v['ID']));
+                                    if(!empty($sign)) {
+                                        $subtrack[$i]['sign'] = $sign->FLAG;
+                                    } else {
+                                        $subtrack[$i]['sign'] = '6';
+                                    }
                                 }
                             } else {
                                 $subtrack[$i]['sign'] = '6';
@@ -84,7 +85,6 @@ else
     if($p_v['STATUS'] == 1)
         $tracker[$count + 1]['state'] = '1';
 
-print_r($tracker);
 ?>
 
 <?php
