@@ -47,9 +47,14 @@ else
                     foreach($brands as $brand) {
                             $subtrack[$i]['brand'] = $brand->BRAND_NAME;
                             $subtrack[$i]['role'] = $role->ROLE_NAME;
+
                             $users = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $role->ID, 'BRAND'=>$brand->ID, 'KEY_USER' => '1'));
                             if(!empty($users)) {
                                 foreach($users as $user) {
+                                    if($user->CAN_ADD == '1') {
+                                        $subtrack[$i]['brand'] = '';
+                                        $subtrack[$i]['tkam'] = '1';
+                                    }
                                     $sign = Signs::model()->findByAttributes(array('USER_ID' => $user->USER_ID, 'PRG_ID' => $p_v['ID']));
                                     if(!empty($sign)) {
                                         $subtrack[$i]['sign'] = $sign->FLAG;
@@ -85,6 +90,28 @@ else
     if($p_v['STATUS'] == 1)
         $tracker[$count + 1]['state'] = '1';
 
+$tkams = array();
+$j = 0;
+foreach($tracker as $tk => $tv) {
+    if(!empty($tv['subs'])) {
+        foreach($tv['subs'] as $sk => $sv) {
+            if(isset($sv['tkam']) && $sv['sign'] !== '6') {
+                $tkams[$j]['mk'] = $tk;
+                $tkams[$j]['sk'] = $sk;
+                $j = $j +1;
+            }
+        }
+    }
+}
+
+foreach($tkams as $t_k => $tv) {
+    $tmp = $tracker[$tv['mk']]['subs'];
+    foreach($tmp as $temp_key => $temp_val) {
+        if($temp_key !== $tv['sk'])
+            unset($tmp[$temp_key]);
+    }
+    $tracker[$tv['mk']]['subs'] = $tmp;
+}
 ?>
 
 <?php

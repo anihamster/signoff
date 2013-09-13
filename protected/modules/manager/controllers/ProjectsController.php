@@ -113,7 +113,7 @@ class ProjectsController extends Controller {
                             }
                         }
                     } else {
-                        foreach($rules as $rule) {                        
+                        foreach($rules as $rule) {
 
                             $users = UserDetails::model()->findAllByAttributes(array('ROLE_ID' => $rule->ROLE_ID, 'BRAND' => $rule->BRAND_ID, 'KEY_USER' => '1'));
 

@@ -10953,3 +10953,140 @@ Stack trace:
 REQUEST_URI=/admin/managers/add
 HTTP_REFERER=http://localhost/admin/managers/add
 ---
+2013/09/12 15:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/12 15:22:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/13 05:05:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/13 05:05:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\xampp\htdocs\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/09/13 05:05:57 [error] [php] Undefined index: sign (C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php:80)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#1 C:\xampp\htdocs\protected\modules\manager\views\projects\index.php(16): ProjectsController->renderPartial()
+#2 C:\xampp\htdocs\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\framework\web\CBaseController.php(95): ProjectsController->renderInternal()
+#4 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#5 C:\xampp\htdocs\framework\web\CController.php(782): ProjectsController->renderPartial()
+#6 C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php(33): ProjectsController->render()
+#7 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): ProjectsController->actionIndex()
+#8 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\framework\web\CController.php(286): ProjectsController->runAction()
+#10 C:\xampp\htdocs\framework\web\CController.php(265): ProjectsController->runActionWithFilters()
+#11 C:\xampp\htdocs\framework\web\CWebApplication.php(282): ProjectsController->run()
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/manager/projects
+in C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php (80)
+in C:\xampp\htdocs\protected\modules\manager\views\projects\index.php (16)
+in C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php (33)
+2013/09/13 05:08:35 [error] [php] Undefined index: brand (C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php:160)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#1 C:\xampp\htdocs\protected\modules\manager\views\projects\index.php(16): ProjectsController->renderPartial()
+#2 C:\xampp\htdocs\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\framework\web\CBaseController.php(95): ProjectsController->renderInternal()
+#4 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#5 C:\xampp\htdocs\framework\web\CController.php(782): ProjectsController->renderPartial()
+#6 C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php(33): ProjectsController->render()
+#7 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): ProjectsController->actionIndex()
+#8 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\framework\web\CController.php(286): ProjectsController->runAction()
+#10 C:\xampp\htdocs\framework\web\CController.php(265): ProjectsController->runActionWithFilters()
+#11 C:\xampp\htdocs\framework\web\CWebApplication.php(282): ProjectsController->run()
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/manager/projects
+in C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php (160)
+in C:\xampp\htdocs\protected\modules\manager\views\projects\index.php (16)
+in C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php (33)
+2013/09/13 05:11:48 [error] [php] Undefined index: brand (C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php:160)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#1 C:\xampp\htdocs\protected\modules\manager\views\projects\index.php(16): ProjectsController->renderPartial()
+#2 C:\xampp\htdocs\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\framework\web\CBaseController.php(95): ProjectsController->renderInternal()
+#4 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#5 C:\xampp\htdocs\framework\web\CController.php(782): ProjectsController->renderPartial()
+#6 C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php(33): ProjectsController->render()
+#7 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): ProjectsController->actionIndex()
+#8 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\framework\web\CController.php(286): ProjectsController->runAction()
+#10 C:\xampp\htdocs\framework\web\CController.php(265): ProjectsController->runActionWithFilters()
+#11 C:\xampp\htdocs\framework\web\CWebApplication.php(282): ProjectsController->run()
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/manager/projects
+in C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php (160)
+in C:\xampp\htdocs\protected\modules\manager\views\projects\index.php (16)
+in C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php (33)
+2013/09/13 05:15:33 [error] [php] Undefined index: tkam (C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php:152)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#1 C:\xampp\htdocs\protected\modules\manager\views\projects\index.php(16): ProjectsController->renderPartial()
+#2 C:\xampp\htdocs\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\framework\web\CBaseController.php(95): ProjectsController->renderInternal()
+#4 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#5 C:\xampp\htdocs\framework\web\CController.php(782): ProjectsController->renderPartial()
+#6 C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php(33): ProjectsController->render()
+#7 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): ProjectsController->actionIndex()
+#8 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\framework\web\CController.php(286): ProjectsController->runAction()
+#10 C:\xampp\htdocs\framework\web\CController.php(265): ProjectsController->runActionWithFilters()
+#11 C:\xampp\htdocs\framework\web\CWebApplication.php(282): ProjectsController->run()
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/manager/projects
+in C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php (152)
+in C:\xampp\htdocs\protected\modules\manager\views\projects\index.php (16)
+in C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php (33)
+2013/09/13 06:15:12 [error] [php] Undefined index: sign (C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php:82)
+Stack trace:
+#0 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#1 C:\xampp\htdocs\protected\modules\manager\views\projects\index.php(16): ProjectsController->renderPartial()
+#2 C:\xampp\htdocs\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\framework\web\CBaseController.php(95): ProjectsController->renderInternal()
+#4 C:\xampp\htdocs\framework\web\CController.php(869): ProjectsController->renderFile()
+#5 C:\xampp\htdocs\framework\web\CController.php(782): ProjectsController->renderPartial()
+#6 C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php(33): ProjectsController->render()
+#7 C:\xampp\htdocs\framework\web\actions\CInlineAction.php(49): ProjectsController->actionIndex()
+#8 C:\xampp\htdocs\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\framework\web\CController.php(286): ProjectsController->runAction()
+#10 C:\xampp\htdocs\framework\web\CController.php(265): ProjectsController->runActionWithFilters()
+#11 C:\xampp\htdocs\framework\web\CWebApplication.php(282): ProjectsController->run()
+#12 C:\xampp\htdocs\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/manager/projects
+in C:\xampp\htdocs\protected\modules\manager\views\projects\_project.php (82)
+in C:\xampp\htdocs\protected\modules\manager\views\projects\index.php (16)
+in C:\xampp\htdocs\protected\modules\manager\controllers\ProjectsController.php (33)
